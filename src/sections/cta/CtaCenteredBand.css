@@ -1,0 +1,72 @@
+.cta-centered-band {
+  --lp-btn-radius: var(--radius);
+  --lp-focus: var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Manrope', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.cta-centered-band .ccb-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-centered-band h2 {
+  max-width: 18ch;
+  font-size: clamp(32px, 4.6vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.cta-centered-band .ccb-body {
+  margin-top: 18px;
+  max-width: 34em;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.82;
+}
+
+.cta-centered-band .ccb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.cta-centered-band .ccb-primary {
+  min-height: 52px;
+  padding-inline: 26px;
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.cta-centered-band .ccb-primary:hover {
+  background: color-mix(in srgb, var(--ink) 85%, var(--bg));
+}
+
+.cta-centered-band .ccb-secondary {
+  min-height: 52px;
+  border-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  color: var(--ink);
+}
+
+.cta-centered-band .ccb-secondary:hover {
+  border-color: var(--ink);
+}
+
+.cta-centered-band .ccb-note {
+  margin-top: 16px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@media (max-width: 479px) {
+  .cta-centered-band .ccb-actions .lp-btn {
+    flex: 1 1 100%;
+  }
+}

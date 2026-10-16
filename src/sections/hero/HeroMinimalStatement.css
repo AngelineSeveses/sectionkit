@@ -1,0 +1,72 @@
+.hero-minimal-statement {
+  --lp-btn-radius: var(--radius);
+  --lp-focus: var(--accent);
+  --lp-max: 1040px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 1.4);
+}
+
+.hero-minimal-statement .hms-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-minimal-statement[data-align='center'] .hms-inner {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-minimal-statement .hms-name {
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.hero-minimal-statement .hms-title {
+  margin-top: 28px;
+  font-size: clamp(42px, 6.6vw, 88px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  font-variation-settings: 'opsz' 96;
+}
+
+.hero-minimal-statement .hms-sub {
+  margin-top: 28px;
+  max-width: 32em;
+  font-size: 20px;
+  line-height: 1.55;
+  opacity: 0.78;
+  font-variation-settings: 'opsz' 14;
+}
+
+.hero-minimal-statement .hms-cta {
+  margin-top: 40px;
+  min-height: 54px;
+  padding-inline: 28px;
+  font-size: 16px;
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.hero-minimal-statement .hms-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, var(--bg));
+}
+
+.hero-minimal-statement .hms-note {
+  margin-top: 16px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+@media (max-width: 599px) {
+  .hero-minimal-statement .hms-sub {
+    font-size: 18px;
+  }
+  .hero-minimal-statement .hms-cta {
+    align-self: stretch;
+  }
+}

@@ -1,0 +1,131 @@
+.faq-accordion {
+  --ink: #17191d;
+  --muted: #5d6068;
+  --line: #e2e2de;
+  --lp-focus: var(--accent);
+  --lp-max: 840px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.faq-accordion .fqa-head {
+  text-align: center;
+}
+
+.faq-accordion h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+.faq-accordion .fqa-head p {
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.faq-accordion .fqa-list {
+  margin-top: 44px;
+  border-top: 1px solid var(--line);
+}
+
+.faq-accordion .fqa-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-accordion summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  font-size: 17.5px;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion summary:hover span:first-child {
+  color: var(--accent);
+}
+
+.faq-accordion .fqa-icon {
+  position: relative;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+.faq-accordion .fqa-icon::before,
+.faq-accordion .fqa-icon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 11px;
+  height: 1.5px;
+  background: var(--ink);
+  transform: translate(-50%, -50%);
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.faq-accordion .fqa-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-accordion details[open] .fqa-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-accordion details[open] .fqa-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.faq-accordion details[open] .fqa-icon::before,
+.faq-accordion details[open] .fqa-icon::after {
+  background: #fff;
+}
+
+.faq-accordion .fqa-answer {
+  padding: 0 52px 24px 0;
+}
+
+.faq-accordion .fqa-answer p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.faq-accordion .fqa-contact {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 15.5px;
+  color: var(--muted);
+}
+
+.faq-accordion .fqa-contact a {
+  color: var(--ink);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 599px) {
+  .faq-accordion summary {
+    font-size: 16.5px;
+  }
+  .faq-accordion .fqa-answer {
+    padding-right: 0;
+  }
+}

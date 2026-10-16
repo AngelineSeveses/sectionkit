@@ -1,0 +1,92 @@
+.testimonial-large-quote {
+  --lp-focus: var(--accent);
+  --lp-max: 1080px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.testimonial-large-quote .tlq-figure {
+  margin: 0;
+}
+
+.testimonial-large-quote blockquote {
+  margin: 0;
+}
+
+.testimonial-large-quote blockquote p {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(28px, 3.8vw, 48px);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  font-weight: 380;
+  font-variation-settings: 'SOFT' 50, 'opsz' 72;
+  text-indent: -0.42em;
+}
+
+.testimonial-large-quote blockquote p::before {
+  content: '\201C';
+}
+
+.testimonial-large-quote blockquote p::after {
+  content: '\201D';
+}
+
+.testimonial-large-quote figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 16px;
+  margin-top: 44px;
+  font-size: 15px;
+}
+
+.testimonial-large-quote figcaption img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-large-quote .tlq-who {
+  display: grid;
+  opacity: 0.8;
+}
+
+.testimonial-large-quote .tlq-who strong {
+  font-size: 16px;
+  opacity: 1;
+}
+
+.testimonial-large-quote .tlq-result {
+  margin-left: auto;
+  display: grid;
+  padding-left: 24px;
+  border-left: 2px solid var(--accent);
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.testimonial-large-quote .tlq-result strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.testimonial-large-quote .tlq-link {
+  display: inline-block;
+  margin-top: 36px;
+  font-size: 15px;
+  font-weight: 600;
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 639px) {
+  .testimonial-large-quote .tlq-result {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}

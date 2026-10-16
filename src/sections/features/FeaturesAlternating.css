@@ -1,0 +1,113 @@
+.features-alternating {
+  --ink: #1b1d21;
+  --muted: #5c6068;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Albert Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.features-alternating .fa-heading {
+  max-width: 18ch;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin-bottom: 64px;
+}
+
+.features-alternating .fa-rows {
+  display: grid;
+  gap: 96px;
+}
+
+.features-alternating .fa-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.features-alternating[data-start='right'] .fa-row[data-flip='false'] .fa-media,
+.features-alternating[data-start='left'] .fa-row[data-flip='true'] .fa-media {
+  order: 2;
+}
+
+.features-alternating .fa-media {
+  margin: 0;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #e9e7e2;
+}
+
+.features-alternating .fa-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features-alternating .fa-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.features-alternating h3 {
+  margin-top: 12px;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.features-alternating .fa-text {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 32em;
+}
+
+.features-alternating .fa-copy ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.features-alternating .fa-copy li {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.features-alternating .fa-copy li::before {
+  content: '';
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 100% no-repeat,
+    var(--accent);
+}
+
+@media (max-width: 899px) {
+  .features-alternating .fa-rows {
+    gap: 64px;
+  }
+  .features-alternating .fa-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .features-alternating .fa-media {
+    order: 0 !important;
+    aspect-ratio: 16 / 10;
+  }
+  .features-alternating .fa-heading {
+    margin-bottom: 44px;
+  }
+}

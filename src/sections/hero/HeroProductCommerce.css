@@ -1,0 +1,203 @@
+.hero-product-commerce {
+  --ink: #1c1a17;
+  --muted: #6b665d;
+  --lp-btn-radius: var(--radius);
+  --lp-focus: var(--ink);
+  background: #fff;
+  color: var(--ink);
+  font-family: 'Outfit', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.6);
+}
+
+.hero-product-commerce .hpc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-product-commerce .hpc-media {
+  background: var(--bg);
+  border-radius: calc(var(--radius) + 8px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.hero-product-commerce .hpc-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-product-commerce .hpc-info {
+  max-width: 460px;
+}
+
+.hero-product-commerce .hpc-collection {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero-product-commerce .hpc-name {
+  margin-top: 8px;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.hero-product-commerce .hpc-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.hero-product-commerce .hpc-rating:hover > span:last-child {
+  text-decoration: underline;
+}
+
+.hero-product-commerce .hpc-stars {
+  position: relative;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #ddd8cf;
+  line-height: 1;
+}
+
+.hero-product-commerce .hpc-stars::before {
+  content: '★★★★★';
+  position: absolute;
+  inset: 0;
+  width: calc(var(--rating) / 5 * 100%);
+  overflow: hidden;
+  color: var(--ink);
+}
+
+.hero-product-commerce .hpc-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-product-commerce .hpc-price small {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+
+.hero-product-commerce .hpc-desc {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #3d3a35;
+}
+
+.hero-product-commerce .hpc-colors {
+  margin: 28px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.hero-product-commerce .hpc-colors legend {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-product-commerce .hpc-colors > div {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.hero-product-commerce .hpc-colors label {
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-product-commerce .hpc-colors input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hero-product-commerce .hpc-colors span:not(.lp-sr-only) {
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 140ms ease;
+}
+
+.hero-product-commerce .hpc-colors input:checked + span {
+  outline-color: var(--ink);
+}
+
+.hero-product-commerce .hpc-colors input:focus-visible + span {
+  outline-color: var(--accent);
+}
+
+.hero-product-commerce .hpc-cta {
+  width: 100%;
+  margin-top: 32px;
+  min-height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  background: var(--accent);
+  color: #fff;
+}
+
+.hero-product-commerce .hpc-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #fff);
+}
+
+.hero-product-commerce .hpc-notes {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ebe7e0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero-product-commerce .hpc-notes li {
+  display: flex;
+  gap: 10px;
+}
+
+.hero-product-commerce .hpc-notes li::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+@media (max-width: 899px) {
+  .hero-product-commerce .hpc-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-product-commerce .hpc-info {
+    max-width: none;
+  }
+  .hero-product-commerce .hpc-media {
+    aspect-ratio: 4 / 3;
+  }
+}

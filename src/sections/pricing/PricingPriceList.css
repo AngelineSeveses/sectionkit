@@ -1,0 +1,119 @@
+.pricing-price-list {
+  --line: color-mix(in srgb, var(--ink) 22%, transparent);
+  --lp-focus: var(--accent);
+  --lp-max: 1100px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.pricing-price-list .ppl2-head {
+  text-align: center;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.pricing-price-list h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(36px, 4.6vw, 56px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.pricing-price-list .ppl2-head p {
+  margin-top: 14px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  opacity: 0.78;
+}
+
+.pricing-price-list .ppl2-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px 72px;
+  margin-top: 56px;
+}
+
+.pricing-price-list h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.pricing-price-list dl {
+  margin: 0;
+}
+
+.pricing-price-list .ppl2-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pricing-price-list dt {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.pricing-price-list dt small {
+  font-size: 13.5px;
+  font-weight: 400;
+  opacity: 0.68;
+}
+
+.pricing-price-list dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pricing-price-list .ppl2-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 40px;
+}
+
+.pricing-price-list .ppl2-foot p {
+  font-size: 14px;
+  opacity: 0.72;
+  max-width: 40em;
+}
+
+.pricing-price-list .ppl2-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: background-color 180ms ease;
+}
+
+.pricing-price-list .ppl2-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
+@media (max-width: 767px) {
+  .pricing-price-list .ppl2-groups {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,137 @@
+.portfolio-masonry {
+  --lp-focus: var(--ink);
+  --lp-max: 1320px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Syne', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.portfolio-masonry .pm-head {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.portfolio-masonry h2 {
+  font-size: clamp(36px, 5vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.portfolio-masonry .pm-head p {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.75;
+  max-width: 30em;
+}
+
+.portfolio-masonry .pm-wall {
+  columns: 3 280px;
+  column-gap: 14px;
+  margin-top: 52px;
+}
+
+.portfolio-masonry .pm-item {
+  break-inside: avoid;
+  margin-bottom: 14px;
+}
+
+.portfolio-masonry .pm-item a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.portfolio-masonry .pm-item img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-masonry .pm-shape-0 img {
+  aspect-ratio: 4 / 5;
+}
+
+.portfolio-masonry .pm-shape-1 img {
+  aspect-ratio: 1;
+}
+
+.portfolio-masonry .pm-shape-2 img {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-masonry .pm-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 40px 18px 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.62));
+  font-size: 14px;
+}
+
+.portfolio-masonry .pm-caption strong {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-masonry .pm-caption span {
+  font-family: 'Inter', system-ui, sans-serif;
+  opacity: 0.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-masonry .pm-caption {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 220ms ease, transform 260ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .portfolio-masonry .pm-item a:hover .pm-caption,
+  .portfolio-masonry .pm-item a:focus-visible .pm-caption {
+    opacity: 1;
+    transform: none;
+  }
+  .portfolio-masonry .pm-item a:hover img {
+    transform: scale(1.03);
+  }
+}
+
+.portfolio-masonry .pm-foot {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.portfolio-masonry .pm-foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 26px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.portfolio-masonry .pm-foot a:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+@media (max-width: 899px) {
+  .portfolio-masonry .pm-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

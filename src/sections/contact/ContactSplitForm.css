@@ -1,0 +1,137 @@
+.contact-split-form {
+  --ink: #1b1f23;
+  --muted: #5c636a;
+  --line: #dadde1;
+  --lp-btn-radius: var(--radius);
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.contact-split-form .csf2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.contact-split-form h2 {
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 650;
+}
+
+.contact-split-form .csf2-intro {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.contact-split-form .csf2-rows {
+  display: grid;
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.contact-split-form .csf2-rows li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-split-form .csf2-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: var(--accent);
+}
+
+.contact-split-form .csf2-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-split-form .csf2-text {
+  display: grid;
+  gap: 2px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.contact-split-form .csf2-text small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.contact-split-form .csf2-text a {
+  color: var(--ink);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+
+.contact-split-form .csf2-form {
+  display: grid;
+  gap: 16px;
+  padding: 32px;
+  border-radius: calc(var(--radius) + 6px);
+  background: #fff;
+  border: 1px solid #e6e8eb;
+}
+
+.contact-split-form .csf2-field {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact-split-form .csf2-field input,
+.contact-split-form .csf2-field select,
+.contact-split-form .csf2-field textarea {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 16px;
+  background: #fff;
+}
+
+.contact-split-form .csf2-field textarea {
+  resize: vertical;
+}
+
+.contact-split-form .csf2-field :is(input, select, textarea):focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.contact-split-form .csf2-submit {
+  min-height: 50px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.contact-split-form .csf2-submit:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+@media (max-width: 899px) {
+  .contact-split-form .csf2-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 479px) {
+  .contact-split-form .csf2-form {
+    padding: 22px 18px;
+  }
+}

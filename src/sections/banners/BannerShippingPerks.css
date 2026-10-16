@@ -1,0 +1,43 @@
+.banner-shipping-perks {
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  padding-block: 28px;
+}
+
+.banner-shipping-perks[data-divider='true'] {
+  border-block: 1px solid var(--line);
+}
+
+.banner-shipping-perks .bsp-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px 32px;
+}
+
+.banner-shipping-perks li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.banner-shipping-perks svg {
+  flex: none;
+  width: 30px;
+  height: 30px;
+}
+
+.banner-shipping-perks li span {
+  display: grid;
+  gap: 1px;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.86;
+}
+
+.banner-shipping-perks li strong {
+  font-size: 15.5px;
+  font-weight: 700;
+  opacity: 1;
+}

@@ -1,0 +1,249 @@
+.nav-local-utility {
+  --ink: #1d232b;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+  border-bottom: 1px solid #e4e6ea;
+}
+
+.nav-local-utility .nlu-util {
+  background: var(--util);
+  color: #fff;
+  font-size: 14px;
+}
+
+.nav-local-utility .nlu-util-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 38px;
+  align-items: center;
+}
+
+.nav-local-utility .nlu-util p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-local-utility .nlu-util svg {
+  width: 15px;
+  height: 15px;
+  opacity: 0.85;
+}
+
+.nav-local-utility .nlu-hours {
+  opacity: 0.82;
+}
+
+.nav-local-utility .nlu-main {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 84px;
+}
+
+.nav-local-utility .nlu-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nav-local-utility .nlu-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-local-utility .nlu-mark svg {
+  width: 26px;
+  height: 26px;
+}
+
+.nav-local-utility .nlu-mark svg path:last-child {
+  fill: var(--accent);
+}
+
+.nav-local-utility .nlu-brand-text {
+  display: grid;
+  line-height: 1.1;
+}
+
+.nav-local-utility .nlu-brand-text strong {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nav-local-utility .nlu-brand-text small {
+  font-size: 13px;
+  color: #5d6570;
+}
+
+.nav-local-utility .nlu-nav {
+  margin-left: auto;
+}
+
+.nav-local-utility .nlu-nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-local-utility .nlu-nav a {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 160ms ease;
+}
+
+.nav-local-utility .nlu-nav a:hover {
+  border-color: var(--accent);
+}
+
+.nav-local-utility .nlu-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 24px;
+  border-left: 1px solid #e4e6ea;
+}
+
+.nav-local-utility .nlu-phone {
+  display: grid;
+  line-height: 1.15;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-local-utility .nlu-phone small {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #5d6570;
+}
+
+.nav-local-utility .nlu-cta {
+  min-height: 48px;
+  padding-inline: 22px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nav-local-utility .nlu-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.nav-local-utility .nlu-mobile {
+  display: none;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-local-utility .nlu-call {
+  min-height: 42px;
+  padding-inline: 14px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-local-utility .nlu-call svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-local-utility .nlu-mobile summary {
+  list-style: none;
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #d4d8de;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-local-utility .nlu-mobile summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-local-utility .nlu-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 5;
+  padding: 8px 20px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e4e6ea;
+  box-shadow: 0 16px 30px -18px rgba(0, 0, 0, 0.3);
+  display: grid;
+  gap: 12px;
+}
+
+.nav-local-utility .nlu-panel li a {
+  display: block;
+  padding: 13px 0;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+@media (max-width: 1099px) {
+  .nav-local-utility .nlu-nav ul {
+    gap: 18px;
+  }
+  .nav-local-utility .nlu-phone small {
+    display: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .nav-local-utility .nlu-nav,
+  .nav-local-utility .nlu-actions {
+    display: none;
+  }
+  .nav-local-utility .nlu-mobile {
+    display: flex;
+  }
+  .nav-local-utility .nlu-main {
+    height: 72px;
+  }
+  .nav-local-utility .nlu-hours {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .nav-local-utility .nlu-brand-text small {
+    display: none;
+  }
+  .nav-local-utility .nlu-mark {
+    width: 38px;
+    height: 38px;
+  }
+  .nav-local-utility .nlu-brand-text strong {
+    font-size: 18px;
+  }
+  .nav-local-utility .nlu-util {
+    font-size: 13px;
+  }
+}

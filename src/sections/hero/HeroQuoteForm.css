@@ -1,0 +1,228 @@
+.hero-quote-form {
+  --ink: #1b1d22;
+  --lp-btn-radius: var(--radius);
+  --lp-focus: #ffffff;
+  position: relative;
+  isolation: isolate;
+  color: #ffffff;
+  font-family: 'Archivo', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+  background: #1d2430;
+  overflow: hidden;
+}
+
+.hero-quote-form .hqf-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-quote-form .hqf-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 18, 26, calc(var(--overlay) + 0.12)) 0%,
+    rgba(14, 18, 26, var(--overlay)) 45%,
+    rgba(14, 18, 26, calc(var(--overlay) - 0.25)) 100%
+  );
+}
+
+.hero-quote-form .hqf-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 420px);
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-quote-form .hqf-kicker {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.hero-quote-form .hqf-title {
+  margin-top: 20px;
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  font-stretch: 92%;
+}
+
+.hero-quote-form .hqf-sub {
+  margin-top: 18px;
+  max-width: 32em;
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.hero-quote-form .hqf-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero-quote-form .hqf-phone svg {
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+}
+
+.hero-quote-form .hqf-phone span {
+  display: grid;
+  line-height: 1.2;
+}
+
+.hero-quote-form .hqf-phone small {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-quote-form .hqf-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 36px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-quote-form .hqf-trust li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.hero-quote-form .hqf-trust li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-70%) rotate(-45deg);
+}
+
+/* Form card */
+.hero-quote-form .hqf-form {
+  --lp-focus: var(--accent);
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: calc(var(--radius) + 4px);
+  padding: 28px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+.hero-quote-form .hqf-form-title {
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 800;
+}
+
+.hero-quote-form .hqf-form-note {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #5d6270;
+}
+
+.hero-quote-form .hqf-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.hero-quote-form .hqf-field {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-quote-form .hqf-field:nth-child(1),
+.hero-quote-form .hqf-field:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.hero-quote-form .hqf-field input,
+.hero-quote-form .hqf-field select {
+  height: 46px;
+  padding: 0 12px;
+  border: 1px solid #d6d9df;
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.hero-quote-form .hqf-field input:focus,
+.hero-quote-form .hqf-field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.hero-quote-form .hqf-submit {
+  width: 100%;
+  margin-top: 20px;
+  min-height: 52px;
+  font-size: 16px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.hero-quote-form .hqf-submit:hover {
+  background: color-mix(in srgb, var(--accent) 88%, #000);
+}
+
+.hero-quote-form .hqf-privacy {
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: #6b707c;
+  text-align: center;
+}
+
+@media (max-width: 959px) {
+  .hero-quote-form .hqf-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-quote-form .hqf-shade {
+    background: rgba(14, 18, 26, calc(var(--overlay) + 0.05));
+  }
+  .hero-quote-form .hqf-form {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-quote-form .hqf-form {
+    padding: 22px 18px;
+  }
+  .hero-quote-form .hqf-fields {
+    grid-template-columns: 1fr;
+  }
+  .hero-quote-form .hqf-sub {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,85 @@
+.team-founder-letter {
+  --lp-max: 1120px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.team-founder-letter .tfl-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.team-founder-letter .tfl-photo {
+  position: sticky;
+  top: 32px;
+  margin: 0;
+}
+
+.team-founder-letter .tfl-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: saturate(0.85);
+}
+
+.team-founder-letter .tfl-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.team-founder-letter h2 {
+  margin-top: 14px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.team-founder-letter .tfl-para {
+  margin-top: 22px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.75;
+  max-width: 34em;
+}
+
+.team-founder-letter .tfl-sign {
+  display: grid;
+  gap: 2px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  max-width: 34em;
+}
+
+.team-founder-letter .tfl-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.team-founder-letter .tfl-role {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@media (max-width: 859px) {
+  .team-founder-letter .tfl-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .team-founder-letter .tfl-photo {
+    position: static;
+    max-width: 360px;
+  }
+  .team-founder-letter .tfl-para {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,203 @@
+.nav-saas-simple {
+  --ink: #15171c;
+  --muted: #545965;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid #ebecef;
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  z-index: 10;
+}
+
+.nav-saas-simple[data-sticky='true'] {
+  position: sticky;
+  top: 0;
+}
+
+.nav-saas-simple .nss-bar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 68px;
+}
+
+.nav-saas-simple .nss-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 650;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nav-saas-simple .nss-brand svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+
+.nav-saas-simple .nss-nav ul {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-saas-simple .nss-nav a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.nav-saas-simple .nss-nav a:hover {
+  color: var(--ink);
+  background: #f3f4f6;
+}
+
+.nav-saas-simple .nss-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-saas-simple .nss-signin {
+  padding: 8px 12px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-saas-simple .nss-signin:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nav-saas-simple .nss-cta {
+  min-height: 38px;
+  padding-inline: 16px;
+  font-size: 14px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.nav-saas-simple .nss-cta:hover {
+  background: #2d3039;
+}
+
+.nav-saas-simple .nss-mobile {
+  display: none;
+  margin-left: auto;
+}
+
+.nav-saas-simple .nss-mobile summary {
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-saas-simple .nss-mobile summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-saas-simple .nss-mobile summary span,
+.nav-saas-simple .nss-mobile summary span::before,
+.nav-saas-simple .nss-mobile summary span::after {
+  display: block;
+  width: 18px;
+  height: 1.75px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), opacity 140ms ease;
+}
+
+.nav-saas-simple .nss-mobile summary span {
+  position: relative;
+}
+
+.nav-saas-simple .nss-mobile summary span::before,
+.nav-saas-simple .nss-mobile summary span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.nav-saas-simple .nss-mobile summary span::before {
+  top: -6px;
+}
+
+.nav-saas-simple .nss-mobile summary span::after {
+  top: 6px;
+}
+
+.nav-saas-simple .nss-mobile[open] summary span {
+  background: transparent;
+}
+
+.nav-saas-simple .nss-mobile[open] summary span::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-saas-simple .nss-mobile[open] summary span::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-saas-simple .nss-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 68px;
+  display: grid;
+  gap: 4px;
+  padding: 12px 20px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ebecef;
+  box-shadow: 0 16px 32px -16px rgba(21, 23, 28, 0.2);
+}
+
+.nav-saas-simple .nss-panel ul {
+  display: grid;
+  margin-bottom: 8px;
+}
+
+.nav-saas-simple .nss-panel li a {
+  display: block;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid #f0f1f3;
+}
+
+.nav-saas-simple .nss-panel .nss-signin {
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+.nav-saas-simple .nss-panel .nss-cta {
+  min-height: 46px;
+  font-size: 15px;
+}
+
+@media (max-width: 899px) {
+  .nav-saas-simple .nss-nav,
+  .nav-saas-simple .nss-actions {
+    display: none;
+  }
+  .nav-saas-simple .nss-mobile {
+    display: block;
+  }
+}

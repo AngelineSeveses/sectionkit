@@ -1,0 +1,116 @@
+.compare-us-vs-them {
+  --ink: #1a1c20;
+  --muted: #61656d;
+  --lp-btn-radius: calc(var(--radius) - 6px);
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.compare-us-vs-them .cuv-head {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.compare-us-vs-them h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.compare-us-vs-them .cuv-head p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.compare-us-vs-them .cuv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 980px;
+  margin: 48px auto 0;
+}
+
+.compare-us-vs-them .cuv-col {
+  padding: 32px;
+  border-radius: var(--radius);
+}
+
+.compare-us-vs-them .cuv-them {
+  background: #eeeeec;
+  color: #4a4d53;
+}
+
+.compare-us-vs-them .cuv-us {
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 30px 60px -36px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.compare-us-vs-them h3 {
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.compare-us-vs-them .cuv-us h3 {
+  color: var(--accent);
+}
+
+.compare-us-vs-them ul {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.compare-us-vs-them li {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.compare-us-vs-them li svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.compare-us-vs-them .cuv-them li svg {
+  color: #9a9da3;
+}
+
+.compare-us-vs-them .cuv-us li svg {
+  color: var(--accent);
+}
+
+.compare-us-vs-them .cuv-cta {
+  width: 100%;
+  margin-top: 28px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.compare-us-vs-them .cuv-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+@media (max-width: 767px) {
+  .compare-us-vs-them .cuv-grid {
+    grid-template-columns: 1fr;
+  }
+  .compare-us-vs-them .cuv-us {
+    order: -1;
+  }
+  .compare-us-vs-them .cuv-col {
+    padding: 24px;
+  }
+}

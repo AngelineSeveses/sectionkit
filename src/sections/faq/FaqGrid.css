@@ -1,0 +1,49 @@
+.faq-grid {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.faq-grid h2 {
+  font-family: 'IBM Plex Serif', Georgia, serif;
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  padding-bottom: 28px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+}
+
+.faq-grid .fg-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px 48px;
+  margin: 40px 0 0;
+}
+
+.faq-grid dt {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.faq-grid dd {
+  margin: 10px 0 0;
+  font-size: 15.5px;
+  line-height: 1.65;
+  opacity: 0.78;
+}
+
+@media (max-width: 959px) {
+  .faq-grid .fg-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 599px) {
+  .faq-grid .fg-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

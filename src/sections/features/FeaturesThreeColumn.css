@@ -1,0 +1,101 @@
+.features-three-column {
+  --ink: #18191d;
+  --muted: #5f626b;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Geist', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.features-three-column .ftc-head {
+  max-width: 640px;
+}
+
+.features-three-column[data-align='center'] .ftc-head {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.features-three-column .ftc-head h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.features-three-column .ftc-head p {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.features-three-column .ftc-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+  margin-top: 64px;
+}
+
+.features-three-column .ftc-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.features-three-column .ftc-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 10%, #fff);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.features-three-column .ftc-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.features-three-column h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.features-three-column li p {
+  margin-top: 8px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.features-three-column li a {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.features-three-column li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 899px) {
+  .features-three-column .ftc-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .features-three-column .ftc-list {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-top: 44px;
+  }
+}

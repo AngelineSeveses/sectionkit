@@ -1,0 +1,170 @@
+.footer-local-business {
+  --ink: #f2f1ed;
+  --muted: #b6b4ad;
+  --line: rgba(255, 255, 255, 0.12);
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+}
+
+.footer-local-business a {
+  color: inherit;
+}
+
+.footer-local-business .flb-cta {
+  background: var(--accent);
+  color: #fff;
+}
+
+.footer-local-business .flb-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+  padding-block: 28px;
+}
+
+.footer-local-business .flb-cta-inner p {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.footer-local-business .flb-cta-inner > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-local-business .flb-cta-btn {
+  min-height: 48px;
+  background: #fff;
+  color: #1b1b1b;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer-local-business .flb-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.footer-local-business .flb-cta-phone {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-local-business .flb-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr 0.8fr;
+  gap: 40px;
+  padding-block: 56px 40px;
+}
+
+.footer-local-business .flb-brand {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.footer-local-business address {
+  margin-top: 12px;
+  font-style: normal;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.footer-local-business address a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+.footer-local-business h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.footer-local-business .flb-hours {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0 0;
+  font-size: 15px;
+}
+
+.footer-local-business .flb-hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-local-business .flb-hours dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-local-business .flb-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+.footer-local-business .flb-links {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+.footer-local-business .flb-links a {
+  text-decoration: none;
+}
+
+.footer-local-business .flb-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-local-business .flb-legal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-block: 20px 28px;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.footer-local-business .flb-legal a {
+  margin-left: 16px;
+  text-underline-offset: 3px;
+}
+
+.footer-local-business .flb-legal a:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 959px) {
+  .footer-local-business .flb-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 559px) {
+  .footer-local-business .flb-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-local-business .flb-cta-inner p {
+    font-size: 22px;
+  }
+}

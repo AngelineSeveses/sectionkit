@@ -1,0 +1,98 @@
+.banner-offer-code {
+  --lp-btn-radius: 999px;
+  --lp-focus: var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  padding-block: 36px 24px;
+}
+
+.banner-offer-code .boc-inner {
+  display: grid;
+  grid-template-columns: 1.4fr auto auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.banner-offer-code .boc-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.banner-offer-code .boc-headline {
+  margin-top: 4px;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.banner-offer-code .boc-details {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.82;
+}
+
+.banner-offer-code .boc-code-wrap {
+  text-align: center;
+}
+
+.banner-offer-code .boc-code-label,
+.banner-offer-code .boc-expires {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.banner-offer-code .boc-code {
+  margin-block: 6px;
+  padding: 10px 22px;
+  border: 2px dashed currentColor;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  user-select: all;
+}
+
+.banner-offer-code .boc-cta {
+  min-height: 54px;
+  padding-inline: 28px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 16px;
+}
+
+.banner-offer-code .boc-cta:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.banner-offer-code .boc-fine {
+  margin-top: 20px;
+  font-size: 12.5px;
+  opacity: 0.7;
+}
+
+@media (max-width: 899px) {
+  .banner-offer-code .boc-inner {
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+  }
+  .banner-offer-code .boc-offer {
+    grid-column: 1 / -1;
+  }
+  .banner-offer-code .boc-code-wrap {
+    text-align: left;
+  }
+}
+
+@media (max-width: 499px) {
+  .banner-offer-code .boc-inner {
+    grid-template-columns: 1fr;
+  }
+  .banner-offer-code .boc-cta {
+    width: 100%;
+  }
+}

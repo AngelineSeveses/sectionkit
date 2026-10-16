@@ -1,0 +1,110 @@
+.team-values-about {
+  --ink: #1f1e1c;
+  --muted: #65625c;
+  --line: #dfdbd3;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Kumbh Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.team-values-about .tva-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.team-values-about h2 {
+  font-size: clamp(32px, 4.2vw, 54px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.team-values-about .tva-head p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.team-values-about .tva-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.team-values-about .tva-facts dt {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.team-values-about .tva-facts dd {
+  margin: 4px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.team-values-about .tva-images {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 56px;
+}
+
+.team-values-about .tva-images img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.team-values-about .tva-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.team-values-about .tva-values li {
+  padding-top: 18px;
+  border-top: 2px solid var(--accent);
+}
+
+.team-values-about .tva-values h3 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.team-values-about .tva-values p {
+  margin-top: 8px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@media (max-width: 899px) {
+  .team-values-about .tva-head {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .team-values-about .tva-images {
+    grid-template-columns: 1fr 1fr;
+  }
+  .team-values-about .tva-images li:first-child {
+    grid-column: 1 / -1;
+  }
+  .team-values-about .tva-images img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 479px) {
+  .team-values-about .tva-facts dd {
+    font-size: 18px;
+  }
+}

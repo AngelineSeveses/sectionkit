@@ -1,0 +1,126 @@
+.portfolio-filter-grid {
+  --ink: #23211e;
+  --muted: #6c675f;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Raleway', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.portfolio-filter-grid .pfg-heading {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.portfolio-filter-grid .pfg-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.portfolio-filter-grid .pfg-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.portfolio-filter-grid .pfg-filters label {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid #d9d4cc;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.portfolio-filter-grid .pfg-filters label:hover {
+  border-color: var(--ink);
+}
+
+.portfolio-filter-grid #pfg-all:checked ~ .pfg-filters label[for='pfg-all'],
+.portfolio-filter-grid #pfg-f1:checked ~ .pfg-filters label[for='pfg-f1'],
+.portfolio-filter-grid #pfg-f2:checked ~ .pfg-filters label[for='pfg-f2'],
+.portfolio-filter-grid #pfg-f3:checked ~ .pfg-filters label[for='pfg-f3'],
+.portfolio-filter-grid #pfg-f4:checked ~ .pfg-filters label[for='pfg-f4'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.portfolio-filter-grid #pfg-all:focus-visible ~ .pfg-filters label[for='pfg-all'],
+.portfolio-filter-grid #pfg-f1:focus-visible ~ .pfg-filters label[for='pfg-f1'],
+.portfolio-filter-grid #pfg-f2:focus-visible ~ .pfg-filters label[for='pfg-f2'],
+.portfolio-filter-grid #pfg-f3:focus-visible ~ .pfg-filters label[for='pfg-f3'],
+.portfolio-filter-grid #pfg-f4:focus-visible ~ .pfg-filters label[for='pfg-f4'] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.portfolio-filter-grid #pfg-f1:checked ~ .pfg-grid .pfg-item:not([data-slot='1']),
+.portfolio-filter-grid #pfg-f2:checked ~ .pfg-grid .pfg-item:not([data-slot='2']),
+.portfolio-filter-grid #pfg-f3:checked ~ .pfg-grid .pfg-item:not([data-slot='3']),
+.portfolio-filter-grid #pfg-f4:checked ~ .pfg-grid .pfg-item:not([data-slot='4']) {
+  display: none;
+}
+
+.portfolio-filter-grid .pfg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.portfolio-filter-grid figure {
+  margin: 0;
+}
+
+.portfolio-filter-grid figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.portfolio-filter-grid figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.portfolio-filter-grid figcaption strong {
+  font-size: 16px;
+}
+
+.portfolio-filter-grid figcaption span {
+  color: var(--muted);
+}
+
+@media (max-width: 899px) {
+  .portfolio-filter-grid .pfg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 539px) {
+  .portfolio-filter-grid .pfg-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-filter-grid .pfg-filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .portfolio-filter-grid .pfg-filters label {
+    white-space: nowrap;
+  }
+}

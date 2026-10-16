@@ -1,0 +1,138 @@
+.case-study-cards {
+  --ink: #15171b;
+  --muted: #5f636b;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.case-study-cards .csc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.case-study-cards .csc-head h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+
+.case-study-cards .csc-head a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.case-study-cards .csc-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 44px;
+}
+
+.case-study-cards .csc-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e5e1;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 160ms ease;
+}
+
+.case-study-cards .csc-card:hover {
+  border-color: var(--ink);
+}
+
+.case-study-cards .csc-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.case-study-cards .csc-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.case-study-cards .csc-card:hover .csc-media img {
+  transform: scale(1.04);
+}
+
+.case-study-cards .csc-tag {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.case-study-cards .csc-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 22px 24px;
+}
+
+.case-study-cards .csc-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.case-study-cards .csc-metric strong {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+
+.case-study-cards .csc-title {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.case-study-cards .csc-client {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 959px) {
+  .case-study-cards .csc-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  .case-study-cards .csc-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .case-study-cards .csc-list {
+    grid-template-columns: 1fr;
+  }
+}

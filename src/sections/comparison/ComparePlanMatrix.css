@@ -1,0 +1,98 @@
+.compare-plan-matrix {
+  --ink: #15171c;
+  --muted: #5d616b;
+  --line: #e6e7eb;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.compare-plan-matrix .cpm-heading {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+  text-align: center;
+}
+
+.compare-plan-matrix .cpm-scroll {
+  /* Contains absolutely positioned screen-reader labels inside the scroller. */
+  position: relative;
+  margin-top: 40px;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.compare-plan-matrix .cpm-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14.5px;
+}
+
+.compare-plan-matrix thead th {
+  position: sticky;
+  top: 0;
+  padding: 16px 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--ink);
+  font-size: 16px;
+  font-weight: 650;
+  text-align: center;
+  width: calc(60% / var(--cols));
+}
+
+.compare-plan-matrix thead th[data-hl='true'] {
+  color: var(--accent);
+}
+
+.compare-plan-matrix .cpm-group th {
+  padding: 28px 12px 10px 0;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-plan-matrix tbody th[scope='row'] {
+  padding: 14px 12px 14px 0;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-plan-matrix tbody td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-plan-matrix td[data-hl='true'],
+.compare-plan-matrix thead th[data-hl='true'] {
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+}
+
+.compare-plan-matrix .cpm-yes {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  color: var(--accent);
+}
+
+.compare-plan-matrix .cpm-yes svg {
+  width: 14px;
+  height: 14px;
+}
+
+.compare-plan-matrix .cpm-no {
+  color: #b4b7bf;
+}

@@ -1,0 +1,111 @@
+.banner-guarantee {
+  --ink: #1b2620;
+  --muted: #55625a;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Outfit', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.7);
+}
+
+.banner-guarantee .bg-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 40px 48px;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, #e6e6e1);
+}
+
+.banner-guarantee .bg-seal svg {
+  width: 180px;
+  height: 180px;
+}
+
+.banner-guarantee .bg-ring {
+  fill: color-mix(in srgb, var(--accent) 10%, #fff);
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 2 5;
+}
+
+.banner-guarantee .bg-core {
+  fill: var(--accent);
+}
+
+.banner-guarantee .bg-arc-text {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  fill: var(--accent);
+}
+
+.banner-guarantee .bg-big {
+  font-size: 30px;
+  font-weight: 700;
+  fill: #fff;
+  letter-spacing: -0.02em;
+}
+
+.banner-guarantee h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.banner-guarantee .bg-copy > p {
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 40em;
+}
+
+.banner-guarantee .bg-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.banner-guarantee .bg-copy li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.banner-guarantee .bg-copy li::before {
+  content: '';
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+.banner-guarantee .bg-copy a {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 14.5px;
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .banner-guarantee .bg-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 24px;
+    justify-items: start;
+  }
+  .banner-guarantee .bg-seal svg {
+    width: 128px;
+    height: 128px;
+  }
+}

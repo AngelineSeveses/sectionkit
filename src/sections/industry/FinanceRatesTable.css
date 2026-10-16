@@ -1,0 +1,132 @@
+.finance-rates-table {
+  --ink: #142033;
+  --muted: #55627a;
+  --line: #dde3ec;
+  --lp-btn-radius: var(--radius);
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.finance-rates-table .frt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.finance-rates-table h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.finance-rates-table .frt-head > div p {
+  margin-top: 10px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 36em;
+}
+
+.finance-rates-table .frt-asof {
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.finance-rates-table .frt-table-wrap {
+  /* Contains absolutely positioned screen-reader labels inside the scroller. */
+  position: relative;
+  margin-top: 32px;
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.finance-rates-table .frt-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 15.5px;
+}
+
+.finance-rates-table thead th {
+  padding: 14px 20px;
+  background: #f4f7fa;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.finance-rates-table tbody th,
+.finance-rates-table tbody td {
+  padding: 18px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+.finance-rates-table tbody tr:last-child th,
+.finance-rates-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.finance-rates-table tbody th {
+  font-weight: 600;
+}
+
+.finance-rates-table .frt-badge {
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.finance-rates-table .frt-rate {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.finance-rates-table tbody a {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+.finance-rates-table .frt-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px 48px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.finance-rates-table .frt-disclosure {
+  flex: 1 1 420px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.finance-rates-table .frt-cta {
+  background: var(--ink);
+  color: #fff;
+}
+
+.finance-rates-table .frt-cta:hover {
+  background: color-mix(in srgb, var(--ink) 82%, #fff);
+}

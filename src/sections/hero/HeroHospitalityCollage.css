@@ -1,0 +1,173 @@
+.hero-hospitality-collage {
+  --lp-focus: var(--accent);
+  --lp-max: 1280px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+  overflow: hidden;
+}
+
+.hero-hospitality-collage .hhc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.hero-hospitality-collage .hhc-property {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero-hospitality-collage .hhc-property span {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.hero-hospitality-collage .hhc-title {
+  margin-top: 22px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(44px, 5.6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+.hero-hospitality-collage .hhc-sub {
+  margin-top: 20px;
+  max-width: 30em;
+  font-size: 18px;
+  line-height: 1.65;
+  opacity: 0.82;
+}
+
+.hero-hospitality-collage .hhc-book {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr;
+  gap: 1px;
+  margin-top: 36px;
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  background: color-mix(in srgb, var(--ink) 22%, transparent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hero-hospitality-collage .hhc-book label {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.hero-hospitality-collage .hhc-book input,
+.hero-hospitality-collage .hhc-book select {
+  border: 0;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 0;
+  min-width: 0;
+  outline: none;
+  color-scheme: light;
+}
+
+.hero-hospitality-collage .hhc-book label:focus-within {
+  background: color-mix(in srgb, var(--ink) 6%, var(--bg));
+}
+
+.hero-hospitality-collage .hhc-submit {
+  grid-column: 1 / -1;
+  border-radius: 0;
+  min-height: 54px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.hero-hospitality-collage .hhc-submit:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.hero-hospitality-collage .hhc-note {
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: 0.78;
+}
+
+.hero-hospitality-collage .hhc-note a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.hero-hospitality-collage .hhc-collage {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  height: 620px;
+}
+
+.hero-hospitality-collage figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.hero-hospitality-collage figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-hospitality-collage .hhc-main {
+  grid-row: 1 / 3;
+  border-radius: 999px 999px 4px 4px;
+}
+
+.hero-hospitality-collage .hhc-top {
+  margin-top: 48px;
+}
+
+.hero-hospitality-collage .hhc-bottom {
+  margin-bottom: 48px;
+}
+
+@media (max-width: 1023px) {
+  .hero-hospitality-collage .hhc-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero-hospitality-collage .hhc-collage {
+    height: 520px;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero-hospitality-collage .hhc-book {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-hospitality-collage .hhc-book label:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+  .hero-hospitality-collage .hhc-collage {
+    height: 380px;
+    gap: 8px;
+  }
+  .hero-hospitality-collage .hhc-top {
+    margin-top: 24px;
+  }
+  .hero-hospitality-collage .hhc-bottom {
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,161 @@
+.hero-service-area {
+  --ink: #12263a;
+  --muted: #4f6274;
+  --lp-btn-radius: var(--radius);
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Work Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.hero-service-area .hsa-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-service-area .hsa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #d6dee6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-service-area .hsa-badge span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1f9d55;
+  box-shadow: 0 0 0 3px rgba(31, 157, 85, 0.2);
+}
+
+.hero-service-area .hsa-title {
+  margin-top: 22px;
+  font-size: clamp(38px, 4.8vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.hero-service-area .hsa-sub {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 32em;
+}
+
+.hero-service-area .hsa-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-service-area .hsa-primary {
+  min-height: 52px;
+  padding-inline: 24px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.hero-service-area .hsa-primary:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.hero-service-area .hsa-phone {
+  min-height: 52px;
+  background: #fff;
+  color: var(--ink);
+  border-color: #cdd6df;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-service-area .hsa-phone svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+
+.hero-service-area .hsa-phone:hover {
+  border-color: var(--ink);
+}
+
+.hero-service-area .hsa-hours {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero-service-area .hsa-map {
+  position: relative;
+  border-radius: calc(var(--radius) + 8px);
+  background: #fff;
+  border: 1px solid #d6dee6;
+  overflow: hidden;
+  color: var(--ink);
+}
+
+.hero-service-area .hsa-map-art {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #f3f6f8;
+}
+
+.hero-service-area .hsa-radius {
+  fill: color-mix(in srgb, var(--accent) 12%, transparent);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+}
+
+.hero-service-area .hsa-pin {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+.hero-service-area .hsa-areas {
+  padding: 20px 24px 24px;
+  border-top: 1px solid #e3e9ee;
+}
+
+.hero-service-area .hsa-areas h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hero-service-area .hsa-areas ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.hero-service-area .hsa-areas li {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f1f4f7;
+  font-size: 13.5px;
+}
+
+@media (max-width: 959px) {
+  .hero-service-area .hsa-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-service-area .hsa-actions .lp-btn {
+    flex: 1 1 100%;
+  }
+}

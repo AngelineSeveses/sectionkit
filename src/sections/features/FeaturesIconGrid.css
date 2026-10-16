@@ -1,0 +1,115 @@
+.features-icon-grid {
+  --ink: #183036;
+  --muted: #536a70;
+  --lp-btn-radius: 999px;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.features-icon-grid .fig-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.features-icon-grid .fig-intro {
+  position: sticky;
+  top: 32px;
+}
+
+.features-icon-grid .fig-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.features-icon-grid h2 {
+  margin-top: 12px;
+  font-size: clamp(30px, 3.4vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.features-icon-grid .fig-body {
+  margin-top: 16px;
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.features-icon-grid .fig-cta {
+  margin-top: 28px;
+  min-height: 50px;
+  padding-inline: 26px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.features-icon-grid .fig-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
+.features-icon-grid .fig-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.features-icon-grid .fig-list li {
+  padding: 28px 28px 28px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.features-icon-grid .fig-list li:nth-child(2n) {
+  padding-left: 28px;
+  padding-right: 0;
+  border-left: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.features-icon-grid .fig-list svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+
+.features-icon-grid h3 {
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.features-icon-grid .fig-list p {
+  margin-top: 6px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@media (max-width: 959px) {
+  .features-icon-grid .fig-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .features-icon-grid .fig-intro {
+    position: static;
+  }
+}
+
+@media (max-width: 559px) {
+  .features-icon-grid .fig-list {
+    grid-template-columns: 1fr;
+  }
+  .features-icon-grid .fig-list li,
+  .features-icon-grid .fig-list li:nth-child(2n) {
+    padding: 22px 0;
+    border-left: 0;
+  }
+}

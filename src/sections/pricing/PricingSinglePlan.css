@@ -1,0 +1,149 @@
+.pricing-single-plan {
+  --ink: #1b1530;
+  --muted: #5c5670;
+  --lp-btn-radius: calc(var(--radius) - 6px);
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Poppins', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.pricing-single-plan .psp-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(360px, 440px);
+  gap: 80px;
+  align-items: center;
+}
+
+.pricing-single-plan h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.pricing-single-plan .psp-copy > p {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 30em;
+}
+
+.pricing-single-plan .psp-guarantee {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 36px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid #e6e2ef;
+  max-width: 460px;
+}
+
+.pricing-single-plan .psp-guarantee svg {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+}
+
+.pricing-single-plan .psp-guarantee div {
+  display: grid;
+  gap: 4px;
+}
+
+.pricing-single-plan .psp-guarantee strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pricing-single-plan .psp-guarantee span {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.pricing-single-plan .psp-card {
+  padding: 36px;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 40px 70px -40px rgba(27, 21, 48, 0.6);
+}
+
+.pricing-single-plan .psp-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--accent) 50%, #fff);
+}
+
+.pricing-single-plan .psp-price {
+  margin-top: 8px;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.pricing-single-plan .psp-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #b9b3cc;
+}
+
+.pricing-single-plan .psp-cta {
+  width: 100%;
+  margin-top: 26px;
+  min-height: 54px;
+  font-size: 16px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.pricing-single-plan .psp-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #fff);
+}
+
+.pricing-single-plan .psp-includes-title {
+  margin-top: 28px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #b9b3cc;
+}
+
+.pricing-single-plan .psp-includes {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.pricing-single-plan .psp-includes li {
+  display: flex;
+  gap: 10px;
+}
+
+.pricing-single-plan .psp-includes li::before {
+  content: '✓';
+  color: color-mix(in srgb, var(--accent) 55%, #fff);
+  font-weight: 600;
+}
+
+@media (max-width: 899px) {
+  .pricing-single-plan .psp-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 479px) {
+  .pricing-single-plan .psp-card {
+    padding: 26px 22px;
+  }
+  .pricing-single-plan .psp-price {
+    font-size: 46px;
+  }
+}

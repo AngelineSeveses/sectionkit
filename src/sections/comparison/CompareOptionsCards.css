@@ -1,0 +1,123 @@
+.compare-options-cards {
+  --ink: #1d2126;
+  --muted: #5f666f;
+  --line: #e2e5e9;
+  --lp-btn-radius: 8px;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Overpass', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.compare-options-cards .coc-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.compare-options-cards h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+.compare-options-cards .coc-head p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.compare-options-cards .coc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.compare-options-cards .coc-card {
+  position: relative;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.compare-options-cards .coc-card[data-rec='true'] {
+  border: 2px solid var(--accent);
+  padding: 27px;
+}
+
+.compare-options-cards .coc-flag {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.compare-options-cards h3 {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.compare-options-cards .coc-summary {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.compare-options-cards dl {
+  display: grid;
+  margin: 22px 0 0;
+}
+
+.compare-options-cards dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.compare-options-cards dt {
+  color: var(--muted);
+}
+
+.compare-options-cards dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.compare-options-cards .coc-cta {
+  width: 100%;
+  margin-top: 18px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.compare-options-cards .coc-card[data-rec='true'] .coc-cta {
+  background: var(--accent);
+}
+
+.compare-options-cards .coc-cta:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 899px) {
+  .compare-options-cards .coc-head {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

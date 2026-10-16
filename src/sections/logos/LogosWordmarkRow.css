@@ -1,0 +1,117 @@
+.logos-wordmark-row {
+  background: var(--bg);
+  color: #1a1c20;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: 48px;
+}
+
+.logos-wordmark-row[data-divider='true'] {
+  border-block: 1px solid #e8e8e4;
+}
+
+.logos-wordmark-row[data-tone='dark'] {
+  color: #f2f2ee;
+}
+
+.logos-wordmark-row[data-tone='dark'][data-divider='true'] {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.logos-wordmark-row .lwr-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.logos-wordmark-row .lwr-label {
+  flex: 0 0 180px;
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: 0.66;
+}
+
+.logos-wordmark-row .lwr-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  align-items: center;
+  gap: 24px 32px;
+}
+
+.logos-wordmark-row .lwr-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.62;
+  white-space: nowrap;
+  transition: opacity 200ms ease;
+}
+
+.logos-wordmark-row .lwr-logo:hover {
+  opacity: 1;
+}
+
+.logos-wordmark-row .lwr-logo svg {
+  width: 20px;
+  height: 20px;
+}
+
+.logos-wordmark-row .lwr-style-1 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.logos-wordmark-row .lwr-style-2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.logos-wordmark-row .lwr-style-3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.logos-wordmark-row .lwr-style-4 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-stretch: condensed;
+}
+
+.logos-wordmark-row .lwr-style-5 {
+  font-family: 'Courier New', monospace;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.logos-wordmark-row .lwr-style-6 {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 899px) {
+  .logos-wordmark-row .lwr-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .logos-wordmark-row .lwr-label {
+    flex: none;
+  }
+  .logos-wordmark-row .lwr-list {
+    width: 100%;
+    gap: 20px 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .logos-wordmark-row .lwr-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
