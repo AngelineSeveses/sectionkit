@@ -177,7 +177,7 @@ export default [
       textarea('summary', 'Summary', 'We replaced a tub nobody used with a curbless shower, added a double vanity and heated floors, and kept the family’s second bathroom working throughout.'),
       image('beforeImage', 'Before photo', img.bathroom(1000, 750)),
       text('beforeAlt', 'Before photo description', 'Bathroom with a glass shower and single vanity before the remodel'),
-      image('afterImage', 'After photo', img.kitchen(1000, 750)),
+      image('afterImage', 'After photo', img.bathroomSlats(1000, 750)),
       text('afterAlt', 'After photo description', 'Finished bathroom with wood slat wall, floating vanity and soaking tub'),
       list('facts', 'Project facts (sample)', [
         { label: 'Location', value: 'Oakville, ON' },

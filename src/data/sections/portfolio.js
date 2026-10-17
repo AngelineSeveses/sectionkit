@@ -84,7 +84,7 @@ export default [
       text('allLabel', 'All label', 'All projects'),
       list('filters', 'Filters', [{ name: 'Kitchens' }, { name: 'Bathrooms' }, { name: 'Living spaces' }, { name: 'Exteriors' }], [text('name', 'Filter name', '')], { min: 1, max: 4 }),
       list('projects', 'Projects', [
-        { title: 'Two-tone kitchen', location: 'Burlington, ON', filter: '1', image: img.kitchen(800, 600), imageAlt: 'Kitchen with island' },
+        { title: 'Two-tone kitchen', location: 'Burlington, ON', filter: '1', image: img.kitchen(800, 600), imageAlt: 'Kitchen with taupe cabinets and white counters' },
         { title: 'Spa bathroom', location: 'Oakville, ON', filter: '2', image: img.bathroom(800, 600), imageAlt: 'Bathroom with freestanding tub' },
         { title: 'Open living room', location: 'Hamilton, ON', filter: '3', image: img.livingBright(800, 600), imageAlt: 'Bright living room' },
         { title: 'Modern facade', location: 'Grimsby, ON', filter: '4', image: img.houseModern2(800, 600), imageAlt: 'Modern house exterior' },

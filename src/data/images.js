@@ -22,9 +22,10 @@ export const img = {
   livingRoom: (w, h) => u('1513694203232-719a280e022f', w, h),
   livingYellow: (w, h) => u('1586023492125-27b2c045efd7', w, h),
   livingBright: (w, h) => u('1600607687939-ce8a6c25118c', w, h),
-  kitchen: (w, h) => u('1631889993959-41b4e9c6e3c5', w, h),
+  kitchen: (w, h) => u('1565538810643-b5bdb714032a', w, h),
   kitchenWhite: (w, h) => u('1484154218962-a197022b5858', w, h),
   bathroom: (w, h) => u('1584622650111-993a426fbf0a', w, h),
+  bathroomSlats: (w, h) => u('1631889993959-41b4e9c6e3c5', w, h),
   bedroom: (w, h) => u('1505693416388-ac5ce068fe85', w, h),
   bedroom2: (w, h) => u('1615874959474-d609969a20ed', w, h),
   // Trades
