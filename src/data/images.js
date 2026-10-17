@@ -78,6 +78,7 @@ export const img = {
   headphones: (w, h) => u('1505740420928-5e560c06d30e', w, h),
   sneakerRed: (w, h) => u('1542291026-7eec264c27ff', w, h),
   sneaker: (w, h) => u('1491553895911-0055eca6402d', w, h),
+  sneakerLight: (w, h) => u('1600185365483-26d7a4cc7519', w, h),
   camera: (w, h) => u('1526170375885-4d8ecf77b99f', w, h),
   skincare: (w, h) => u('1556228578-8c89e6adf883', w, h),
   sunglasses: (w, h) => u('1572635196237-14b3f281503f', w, h),

@@ -1,0 +1,197 @@
+.compare-products {
+  --ink: #1b1b1d;
+  --muted: #66666d;
+  --line: #e4e3e0;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Albert Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.compare-products .cpr-head {
+  max-width: 620px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.compare-products h2 {
+  font-size: clamp(30px, 3.8vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.compare-products .cpr-head p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.compare-products .cpr-table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-products .cpr-table thead,
+.compare-products .cpr-table tbody {
+  display: block;
+}
+
+.compare-products .cpr-table tr {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) repeat(var(--n), 1fr);
+  gap: 0 12px;
+}
+
+.compare-products .cpr-table thead th {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 28px 16px 24px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.compare-products .cpr-table [data-featured='true'] {
+  background: color-mix(in srgb, var(--accent) 7%, #fff);
+}
+
+.compare-products .cpr-flag {
+  position: absolute;
+  top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.compare-products thead img {
+  width: min(160px, 100%);
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin: 18px 0 14px;
+  border-radius: 50%;
+}
+
+.compare-products .cpr-name {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.compare-products .cpr-tagline {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.compare-products .cpr-price {
+  margin-top: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-products .cpr-cta {
+  margin-top: 14px;
+  min-height: 40px;
+  padding-inline: 22px;
+  font-size: 14px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.compare-products [data-featured='true'] .cpr-cta {
+  background: var(--accent);
+}
+
+.compare-products .cpr-cta:hover {
+  opacity: 0.88;
+}
+
+.compare-products .cpr-table tbody th,
+.compare-products .cpr-table tbody td {
+  padding: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.compare-products .cpr-table tbody th {
+  padding-left: 0;
+  text-align: left;
+  font-weight: 600;
+}
+
+.compare-products .cpr-table tbody td {
+  text-align: center;
+}
+
+.compare-products .cpr-table tbody tr:last-child [data-featured='true'] {
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.compare-products .cpr-table td[data-empty='true'] {
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
+@media (max-width: 767px) {
+  .compare-products .cpr-table tr {
+    grid-template-columns: repeat(var(--n), 1fr);
+    gap: 0 6px;
+  }
+  .compare-products .cpr-corner {
+    display: none;
+  }
+  .compare-products .cpr-table thead th {
+    padding: 28px 6px 18px;
+  }
+  .compare-products .cpr-flag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .compare-products thead img {
+    margin: 12px 0 10px;
+  }
+  .compare-products .cpr-name {
+    font-size: 15.5px;
+  }
+  .compare-products .cpr-tagline {
+    display: none;
+  }
+  .compare-products .cpr-price {
+    font-size: 14.5px;
+    margin-top: 2px;
+  }
+  .compare-products .cpr-cta {
+    min-height: 36px;
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+  .compare-products .cpr-table tbody th {
+    grid-column: 1 / -1;
+    padding: 14px 0 4px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+  .compare-products .cpr-table tbody td {
+    padding: 4px 4px 14px;
+    border-top: 0;
+    font-size: 13.5px;
+  }
+}

@@ -2,6 +2,9 @@ import { section } from '../define'
 import { text, textarea, url, image, color, select, list, radius, spacing } from '../fields'
 import { img } from '../images'
 
+const dayOptions = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((v) => ({ value: v, label: v }))
+const levelOptions = ['All levels', 'Beginner', 'Intermediate', 'Advanced'].map((v) => ({ value: v, label: v }))
+
 export default [
   section({
     id: 'industry-real-estate-listings-001',
@@ -286,6 +289,65 @@ export default [
       color('ink', 'Text color', '#23251F'),
       color('accent', 'Accent color', '#3D5A3E'),
       radius(6, 20),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'industry-class-schedule-007',
+    slug: 'studio-weekly-class-schedule',
+    name: 'Studio weekly class schedule',
+    description: 'A week of fitness or yoga classes in day columns, each class card showing time, name, instructor, length and level.',
+    category: 'industry',
+    file: 'industry/ClassSchedule',
+    industries: ['healthcare', 'local-business', 'education'],
+    goals: ['book-appointment', 'sign-up'],
+    audience: 'Members and newcomers checking which classes fit their week before booking.',
+    markets: ['US', 'CA'],
+    layout: 'grid',
+    styles: ['bold', 'friendly'],
+    tags: ['fitness', 'yoga', 'pilates', 'gym', 'class schedule', 'timetable', 'studio'],
+    traits: [],
+    fonts: ['Syne:wght@700', 'Karla:wght@400;700'],
+    structure: ['Heading, intro and book button', 'One column per day that has classes, in weekday order', 'Class cards: time, name, instructor and length, level tag', 'Note (for example, first class free)'],
+    rationale: [
+      'Seeing the whole week at once lets people match classes to their own routine.',
+      'Level tags and a colored edge help newcomers find a class they will not feel lost in.',
+      'Days without classes drop out automatically, so the grid never shows empty columns.',
+    ],
+    responsive: ['Under 1024px days wrap into a grid of 200px columns.', 'Under 560px days stack with full day names, and each card puts the time in its own column.'],
+    tokens: { font: 'Syne (heading) and Karla (text)', headingSize: 52, headingWeight: 700, headingLine: 1, bodySize: 15.5, text: '#232020', muted: '#6A6361', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Row container (space-between): Heading (H2) + Text Editor, and a pill Button.', 'Grid container with one column per day (7 or fewer). Each column: Heading (uppercase, bottom border 2px), then cards: containers with white background, left border 3px $accent, holding Text Editor (time), Heading (class), Text Editor (instructor · length) and a pill Text Editor (level).', 'For live schedules, replace the grid with your booking platform’s embed (Mindbody, Momence, Glofox) styled to match.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'This week at the studio'),
+      textarea('intro', 'Intro', 'Fifty-minute classes in a heated room, from gentle flow to power. Mats and towels are included.'),
+      list('classes', 'Classes', [
+        { day: 'Mon', time: '6:30 am', name: 'Sunrise Flow', instructor: 'Maya', duration: '50 min', level: 'All levels' },
+        { day: 'Mon', time: '6:00 pm', name: 'Power Vinyasa', instructor: 'Jordan', duration: '50 min', level: 'Advanced' },
+        { day: 'Tue', time: '12:00 pm', name: 'Lunch Reset', instructor: 'Sam', duration: '30 min', level: 'All levels' },
+        { day: 'Tue', time: '7:15 pm', name: 'Yin and Restore', instructor: 'Maya', duration: '60 min', level: 'Beginner' },
+        { day: 'Wed', time: '6:30 am', name: 'Sunrise Flow', instructor: 'Jordan', duration: '50 min', level: 'All levels' },
+        { day: 'Wed', time: '6:00 pm', name: 'Intro to Yoga', instructor: 'Priya', duration: '50 min', level: 'Beginner' },
+        { day: 'Thu', time: '6:00 pm', name: 'Power Vinyasa', instructor: 'Sam', duration: '50 min', level: 'Advanced' },
+        { day: 'Sat', time: '9:00 am', name: 'Weekend Flow', instructor: 'Priya', duration: '75 min', level: 'All levels' },
+        { day: 'Sat', time: '11:00 am', name: 'Intro to Yoga', instructor: 'Maya', duration: '50 min', level: 'Beginner' },
+        { day: 'Sun', time: '10:00 am', name: 'Yin and Restore', instructor: 'Jordan', duration: '60 min', level: 'Beginner' },
+      ], [
+        select('day', 'Day', 'Mon', dayOptions, { group: 'content' }),
+        text('time', 'Time', ''),
+        text('name', 'Class', ''),
+        text('instructor', 'Instructor', ''),
+        text('duration', 'Length', ''),
+        select('level', 'Level', 'All levels', levelOptions, { group: 'content' }),
+      ], { min: 1, max: 28 }),
+      text('ctaLabel', 'Button label', 'Book a class'),
+      url('ctaUrl', 'Button link', '/schedule'),
+      text('note', 'Note', 'New here? Your first class is free. Arrive 10 minutes early and we will show you around.'),
+      color('accent', 'Accent color', '#D9480F'),
+      color('background', 'Background', '#F4EFEA'),
+      radius(8),
       spacing('regular'),
     ],
   }),

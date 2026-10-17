@@ -1,0 +1,214 @@
+.features-tabbed {
+  --ink: #17191f;
+  --muted: #5a5f6b;
+  --line: #e3e5ea;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.features-tabbed .ftb-head {
+  max-width: 640px;
+}
+
+.features-tabbed .ftb-eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.features-tabbed h2 {
+  margin-top: 12px;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.features-tabbed .ftb-intro {
+  margin-top: 16px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.features-tabbed .ftb-wrap {
+  position: relative;
+  margin-top: 48px;
+}
+
+.features-tabbed .ftb-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.features-tabbed .ftb-tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.features-tabbed .ftb-tabs label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 18px 4px 18px 0;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.features-tabbed .ftb-tabs label:hover {
+  color: var(--ink);
+}
+
+.features-tabbed .ftb-num {
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
+.features-tabbed #ftb-t1:checked ~ .ftb-tabs label[for='ftb-t1'],
+.features-tabbed #ftb-t2:checked ~ .ftb-tabs label[for='ftb-t2'],
+.features-tabbed #ftb-t3:checked ~ .ftb-tabs label[for='ftb-t3'],
+.features-tabbed #ftb-t4:checked ~ .ftb-tabs label[for='ftb-t4'] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+.features-tabbed #ftb-t1:checked ~ .ftb-tabs label[for='ftb-t1'] .ftb-num,
+.features-tabbed #ftb-t2:checked ~ .ftb-tabs label[for='ftb-t2'] .ftb-num,
+.features-tabbed #ftb-t3:checked ~ .ftb-tabs label[for='ftb-t3'] .ftb-num,
+.features-tabbed #ftb-t4:checked ~ .ftb-tabs label[for='ftb-t4'] .ftb-num {
+  color: var(--accent);
+}
+
+.features-tabbed #ftb-t1:focus-visible ~ .ftb-tabs label[for='ftb-t1'],
+.features-tabbed #ftb-t2:focus-visible ~ .ftb-tabs label[for='ftb-t2'],
+.features-tabbed #ftb-t3:focus-visible ~ .ftb-tabs label[for='ftb-t3'],
+.features-tabbed #ftb-t4:focus-visible ~ .ftb-tabs label[for='ftb-t4'] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.features-tabbed .ftb-panel {
+  display: none;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.features-tabbed #ftb-t1:checked ~ .ftb-panels .ftb-panel[data-slot='1'],
+.features-tabbed #ftb-t2:checked ~ .ftb-panels .ftb-panel[data-slot='2'],
+.features-tabbed #ftb-t3:checked ~ .ftb-panels .ftb-panel[data-slot='3'],
+.features-tabbed #ftb-t4:checked ~ .ftb-panels .ftb-panel[data-slot='4'] {
+  display: grid;
+  animation: ftb-in 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes ftb-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.features-tabbed h3 {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.features-tabbed .ftb-text > p {
+  margin-top: 14px;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.features-tabbed .ftb-text ul {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.features-tabbed .ftb-text li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.features-tabbed .ftb-text li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.features-tabbed .ftb-text li::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 6px;
+  height: 9px;
+  border: solid var(--accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.features-tabbed .ftb-panel img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 899px) {
+  .features-tabbed .ftb-tabs {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    border-bottom: 0;
+  }
+  .features-tabbed .ftb-tabs label {
+    padding: 12px 14px;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-size: 15px;
+  }
+  .features-tabbed #ftb-t1:checked ~ .ftb-tabs label[for='ftb-t1'],
+  .features-tabbed #ftb-t2:checked ~ .ftb-tabs label[for='ftb-t2'],
+  .features-tabbed #ftb-t3:checked ~ .ftb-tabs label[for='ftb-t3'],
+  .features-tabbed #ftb-t4:checked ~ .ftb-tabs label[for='ftb-t4'] {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
+  }
+  .features-tabbed .ftb-panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 32px;
+  }
+  .features-tabbed .ftb-panel img {
+    order: -1;
+  }
+}
