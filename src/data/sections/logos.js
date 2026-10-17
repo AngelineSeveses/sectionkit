@@ -1,6 +1,12 @@
 import { section } from '../define'
 import { text, textarea, url, color, select, toggle, list, spacing } from '../fields'
 
+const faceOptions = [
+  { value: 'serif', label: 'Serif italic' },
+  { value: 'sans', label: 'Bold sans' },
+  { value: 'caps', label: 'Spaced capitals' },
+  { value: 'mono', label: 'Monospace' },
+]
 const iconOptions = ['shield', 'home', 'clock', 'badge', 'user', 'tag'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
 
 export default [
@@ -126,6 +132,56 @@ export default [
       ], [text('name', 'Name', ''), text('sector', 'Sector', '')], { min: 3, max: 9 }),
       color('background', 'Background', '#EDEEF0'),
       color('ink', 'Text color', '#14161A'),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'logos-press-mentions-004',
+    slug: 'press-mentions-pull-quotes',
+    name: 'Press mentions with pull quotes',
+    description: 'An “as featured in” row where each outlet wordmark sits under a short serif pull quote from its coverage.',
+    category: 'logos',
+    file: 'logos/LogosPressMentions',
+    thumbWidth: 1200,
+    industries: ['ecommerce', 'hospitality', 'saas', 'local-business'],
+    goals: ['learn-more', 'purchase'],
+    audience: 'Visitors who trust independent coverage more than the brand’s own claims.',
+    markets: ['US', 'CA'],
+    layout: 'band',
+    styles: ['editorial', 'minimal'],
+    tags: ['press', 'as featured in', 'media', 'reviews', 'pull quote', 'social proof'],
+    traits: ['sample-data'],
+    sampleContent: true,
+    fonts: ['Instrument Sans:wght@400;600;700', 'Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,600', 'IBM Plex Mono:wght@500'],
+    structure: ['Label with rule', 'Three or four mentions', 'Each: pull quote, then outlet wordmark linking to the article'],
+    rationale: [
+      'A quote says what the outlet actually wrote, which is more persuasive than a row of logos alone.',
+      'Linking each wordmark to the article lets skeptical readers verify the mention.',
+      'Typeset wordmarks keep the row even when logo files vary in quality.',
+    ],
+    responsive: ['Two columns under 900px, one column with horizontal rules under 560px.'],
+    tokens: { font: 'Instrument Sans (labels) and Newsreader (quotes)', headingSize: 21, bodySize: 21, text: '$ink', bg: '$background', accent: '$accent', radius: 0, maxWidth: 1200, paddingY: 64 },
+    elementor: {
+      structure: ['Heading (13px uppercase) with a Divider beside it in a Row container.', 'Row container of 3–4 inner containers with left borders; each holds a Text Editor (serif, 21px) and an Image (outlet logo) or Heading linked to the article.'],
+      notes: ['Quote coverage word for word and link to it. Use outlet logos only where their brand guidelines allow it.'],
+    },
+    fields: [
+      text('label', 'Label', 'In the press'),
+      list('mentions', 'Mentions (sample)', [
+        { quote: 'The rare kitchen tool that earns its counter space.', outlet: 'The Weekend Table', face: 'serif', url: 'https://example.com/press/weekend-table' },
+        { quote: 'Thoughtful design, honest pricing and shipping that actually arrives on time.', outlet: 'HOMEFRONT', face: 'caps', url: 'https://example.com/press/homefront' },
+        { quote: 'Our pick for anyone cooking for two on weeknights.', outlet: 'Northern Living', face: 'sans', url: 'https://example.com/press/northern-living' },
+        { quote: 'Built to last a decade, and they mean it.', outlet: 'gear/notes', face: 'mono', url: 'https://example.com/press/gear-notes' },
+      ], [
+        textarea('quote', 'Quote', '', { maxLength: 200 }),
+        text('outlet', 'Outlet name', ''),
+        select('face', 'Wordmark style', 'serif', faceOptions, { group: 'content' }),
+        url('url', 'Article link', '#'),
+      ], { min: 2, max: 4 }),
+      color('background', 'Background', '#FBFAF7'),
+      color('ink', 'Text color', '#1C1A17'),
+      color('accent', 'Quote mark color', '#B4532A'),
       spacing('regular'),
     ],
   }),

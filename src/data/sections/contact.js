@@ -1,6 +1,8 @@
 import { section } from '../define'
-import { text, textarea, url, image, color, list, radius, spacing } from '../fields'
+import { text, textarea, url, image, color, list, radius, spacing, select } from '../fields'
 import { img } from '../images'
+
+const channelIcons = ['sales', 'support', 'billing', 'press', 'partners'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
 
 export default [
   section({
@@ -130,6 +132,50 @@ export default [
       color('accent', 'Accent color', '#2F4A3A'),
       color('background', 'Background', '#FFFFFF'),
       radius(14, 24),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'contact-channels-004',
+    slug: 'contact-by-department',
+    name: 'Contact by department',
+    description: 'One card per team (sales, support, billing, press) with what it handles, a typical response time and a direct action.',
+    category: 'contact',
+    file: 'contact/ContactChannels',
+    industries: ['saas', 'b2b', 'finance', 'ecommerce'],
+    goals: ['contact', 'book-demo'],
+    audience: 'Visitors who know what they need and want to reach the right team the first time.',
+    markets: ['US', 'CA'],
+    layout: 'grid',
+    styles: ['minimal', 'professional'],
+    tags: ['contact', 'departments', 'support', 'sales', 'response time', 'help'],
+    traits: [],
+    fonts: ['Inter:wght@400;500;600;650'],
+    structure: ['Heading and intro', 'Two to five channel cards', 'Each: icon, team name, what it handles, response time, action link', 'Optional footnote'],
+    rationale: [
+      'Routing people at the start avoids the support ticket that should have been a sales call, and the reverse.',
+      'A stated response time sets expectations and cuts down on repeat messages.',
+      'Each card ends in a specific action (book, chat, email) rather than a generic form.',
+    ],
+    responsive: ['Two, three or four across on desktop depending on the number of cards (five wrap as three and two).', 'Two across under 1024px, one under 600px.'],
+    tokens: { font: 'Inter', headingSize: 42, headingWeight: 650, headingLine: 1.1, bodySize: 15, text: '#15181E', muted: '#5C6270', bg: '$background', accent: '$accent', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Heading (H2) and Text Editor in a container max 600px.', 'Grid container: 4 columns (2 on tablet, 1 on mobile), gap 16px.', 'Each card: container with border and radius, Icon (boxed, tinted background), Heading (H3), Text Editor, a top-bordered Icon List item for response time, and a Button styled as a text link with an arrow icon.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Talk to the right team'),
+      textarea('intro', 'Intro', 'Pick the team that matches your question. Every message is answered by a person, not a bot.'),
+      list('channels', 'Channels', [
+        { icon: 'sales', title: 'Sales', text: 'Pricing for 50+ seats, security reviews and procurement questions.', response: 'Replies within 2 business hours', action: 'Book a call', url: '/contact/sales' },
+        { icon: 'support', title: 'Support', text: 'Help with your account, integrations or anything that is not working.', response: 'Live chat, 6 am – 9 pm ET', action: 'Start a chat', url: '/support' },
+        { icon: 'billing', title: 'Billing', text: 'Invoices, receipts, tax IDs, payment methods and refunds.', response: 'Replies within 1 business day', action: 'billing@example.com', url: 'mailto:billing@example.com' },
+        { icon: 'press', title: 'Press', text: 'Interview requests, logos and product images for coverage.', response: 'Replies within 2 business days', action: 'Media kit', url: '/press' },
+      ], [select('icon', 'Icon', 'support', channelIcons, { group: 'content' }), text('title', 'Team', ''), textarea('text', 'What it handles', ''), text('response', 'Response time', ''), text('action', 'Action label', ''), url('url', 'Action link', '#')], { min: 2, max: 5 }),
+      text('footnote', 'Footnote', 'Mailing address: 400 Front Street West, Suite 1200, Toronto, ON M5V 3A8'),
+      color('accent', 'Accent color', '#2F5BEA'),
+      color('background', 'Background', '#F6F7F9'),
+      radius(14),
       spacing('regular'),
     ],
   }),

@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, image, color, select, list, radius, spacing, sideOptions } from '../fields'
+import { text, textarea, url, image, color, select, list, radius, spacing, sideOptions, range, alignOptions } from '../fields'
 import { img } from '../images'
 
 export default [
@@ -202,6 +202,50 @@ export default [
       color('background', 'Background', '#EDE8DC'),
       color('ink', 'Text color', '#16302A'),
       spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'cta-full-bleed-photo-006',
+    slug: 'full-bleed-photo-cta',
+    name: 'Full-bleed photo CTA',
+    description: 'An edge-to-edge photograph under a dark gradient, with a large serif headline, a sentence of support and two pill buttons.',
+    category: 'cta',
+    file: 'cta/CtaFullBleedPhoto',
+    industries: ['hospitality', 'real-estate', 'education', 'local-business'],
+    goals: ['book-appointment', 'contact', 'learn-more'],
+    audience: 'Visitors near the end of the page who respond to atmosphere as much as to argument.',
+    markets: ['US', 'CA'],
+    layout: 'full-bleed',
+    styles: ['bold', 'luxury', 'warm'],
+    tags: ['cta', 'photo background', 'closing section', 'book now', 'overlay'],
+    traits: ['photography', 'dark-background'],
+    fonts: ['Fraunces:opsz,wght@9..144,500', 'Inter:wght@400;600'],
+    structure: ['Background photograph with gradient overlay', 'Optional eyebrow', 'Serif headline', 'Supporting sentence', 'Primary and secondary buttons'],
+    rationale: [
+      'A strong closing image restates the feeling of the offer, which suits places and experiences.',
+      'The gradient darkens where the text sits, so the copy stays readable over any photo.',
+      'Two buttons let ready visitors act while giving others a lower-commitment next step.',
+    ],
+    responsive: ['Buttons stack full width under 560px.', 'Minimum height drops from 520px to 460px on phones; content sets the height beyond that.'],
+    tokens: { font: 'Fraunces (headline) and Inter (text)', headingSize: 68, headingWeight: 500, headingLine: 1.02, bodySize: 17.5, text: '#FFFFFF', bg: 'Background photo with dark overlay', accent: '$accent', accentText: '#111111', radius: 999, maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Container (full width, min height 520px, content vertically centered) with Background → Classic image (cover) and Background Overlay → Gradient from rgba(12,14,16,0.7) at bottom to rgba(12,14,16,0.45) at top.', 'Inner boxed container (max 680px): Text Editor (eyebrow), Heading (H2, serif), Text Editor, Row container with two Buttons (radius 999px; second is transparent with a white border).'],
+      notes: ['Check contrast after swapping the photo. Raise the overlay if the image has bright areas behind the text.'],
+    },
+    fields: [
+      text('eyebrow', 'Eyebrow', 'Spring and summer stays'),
+      text('headline', 'Headline', 'Your table by the water is waiting'),
+      textarea('body', 'Body', 'Rooms from $249 a night, with breakfast on the terrace and late checkout for direct bookings.'),
+      text('primaryLabel', 'Primary button', 'Check availability'),
+      url('primaryUrl', 'Primary link', '/book'),
+      text('secondaryLabel', 'Secondary button (optional)', 'Call the front desk'),
+      url('secondaryUrl', 'Secondary link', 'tel:+12505550111'),
+      image('image', 'Background photo', img.resort(2000, 1200)),
+      range('overlay', 'Overlay strength', 45, 20, 80, 1, { unit: '%' }),
+      select('align', 'Alignment', 'center', alignOptions),
+      color('accent', 'Button color', '#F2D7A6'),
+      spacing('spacious'),
     ],
   }),
 ]

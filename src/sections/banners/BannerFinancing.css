@@ -1,0 +1,155 @@
+.banner-financing {
+  --ink: #18202a;
+  --muted: #5a6370;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.6);
+}
+
+.banner-financing .bfn-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px 56px;
+  padding: 36px 40px;
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, #e4e7eb);
+  box-shadow: 0 24px 48px -36px rgba(24, 32, 42, 0.35);
+}
+
+.banner-financing .bfn-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.banner-financing .bfn-label::before {
+  content: '';
+  width: 18px;
+  height: 12px;
+  border-radius: 3px;
+  border: 2px solid currentColor;
+  box-shadow: inset 0 3px 0 -1px currentColor;
+}
+
+.banner-financing h2 {
+  margin-top: 10px;
+  font-size: clamp(24px, 2.8vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+
+.banner-financing .bfn-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 16px;
+}
+
+.banner-financing .bfn-points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15.5px;
+  font-weight: 500;
+}
+
+.banner-financing .bfn-points li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  width: 6px;
+  height: 11px;
+  border: solid var(--accent);
+  border-width: 0 2.25px 2.25px 0;
+  transform: rotate(45deg);
+}
+
+.banner-financing .bfn-offer {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  min-width: 240px;
+  padding-left: 48px;
+  border-left: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  text-align: center;
+}
+
+.banner-financing .bfn-price {
+  display: grid;
+  gap: 2px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.banner-financing .bfn-price strong {
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.banner-financing .bfn-cta {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+}
+
+.banner-financing .bfn-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.banner-financing .bfn-secondary {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+.banner-financing .bfn-disclosure {
+  max-width: 900px;
+  margin-top: 16px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (max-width: 859px) {
+  .banner-financing .bfn-card {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+  .banner-financing .bfn-offer {
+    min-width: 0;
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+}
+
+@media (max-width: 559px) {
+  .banner-financing .bfn-card {
+    padding: 22px;
+  }
+  .banner-financing .bfn-points {
+    flex-direction: column;
+  }
+  .banner-financing .bfn-price strong {
+    font-size: 40px;
+  }
+}

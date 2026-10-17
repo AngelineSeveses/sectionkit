@@ -1,5 +1,6 @@
 import { section } from '../define'
-import { text, textarea, url, color, range, list, radius, spacing } from '../fields'
+import { text, textarea, url, color, range, list, radius, spacing, image } from '../fields'
+import { img } from '../images'
 
 export default [
   section({
@@ -129,6 +130,52 @@ export default [
       color('accent', 'Accent color', '#0F766E'),
       color('background', 'Background', '#F5F7F7'),
       radius(14, 24),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'comparison-products-004',
+    slug: 'product-model-comparison',
+    name: 'Product model comparison',
+    description: 'Up to four product models side by side with photo, price and shop button, above spec rows with one model highlighted.',
+    category: 'comparison',
+    file: 'comparison/CompareProducts',
+    industries: ['ecommerce'],
+    goals: ['purchase'],
+    audience: 'Shoppers deciding between a few versions of the same product.',
+    markets: ['US', 'CA'],
+    layout: 'table',
+    styles: ['minimal', 'friendly'],
+    tags: ['compare models', 'product comparison', 'specs', 'which one is right', 'shop', 'shoes'],
+    traits: ['photography'],
+    fonts: ['Albert Sans:wght@400;600;700'],
+    structure: ['Centered heading and intro', 'Product header cells: photo, name, tagline, price, shop button', 'Spec rows with one value per product', 'Optional highlighted model with label'],
+    rationale: [
+      'Choosing between similar models is a common reason shoppers stall; a single table settles it on one screen.',
+      'The buy button sits at the top of each column, so the decision and the action are in the same place.',
+      'Highlighting one model gives undecided shoppers a sensible default.',
+    ],
+    responsive: ['Under 768px each spec label becomes a full-width row heading above the values, so all models stay visible without horizontal scrolling.', 'Taglines hide on phones.'],
+    tokens: { font: 'Albert Sans', headingSize: 44, headingWeight: 700, headingLine: 1.1, bodySize: 15, text: '#1B1B1D', muted: '#66666D', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Centered Heading (H2) and Text Editor.', 'Grid container: columns 0.8fr + one per product. Header row: empty cell, then per product an inner container with Image (circle), Heading, Text Editor, price Heading and pill Button. Give the featured column a tinted background and a pill label.', 'One Grid row per spec with a left-aligned Heading and centered Text Editors, top border 1px.', 'Mobile: switch the grid to product columns only and set each spec label to span all columns.'],
+      notes: ['Elementor has no native comparison table; build it from Grid containers or use a table add-on.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Find your running shoe'),
+      textarea('intro', 'Intro', 'All three use the same recycled knit upper and come with 30-day free returns in the US and Canada. The difference is cushioning and weight.'),
+      list('products', 'Products', [
+        { name: 'Tempo', tagline: 'Light and fast', price: '$120', image: img.sneakerLight(400, 400), url: '/products/tempo', values: 'Responsive;6 mm;230 g;Races and speed work;Regular' },
+        { name: 'Daily', tagline: 'The everyday trainer', price: '$140', image: img.sneakerRed(400, 400), url: '/products/daily', values: 'Balanced;8 mm;265 g;Most runs;Regular, wide' },
+        { name: 'Cloudline', tagline: 'Maximum cushion', price: '$165', image: img.sneaker(400, 400), url: '/products/cloudline', values: 'Plush;10 mm;290 g;Long runs and recovery;Regular, wide, extra wide' },
+      ], [text('name', 'Name', ''), text('tagline', 'Tagline', ''), text('price', 'Price', ''), image('image', 'Photo', img.sneaker(400, 400)), url('url', 'Shop link', '#'), text('values', 'Spec values (semicolon separated, in row order)', '', { maxLength: 400 })], { min: 2, max: 4 }),
+      list('specs', 'Spec rows', [{ label: 'Cushioning' }, { label: 'Heel-to-toe drop' }, { label: 'Weight (men’s 9)' }, { label: 'Best for' }, { label: 'Widths' }], [text('label', 'Spec', '')], { min: 1, max: 10 }),
+      range('highlighted', 'Highlighted product (0 for none)', 2, 0, 4),
+      text('highlightLabel', 'Highlight label', 'Most popular'),
+      color('accent', 'Accent color', '#C2410C'),
+      color('background', 'Background', '#FFFFFF'),
+      radius(16, 32),
       spacing('regular'),
     ],
   }),

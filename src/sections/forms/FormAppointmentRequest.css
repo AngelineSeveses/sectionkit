@@ -1,0 +1,239 @@
+.form-appointment-request {
+  --ink: #1d2a33;
+  --muted: #5a6871;
+  --line: #d7dee2;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.form-appointment-request .far-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  width: calc(100% - 2 * var(--lp-gutter, 24px));
+  max-width: 1120px;
+  padding: 0;
+  border-radius: calc(var(--radius) * 2);
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -40px rgba(29, 42, 51, 0.35);
+}
+
+.form-appointment-request .far-info {
+  padding: 48px 44px;
+  background: var(--panel);
+  color: #fff;
+}
+
+.form-appointment-request h2 {
+  font-size: clamp(28px, 3.2vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.form-appointment-request .far-intro {
+  margin-top: 16px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  opacity: 0.86;
+}
+
+.form-appointment-request .far-hours {
+  display: grid;
+  gap: 0;
+  margin: 32px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-appointment-request .far-hours > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 15px;
+}
+
+.form-appointment-request .far-hours dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.form-appointment-request .far-call {
+  margin-top: 28px;
+  font-size: 15px;
+  opacity: 0.92;
+}
+
+.form-appointment-request .far-call a {
+  display: block;
+  margin-top: 4px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+}
+
+.form-appointment-request .far-call a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.form-appointment-request .far-form {
+  display: grid;
+  gap: 18px;
+  padding: 44px;
+}
+
+.form-appointment-request .far-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-appointment-request .far-field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-appointment-request .far-field > span,
+.form-appointment-request .far-field legend {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-appointment-request .far-field small {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.form-appointment-request .far-field legend {
+  margin-bottom: 7px;
+}
+
+.form-appointment-request :is(input[type='text'], input[type='tel'], input[type='email'], input[type='date'], select, textarea) {
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 16px;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.form-appointment-request textarea {
+  resize: vertical;
+}
+
+.form-appointment-request :is(input, select, textarea):focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.form-appointment-request .far-chips > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.form-appointment-request .far-chips label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-appointment-request .far-chips input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.form-appointment-request .far-chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.form-appointment-request .far-chips input:checked + span {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, #fff);
+  color: color-mix(in srgb, var(--accent) 80%, var(--ink));
+}
+
+.form-appointment-request .far-chips input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.form-appointment-request .far-consent {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.form-appointment-request .far-consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--accent);
+}
+
+.form-appointment-request .far-submit {
+  min-height: 52px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-appointment-request .far-submit:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.form-appointment-request .far-privacy {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 899px) {
+  .form-appointment-request .far-card {
+    grid-template-columns: 1fr;
+  }
+  .form-appointment-request .far-info,
+  .form-appointment-request .far-form {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 559px) {
+  .form-appointment-request .far-card {
+    width: calc(100% - 2 * var(--lp-gutter-sm, 20px));
+  }
+  .form-appointment-request .far-info,
+  .form-appointment-request .far-form {
+    padding: 28px 20px;
+  }
+  .form-appointment-request .far-row {
+    grid-template-columns: 1fr;
+  }
+}

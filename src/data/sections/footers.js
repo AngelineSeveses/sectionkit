@@ -1,7 +1,15 @@
 import { section } from '../define'
-import { text, textarea, url, color, list } from '../fields'
+import { text, textarea, url, color, list, select } from '../fields'
 
+const link = (label, href) => ({ label, url: href })
 const linkFields = [text('label', 'Label', ''), url('url', 'Link', '#')]
+
+const socialOptions = [
+  { value: 'instagram', label: 'Instagram' },
+  { value: 'youtube', label: 'YouTube' },
+  { value: 'linkedin', label: 'LinkedIn' },
+  { value: 'facebook', label: 'Facebook' },
+]
 
 export default [
   section({
@@ -130,6 +138,51 @@ export default [
       text('city', 'City', 'Montréal and Portland'),
       color('background', 'Background', '#16302A'),
       color('ink', 'Text color', '#EDE8DC'),
+    ],
+  }),
+
+  section({
+    id: 'footer-compact-centered-004',
+    slug: 'compact-centered-footer',
+    name: 'Compact centered footer',
+    description: 'A short centered footer with logo, tagline, one row of links and social icons, above a ruled line with copyright and legal links.',
+    category: 'footers',
+    file: 'footers/FooterCompactCentered',
+    industries: ['saas', 'ecommerce', 'education', 'agency', 'local-business'],
+    goals: ['learn-more'],
+    audience: 'Visitors finishing a focused landing page who only need the essentials.',
+    markets: ['US', 'CA'],
+    layout: 'centered',
+    styles: ['minimal', 'friendly'],
+    tags: ['footer', 'landing page footer', 'social links', 'privacy', 'accessibility', 'legal'],
+    traits: [],
+    fonts: ['Inter:wght@400;500;700'],
+    structure: ['Logo mark and wordmark', 'Tagline', 'Single row of links', 'Social icons', 'Ruled line: copyright and legal links'],
+    rationale: [
+      'Landing pages convert better without a full sitemap pulling people away; this keeps only what is expected.',
+      'Privacy, terms and accessibility links are required or expected in both countries and stay easy to find.',
+      'Centered alignment suits short content and reads well at every width.',
+    ],
+    responsive: ['Links wrap onto more lines as needed.', 'Under 640px copyright moves below the legal links and both center.'],
+    tokens: { font: 'Inter', bodySize: 15, text: '$ink', bg: '$background', accent: '$accent', radius: 0, maxWidth: 1200, paddingY: 64 },
+    elementor: {
+      structure: ['Footer template: a centered column container (padding 64px top, 32px bottom).', 'Site Logo or Heading, Text Editor (tagline), Nav Menu (horizontal, centered), Social Icons (framed circle, 40px).', 'Row container (space-between, top border 1px): Text Editor (copyright) and a horizontal Icon List or Nav Menu for legal links.'],
+      notes: ['Canadian businesses collecting personal data need a privacy policy under PIPEDA; many US states require one too.'],
+    },
+    fields: [
+      text('brand', 'Brand name', 'Brightleaf'),
+      text('tagline', 'Tagline', 'Online courses in practical design skills, taught by working designers.'),
+      list('links', 'Links', [link('Courses', '/courses'), link('Pricing', '/pricing'), link('For teams', '/teams'), link('Blog', '/blog'), link('Help', '/help')], linkFields, { max: 7 }),
+      list('socials', 'Social links', [
+        { network: 'instagram', url: 'https://www.instagram.com/' },
+        { network: 'youtube', url: 'https://www.youtube.com/' },
+        { network: 'linkedin', url: 'https://www.linkedin.com/' },
+      ], [select('network', 'Network', 'instagram', socialOptions, { group: 'content' }), url('url', 'Profile link', '#')], { min: 0, max: 4 }),
+      text('copyright', 'Copyright', '© 2026 Brightleaf Learning Inc.'),
+      list('legalLinks', 'Legal links', [link('Privacy', '/privacy'), link('Terms', '/terms'), link('Accessibility', '/accessibility'), link('Cookie settings', '/cookies')], linkFields, { max: 5 }),
+      color('background', 'Background', '#FAFAF7'),
+      color('ink', 'Text color', '#1A1D1A'),
+      color('accent', 'Accent color', '#3D8B5A'),
     ],
   }),
 ]

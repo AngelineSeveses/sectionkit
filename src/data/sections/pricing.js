@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, select, range, list, radius, spacing, currencyOptions } from '../fields'
+import { text, textarea, url, color, select, range, list, radius, spacing, currencyOptions, toggle } from '../fields'
 
 export default [
   section({
@@ -222,6 +222,64 @@ export default [
       color('accent', 'Accent color', '#2563EB'),
       color('background', 'Background', '#F5F7FA'),
       radius(16, 28),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'pricing-usage-tiers-006',
+    slug: 'usage-based-volume-pricing',
+    name: 'Usage-based volume pricing',
+    description: 'Copy and pricing notes beside a table of graduated volume tiers and a worked example of one month’s bill.',
+    category: 'pricing',
+    file: 'pricing/PricingUsageTiers',
+    industries: ['saas', 'b2b', 'finance'],
+    goals: ['sign-up', 'free-trial'],
+    audience: 'Developers and operators estimating what a pay-as-you-go service will cost at their volume.',
+    markets: ['US', 'CA'],
+    layout: 'table',
+    styles: ['technical', 'minimal'],
+    tags: ['usage pricing', 'pay as you go', 'volume tiers', 'metered', 'api pricing', 'calculator'],
+    traits: ['sample-data'],
+    sampleContent: true,
+    fonts: ['Geist:wght@400;500;600', 'Geist Mono:wght@500'],
+    structure: ['Eyebrow, heading and intro', 'Pricing notes (no minimums, billing, currency)', 'Sign-up button', 'Tier table: volume range and unit price', 'Worked example with line items and total', 'Footnote'],
+    rationale: [
+      'Metered prices are hard to picture; a worked example turns a rate card into a number people can budget.',
+      'A graduated table shows the discount for growth without a sales call.',
+      'Stating “no minimums” and the billing currency answers the usual objections next to the price.',
+    ],
+    responsive: ['Copy stacks above the pricing panel under 960px.', 'Table cells and example text tighten on phones; the table stays two columns so it never scrolls sideways.'],
+    tokens: { font: 'Geist (text) and Geist Mono (figures)', headingSize: 44, headingWeight: 600, headingLine: 1.08, bodySize: 17, text: '#12161D', muted: '#5B6370', bg: '$background', accent: '$accent', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Row container 45/55.', 'Left: Text Editor (eyebrow, monospace), Heading (H2), Text Editor, Icon List (square bullets), Button.', 'Right: container with border and radius: an HTML or Table widget for the tiers (two columns, right-aligned prices), then an inner container (tinted background) with Text Editor rows for the example and a dashed top border on the total.'],
+      notes: ['Check the example against your real rates whenever tiers change. Elementor has no native table widget; use an HTML widget or a table add-on.'],
+    },
+    fields: [
+      text('eyebrow', 'Eyebrow', 'Pay as you send'),
+      text('heading', 'Heading', 'Simple per-email pricing that drops as you grow'),
+      textarea('intro', 'Intro', 'Every account starts with 3,000 free emails a month. After that you pay only for what you send, with lower rates at each tier.'),
+      textarea('notes', 'Notes (semicolon separated)', 'No monthly minimum or contract; Billed monthly in arrears; Dedicated IPs and support plans available separately'),
+      text('unitLabel', 'Price column label', 'Price per 1,000'),
+      list('tiers', 'Tiers (sample)', [
+        { range: 'First 3,000', price: 'Free', free: true },
+        { range: '3,001 – 100,000', price: '$0.80', free: false },
+        { range: '100,001 – 1,000,000', price: '$0.60', free: false },
+        { range: 'Over 1,000,000', price: '$0.40', free: false },
+      ], [text('range', 'Volume range', ''), text('price', 'Price', ''), toggle('free', 'Highlight as free', false, { group: 'content' })], { min: 2, max: 6 }),
+      text('exampleTitle', 'Example title', 'Example: 250,000 emails in a month'),
+      list('exampleLines', 'Example lines (sample)', [
+        { label: 'First 3,000', amount: '$0.00' },
+        { label: 'Next 97,000 at $0.80', amount: '$77.60' },
+        { label: 'Next 150,000 at $0.60', amount: '$90.00' },
+      ], [text('label', 'Line', ''), text('amount', 'Amount', '')], { min: 1, max: 5 }),
+      text('exampleTotal', 'Example total', '$167.60'),
+      text('ctaLabel', 'Button label', 'Create a free account'),
+      url('ctaUrl', 'Button link', '/signup'),
+      text('footnote', 'Footnote', 'Prices in USD. Canadian accounts can be billed in CAD at the same rates; sales tax is added where applicable.'),
+      color('accent', 'Accent color', '#0F7B5F'),
+      color('background', 'Background', '#F6F7F9'),
+      radius(10),
       spacing('regular'),
     ],
   }),

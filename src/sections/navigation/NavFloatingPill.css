@@ -1,0 +1,173 @@
+.nav-floating-pill {
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 999px;
+  --pill-ink: #f4f4f1;
+  --pill-muted: color-mix(in srgb, var(--pill-ink) 68%, transparent);
+  background: var(--page);
+  padding-block: 16px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  z-index: 10;
+}
+
+.nav-floating-pill[data-sticky='true'] {
+  position: sticky;
+  top: 0;
+  background: transparent;
+}
+
+.nav-floating-pill .nfp-wrap {
+  max-width: 1040px;
+}
+
+.nav-floating-pill .nfp-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 60px;
+  padding: 0 8px 0 22px;
+  border-radius: 999px;
+  background: var(--pill);
+  color: var(--pill-ink);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 18px 40px -18px rgba(10, 10, 12, 0.45);
+}
+
+.nav-floating-pill .nfp-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--pill-ink);
+}
+
+.nav-floating-pill .nfp-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 7px 0 0 -2px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.nav-floating-pill .nfp-nav {
+  margin-inline: auto;
+}
+
+.nav-floating-pill .nfp-nav ul {
+  display: flex;
+  gap: 2px;
+}
+
+.nav-floating-pill .nfp-nav a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pill-muted);
+  text-decoration: none;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.nav-floating-pill .nfp-nav a:hover {
+  color: var(--pill-ink);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-floating-pill .nfp-cta {
+  min-height: 44px;
+  padding-inline: 18px 16px;
+  font-size: 14px;
+  background: var(--accent);
+  color: #111;
+}
+
+.nav-floating-pill .nfp-cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-floating-pill .nfp-cta:hover svg {
+  transform: translateX(2px);
+}
+
+.nav-floating-pill .nfp-mobile {
+  display: none;
+  margin-left: auto;
+}
+
+.nav-floating-pill .nfp-mobile summary {
+  list-style: none;
+  display: grid;
+  place-items: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-floating-pill .nfp-mobile summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-floating-pill .nfp-mobile[open] summary {
+  background: var(--pill-ink);
+  color: var(--pill);
+}
+
+.nav-floating-pill .nfp-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 24px;
+  background: var(--pill);
+  box-shadow: 0 24px 48px -20px rgba(10, 10, 12, 0.5);
+}
+
+.nav-floating-pill .nfp-panel ul {
+  display: grid;
+}
+
+.nav-floating-pill .nfp-panel li a {
+  display: block;
+  padding: 14px 12px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--pill-ink);
+  text-decoration: none;
+}
+
+.nav-floating-pill .nfp-panel li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-floating-pill .nfp-panel .nfp-cta {
+  min-height: 50px;
+  font-size: 15px;
+}
+
+@media (max-width: 859px) {
+  .nav-floating-pill .nfp-nav,
+  .nav-floating-pill .nfp-pill > .nfp-cta {
+    display: none;
+  }
+  .nav-floating-pill .nfp-mobile {
+    display: block;
+  }
+  .nav-floating-pill .nfp-pill {
+    padding-left: 18px;
+  }
+}
