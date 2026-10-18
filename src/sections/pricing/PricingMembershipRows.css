@@ -1,0 +1,189 @@
+.pricing-membership-rows {
+  --ink: #f4f1ea;
+  --muted: rgba(244, 241, 234, 0.64);
+  --line: rgba(244, 241, 234, 0.14);
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Archivo', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.pricing-membership-rows .pmr-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 64px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.pricing-membership-rows h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  word-spacing: 0.08em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pricing-membership-rows .pmr-head p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.pricing-membership-rows .pmr-list {
+  border-top: 1px solid var(--line);
+}
+
+.pricing-membership-rows .pmr-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr auto auto;
+  align-items: center;
+  gap: 20px 36px;
+  padding: 28px 24px;
+  margin-inline: -24px;
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: background-color 160ms ease;
+}
+
+.pricing-membership-rows .pmr-row[data-featured='true'] {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-bottom-color: transparent;
+}
+
+.pricing-membership-rows h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.pricing-membership-rows .pmr-flag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #111;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.pricing-membership-rows .pmr-name p {
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.pricing-membership-rows .pmr-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.pricing-membership-rows .pmr-perks li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+}
+
+.pricing-membership-rows .pmr-perks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+.pricing-membership-rows .pmr-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.pricing-membership-rows .pmr-price strong {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing-membership-rows .pmr-price span {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.pricing-membership-rows .pmr-cta {
+  min-height: 46px;
+  padding-inline: 22px;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.pricing-membership-rows .pmr-cta:hover {
+  border-color: var(--ink);
+}
+
+.pricing-membership-rows .pmr-row[data-featured='true'] .pmr-cta {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #111;
+}
+
+.pricing-membership-rows .pmr-foot {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 1023px) {
+  .pricing-membership-rows .pmr-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'name price' 'perks perks' 'cta cta';
+  }
+  .pricing-membership-rows .pmr-name {
+    grid-area: name;
+  }
+  .pricing-membership-rows .pmr-perks {
+    grid-area: perks;
+  }
+  .pricing-membership-rows .pmr-price {
+    grid-area: price;
+  }
+  .pricing-membership-rows .pmr-cta {
+    grid-area: cta;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing-membership-rows .pmr-head {
+    grid-template-columns: 1fr;
+  }
+  .pricing-membership-rows .pmr-row {
+    padding: 24px 16px;
+    margin-inline: -16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .pricing-membership-rows .pmr-row {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'name' 'price' 'perks' 'cta';
+    gap: 14px;
+  }
+  .pricing-membership-rows .pmr-cta {
+    justify-self: stretch;
+  }
+}

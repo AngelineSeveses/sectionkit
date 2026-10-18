@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, range, list, radius, spacing, image } from '../fields'
+import { text, textarea, url, color, range, list, radius, spacing, image, select, currencyOptions } from '../fields'
 import { img } from '../images'
 
 export default [
@@ -176,6 +176,55 @@ export default [
       color('accent', 'Accent color', '#C2410C'),
       color('background', 'Background', '#FFFFFF'),
       radius(16, 32),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'comparison-cost-bars-005',
+    slug: 'cost-comparison-bars',
+    name: 'Cost comparison bars',
+    description: 'Horizontal bars comparing the total cost of a few options over the same period, with the cheapest marked, beside the written assumptions and a call to action.',
+    category: 'comparison',
+    file: 'comparison/CompareCostBars',
+    industries: ['real-estate', 'finance', 'home-services', 'professional-services'],
+    goals: ['book-consultation', 'learn-more'],
+    audience: 'People weighing a big decision (rent or buy, lease or own, repair or replace) who want the numbers side by side.',
+    markets: ['US', 'CA'],
+    layout: 'split',
+    styles: ['professional', 'minimal'],
+    tags: ['comparison', 'cost', 'rent vs buy', 'chart', 'calculator', 'mortgage'],
+    traits: ['sample-data'],
+    sampleContent: true,
+    fonts: ['Plus Jakarta Sans:wght@400;600;700'],
+    structure: ['Heading and intro', 'Assumptions list', 'Button', 'Chart card: period label, one bar per option with total and detail, lowest cost flagged'],
+    rationale: [
+      'Bars make the size of the difference obvious before anyone reads the figures.',
+      'Listing the assumptions next to the chart keeps the comparison honest and lets readers adjust for their own situation.',
+      'The lowest total is flagged automatically, so editing a figure never leaves the wrong option highlighted.',
+    ],
+    responsive: ['Copy stacks above the chart under 900px; bars keep full width.'],
+    tokens: { font: 'Plus Jakarta Sans', headingSize: 40, headingWeight: 700, headingLine: 1.12, bodySize: 16.5, text: '#142028', muted: '#5A6670', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Row container 40/60.', 'Left: Heading (H2), Text Editor, Heading (small caps), Icon List, Button.', 'Right: bordered container with Text Editor (period), then per option: Heading + pill label, Progress Bar widget (no percentage text, set the value as a share of the largest total), and Heading + Text Editor for the total and detail.'],
+      notes: ['Recalculate when rates change, and say these are estimates, not advice. Have a licensed professional review published comparisons.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Renting vs buying over five years'),
+      textarea('intro', 'Intro', 'For a $600,000 home, buying with 20% down came out cheapest in our example, but only if you stay at least five years. Your numbers will differ; book a call and we will run them with you.'),
+      text('horizon', 'Chart label', 'Estimated net cost over 5 years'),
+      select('currency', 'Currency', 'CAD', currencyOptions),
+      list('options', 'Options (sample)', [
+        { name: 'Rent', total: '179587', detail: '$2,800/month, rising 3% a year' },
+        { name: 'Buy with 20% down', total: '147759', detail: '$120,000 down · $2,806/month mortgage' },
+        { name: 'Buy with 10% down', total: '169653', detail: '$60,000 down · $3,255/month incl. default insurance' },
+      ], [text('name', 'Option', ''), text('total', 'Total (number only)', ''), text('detail', 'Detail', '')], { min: 2, max: 5 }),
+      textarea('assumptions', 'Assumptions (semicolon separated)', '5.00% mortgage over 25 years; Property tax 0.7% and maintenance 1% of the price each year; Home value grows 3% a year; 1.5% closing costs to buy and 5% to sell; Down payment would otherwise earn 4% a year; 3.1% default insurance added to the loan at 10% down', { maxLength: 800 }),
+      text('ctaLabel', 'Button label', 'Run my numbers'),
+      url('ctaUrl', 'Button link', '/consultation'),
+      color('accent', 'Accent color', '#0E7C66'),
+      color('background', 'Background', '#F4F6F7'),
+      radius(10),
       spacing('regular'),
     ],
   }),

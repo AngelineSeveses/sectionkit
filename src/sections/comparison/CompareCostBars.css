@@ -1,0 +1,163 @@
+.compare-cost-bars {
+  --ink: #142028;
+  --muted: #5a6670;
+  --line: #dfe4e8;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.compare-cost-bars .ccb-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.compare-cost-bars h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.compare-cost-bars .ccb-copy > p {
+  margin-top: 14px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.compare-cost-bars h3 {
+  margin-top: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.compare-cost-bars .ccb-assumptions {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.compare-cost-bars .ccb-assumptions li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.compare-cost-bars .ccb-assumptions li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.compare-cost-bars .ccb-cta {
+  margin-top: 28px;
+  min-height: 48px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.compare-cost-bars .ccb-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.compare-cost-bars .ccb-chart {
+  padding: 28px;
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.compare-cost-bars .ccb-horizon {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.compare-cost-bars .ccb-chart ul {
+  display: grid;
+  gap: 22px;
+}
+
+.compare-cost-bars .ccb-chart li {
+  display: grid;
+  gap: 8px;
+}
+
+.compare-cost-bars .ccb-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.compare-cost-bars .ccb-flag {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  color: color-mix(in srgb, var(--accent) 80%, var(--ink));
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.compare-cost-bars .ccb-bar {
+  height: 18px;
+  border-radius: 999px;
+  background: #eef1f3;
+  overflow: hidden;
+}
+
+.compare-cost-bars .ccb-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #a8b3bc;
+}
+
+.compare-cost-bars li[data-best='true'] .ccb-bar span {
+  background: var(--accent);
+}
+
+.compare-cost-bars .ccb-value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+
+.compare-cost-bars .ccb-value strong {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-cost-bars .ccb-value span {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 899px) {
+  .compare-cost-bars .ccb-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 479px) {
+  .compare-cost-bars .ccb-chart {
+    padding: 20px;
+  }
+}

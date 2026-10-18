@@ -1,5 +1,6 @@
 import { section } from '../define'
-import { text, textarea, url, color, toggle, list, radius, spacing } from '../fields'
+import { text, textarea, url, color, toggle, list, radius, spacing, image } from '../fields'
+import { img } from '../images'
 
 const qa = (question, answer) => ({ question, answer })
 const qaFields = [text('question', 'Question', ''), textarea('answer', 'Answer', '')]
@@ -188,6 +189,54 @@ export default [
       color('accent', 'Accent color', '#7A3FC4'),
       color('background', 'Background', '#FFFFFF'),
       radius(8),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'faq-chat-005',
+    slug: 'faq-chat-conversation',
+    name: 'FAQ as a chat conversation',
+    description: 'Questions and answers styled as a messaging thread, with the customer’s questions as colored bubbles, the business replying, and a start-chat button.',
+    category: 'faq',
+    file: 'faq/FaqChat',
+    industries: ['local-business', 'ecommerce', 'healthcare', 'home-services', 'education'],
+    goals: ['contact', 'learn-more'],
+    audience: 'Visitors who prefer a friendly, conversational tone over a formal help page.',
+    markets: ['US', 'CA'],
+    layout: 'centered',
+    styles: ['friendly', 'warm'],
+    tags: ['faq', 'chat', 'messages', 'conversational', 'support', 'bubbles'],
+    traits: ['photography'],
+    fonts: ['Nunito:wght@400;700;800'],
+    structure: ['Centered heading and intro', 'Chat window: agent photo, name and status', 'Question and answer bubbles', 'Compose bar with start-chat button'],
+    rationale: [
+      'Answers written as replies feel personal, which suits small businesses with a human voice.',
+      'Every answer is visible, so there is nothing to click open, and the markup is a description list that screen readers announce as questions and answers.',
+      'The compose bar ends the thread with the natural next step: ask your own question.',
+    ],
+    responsive: ['Bubbles widen to 90% on phones; the compose bar keeps only the button.'],
+    tokens: { font: 'Nunito', headingSize: 42, headingWeight: 800, headingLine: 1.1, bodySize: 15.5, text: '#1A1C20', muted: '#656A74', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: 24, maxWidth: 760, paddingY: 96 },
+    elementor: {
+      structure: ['Centered Heading and Text Editor.', 'Container (max 760px, white, radius 24px, shadow): header Row with Image (circle) and two Text Editors; body container (light gray) with alternating Text Editors styled as bubbles (questions aligned right in $accent, answers left in white); footer Row with placeholder text and a pill Button.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Questions we get every week'),
+      textarea('intro', 'Intro', 'Straight from our inbox, with the answers we actually send.'),
+      text('agentName', 'Agent name', 'Maya from Fernwood Bakery'),
+      image('agentPhoto', 'Agent photo', img.p12(96, 96)),
+      text('agentStatus', 'Status line', 'Usually replies within an hour'),
+      list('items', 'Questions', [
+        { question: 'Do you make custom birthday cakes?', answer: 'Yes! Order at least 72 hours ahead and tell us the size, flavor and any message. We can usually do a photo topper too.' },
+        { question: 'Is anything gluten-free?', answer: 'Our almond cake and macarons are made without gluten, but our kitchen handles wheat, so we can’t guarantee they’re free of traces.' },
+        { question: 'Can I pick up before you open?', answer: 'For orders over $60 we can do 7 am pickup on weekdays. Just add a note at checkout.' },
+        { question: 'Do you deliver?', answer: 'We deliver within 10 km for $8, free over $75. Same-day if you order before 11 am.' },
+      ], [text('question', 'Question', ''), textarea('answer', 'Answer', '')], { min: 1, max: 8 }),
+      text('composeText', 'Compose bar text', 'Ask your own question…'),
+      text('ctaLabel', 'Button label', 'Start a chat'),
+      url('ctaUrl', 'Button link', '/contact'),
+      color('accent', 'Bubble color', '#C2410C'),
+      color('background', 'Background', '#FBF6F0'),
       spacing('regular'),
     ],
   }),

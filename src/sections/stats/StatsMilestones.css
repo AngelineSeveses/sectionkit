@@ -1,0 +1,131 @@
+.stats-milestones {
+  --ink: #1c1a17;
+  --muted: #6a655d;
+  --line: color-mix(in srgb, var(--ink) 18%, transparent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.stats-milestones .sms-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 64px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.stats-milestones h2 {
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(30px, 3.8vw, 44px);
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+.stats-milestones .sms-head p {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.stats-milestones .sms-line {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 24px;
+}
+
+.stats-milestones .sms-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 41px;
+  height: 2px;
+  background: var(--line);
+}
+
+.stats-milestones .sms-line li {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+
+.stats-milestones .sms-year {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-milestones .sms-dot {
+  width: 16px;
+  height: 16px;
+  margin: 6px 0 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+}
+
+.stats-milestones .sms-line li:last-child .sms-dot {
+  background: var(--accent);
+}
+
+.stats-milestones .sms-value {
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.stats-milestones .sms-label {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 16em;
+}
+
+@media (max-width: 767px) {
+  .stats-milestones .sms-head {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+  .stats-milestones .sms-line {
+    grid-auto-flow: row;
+    gap: 0;
+  }
+  .stats-milestones .sms-line::before {
+    left: 7px;
+    right: auto;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    height: auto;
+  }
+  .stats-milestones .sms-line li {
+    grid-template-columns: 16px 1fr;
+    grid-template-areas: 'dot year' 'dot value' 'dot label';
+    column-gap: 20px;
+    padding-bottom: 32px;
+  }
+  .stats-milestones .sms-dot {
+    grid-area: dot;
+    margin: 0;
+  }
+  .stats-milestones .sms-year {
+    grid-area: year;
+  }
+  .stats-milestones .sms-value {
+    grid-area: value;
+  }
+  .stats-milestones .sms-label {
+    grid-area: label;
+  }
+  .stats-milestones .sms-line li:last-child {
+    padding-bottom: 0;
+  }
+}

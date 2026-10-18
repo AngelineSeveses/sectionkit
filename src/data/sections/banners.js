@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, select, toggle, list, radius, spacing } from '../fields'
+import { text, textarea, url, color, select, toggle, list, radius, spacing, range } from '../fields'
 
 const perkIcons = ['truck', 'return', 'lock', 'leaf', 'maple', 'chat'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
 
@@ -171,6 +171,52 @@ export default [
       color('accent', 'Accent color', '#0B6E4F'),
       color('background', 'Background', '#F2F5F3'),
       radius(10),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'banner-capacity-005',
+    slug: 'limited-spots-progress',
+    name: 'Limited spots with progress bar',
+    description: 'A dark card announcing a cohort, tour or event, with the number of spots left, a fill bar, the enrolment deadline and a reserve button.',
+    category: 'banners',
+    file: 'banners/BannerCapacity',
+    industries: ['education', 'hospitality', 'healthcare', 'professional-services'],
+    goals: ['sign-up', 'purchase'],
+    audience: 'Interested visitors deciding whether to commit now or later.',
+    markets: ['US', 'CA'],
+    layout: 'band',
+    styles: ['bold', 'dark'],
+    tags: ['limited spots', 'cohort', 'enrolment', 'waitlist', 'event', 'scarcity', 'progress'],
+    traits: ['dark-background', 'sample-data'],
+    sampleContent: true,
+    fonts: ['Outfit:wght@400;600;700'],
+    structure: ['Pill label', 'Headline', 'Dates and format', 'Spots left with fill bar', 'Deadline', 'Reserve button', 'Refund or waitlist note'],
+    rationale: [
+      'Real capacity is a genuine reason to act now; the numbers make it concrete instead of vague urgency.',
+      'Spots left and the bar are calculated from two numbers you set, so they can never disagree.',
+      'A refund note next to the button lowers the risk of committing early.',
+    ],
+    responsive: ['Status panel moves under the copy below 860px.'],
+    tokens: { font: 'Outfit', headingSize: 40, headingWeight: 600, headingLine: 1.08, bodySize: 16.5, text: '#FDFCF8', bg: '$background', accent: '$accent', accentText: '#141414', radius: '$radius', maxWidth: 1200, paddingY: 58 },
+    elementor: {
+      structure: ['Container (background $background, radius 2× $radius, padding 40px 44px) set to Row 55/45.', 'Left: pill Text Editor, Heading (H2), Text Editor.', 'Right: translucent inner container with Heading for the count, Progress Bar widget (value = taken ÷ total), Text Editor (deadline), full-width Button and Text Editor note.'],
+      notes: ['Only show capacity you actually have and update it as spots fill. Inflated scarcity is misleading advertising in both countries.'],
+    },
+    fields: [
+      text('label', 'Label', 'Winter cohort'),
+      text('headline', 'Headline', 'Product Design Bootcamp starts January 13'),
+      textarea('details', 'Details', '12 weeks, live online on Tuesday and Thursday evenings (ET), with a mentor for every 8 students.'),
+      range('total', 'Total spots', 40, 1, 500),
+      range('taken', 'Spots taken', 28, 0, 500),
+      text('deadline', 'Deadline', 'Enrolment closes December 20 or when full'),
+      text('ctaLabel', 'Button label', 'Reserve your spot'),
+      url('ctaUrl', 'Button link', '/enrol'),
+      text('note', 'Note (optional)', 'Full refund until the end of week one.'),
+      color('accent', 'Accent color', '#7CE0B5'),
+      color('background', 'Background', '#16232B'),
+      radius(12),
       spacing('regular'),
     ],
   }),

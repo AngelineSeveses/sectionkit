@@ -1,0 +1,281 @@
+.hero-app-download {
+  --ink: #111318;
+  --muted: #545967;
+  --lp-focus: var(--accent);
+  background:
+    radial-gradient(60% 70% at 85% 40%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+    var(--bg);
+  color: var(--ink);
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.8);
+  overflow: hidden;
+}
+
+.hero-app-download .had-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-app-download .had-eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(17, 19, 24, 0.08);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-app-download h1 {
+  margin-top: 20px;
+  font-size: clamp(40px, 5.6vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.hero-app-download .had-body {
+  margin-top: 20px;
+  max-width: 30em;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-app-download .had-stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-app-download .had-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 20px 0 16px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease;
+}
+
+.hero-app-download .had-store:hover {
+  background: #2a2d36;
+}
+
+.hero-app-download .had-store:active {
+  transform: scale(0.97);
+}
+
+.hero-app-download .had-store svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hero-app-download .had-store span {
+  display: grid;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.hero-app-download .had-store small {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.hero-app-download .had-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.hero-app-download .had-stars {
+  color: #f2a900;
+  letter-spacing: 1px;
+}
+
+.hero-app-download .had-rating strong {
+  color: var(--ink);
+}
+
+.hero-app-download .had-visual {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding-block: 12px;
+}
+
+.hero-app-download .had-phone {
+  width: 290px;
+  padding: 10px;
+  border-radius: 46px;
+  background: #15161a;
+  box-shadow:
+    inset 0 0 0 1.5px #3a3c44,
+    0 40px 80px -30px rgba(17, 19, 24, 0.55);
+  transform: rotate(-4deg);
+}
+
+.hero-app-download .had-screen {
+  display: grid;
+  gap: 14px;
+  padding: 14px 18px 24px;
+  border-radius: 36px;
+  background: #f7f7f9;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.hero-app-download .had-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hero-app-download .had-notch {
+  width: 84px;
+  height: 22px;
+  border-radius: 999px;
+  background: #15161a;
+}
+
+.hero-app-download .had-app {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-app-download .had-balance {
+  display: grid;
+  gap: 2px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.hero-app-download .had-balance small {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.hero-app-download .had-balance strong {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.hero-app-download .had-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 52px;
+  margin-top: 10px;
+}
+
+.hero-app-download .had-bars span {
+  flex: 1;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-app-download .had-bars span:nth-child(4) {
+  background: #fff;
+}
+
+.hero-app-download .had-items {
+  display: grid;
+  gap: 4px;
+}
+
+.hero-app-download .had-items li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 12.5px;
+}
+
+.hero-app-download .had-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 16%, #fff);
+}
+
+.hero-app-download .had-label {
+  font-weight: 600;
+}
+
+.hero-app-download .had-amount {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-app-download .had-badge {
+  position: absolute;
+  left: max(0px, calc(50% - 230px));
+  bottom: 18%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 40px -18px rgba(17, 19, 24, 0.4);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-app-download .had-badge span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #17a34a;
+  color: #fff;
+  font-size: 13px;
+}
+
+@media (max-width: 899px) {
+  .hero-app-download .had-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-app-download .had-phone {
+    width: 250px;
+  }
+  .hero-app-download .had-badge {
+    left: 0;
+    bottom: 10%;
+    font-size: 13px;
+  }
+  .hero-app-download .had-store {
+    flex: 1;
+    min-width: 0;
+    gap: 8px;
+    padding: 0 12px;
+  }
+  .hero-app-download .had-store span {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}

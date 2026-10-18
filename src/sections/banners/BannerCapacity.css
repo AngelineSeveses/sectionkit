@@ -1,0 +1,117 @@
+.banner-capacity {
+  --ink: #fdfcf8;
+  --muted: rgba(253, 252, 248, 0.72);
+  --lp-focus: #fff;
+  --lp-btn-radius: var(--radius);
+  background: transparent;
+  font-family: 'Outfit', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.6);
+}
+
+.banner-capacity .bcp-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px 56px;
+  align-items: center;
+  padding: 40px 44px;
+  border-radius: calc(var(--radius) * 2);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.banner-capacity .bcp-label {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.banner-capacity h2 {
+  margin-top: 14px;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.banner-capacity .bcp-details {
+  margin-top: 12px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.banner-capacity .bcp-status {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: calc(var(--radius) * 1.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.banner-capacity .bcp-left {
+  font-size: 17px;
+}
+
+.banner-capacity .bcp-left strong {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.banner-capacity .bcp-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+.banner-capacity .bcp-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.banner-capacity .bcp-deadline {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.banner-capacity .bcp-cta {
+  margin-top: 4px;
+  min-height: 50px;
+  background: var(--accent);
+  color: #141414;
+  font-size: 16px;
+}
+
+.banner-capacity .bcp-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #fff);
+}
+
+.banner-capacity .bcp-note {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 859px) {
+  .banner-capacity .bcp-card {
+    grid-template-columns: 1fr;
+    padding: 32px 28px;
+  }
+}
+
+@media (max-width: 479px) {
+  .banner-capacity .bcp-card {
+    padding: 24px 20px;
+  }
+  .banner-capacity .bcp-status {
+    padding: 18px;
+  }
+}

@@ -1,0 +1,200 @@
+.case-study-chart {
+  --ink: #121417;
+  --muted: #5c626b;
+  --line: #e2e5e9;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.case-study-chart .csc-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.case-study-chart .csc-client {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.case-study-chart .csc-client span {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.case-study-chart h2 {
+  margin-top: 16px;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.case-study-chart .csc-summary {
+  margin-top: 14px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.case-study-chart .csc-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 28px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.case-study-chart .csc-metrics > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+  padding: 16px 12px 0 0;
+}
+
+.case-study-chart .csc-metrics dt {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.case-study-chart .csc-metrics dd {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.case-study-chart .csc-quote {
+  margin: 28px 0 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.case-study-chart .csc-quote footer {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.case-study-chart .csc-link {
+  display: inline-flex;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-underline-offset: 4px;
+}
+
+.case-study-chart .csc-chart {
+  margin: 0;
+  padding: 24px 24px 16px;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.case-study-chart .csc-chart figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14.5px;
+}
+
+.case-study-chart .csc-chart figcaption span {
+  color: var(--muted);
+}
+
+.case-study-chart .csc-plot {
+  position: relative;
+}
+
+.case-study-chart svg {
+  width: 100%;
+  height: 220px;
+  overflow: visible;
+}
+
+.case-study-chart :is(.csc-grid-line, .csc-switch) {
+  vector-effect: non-scaling-stroke;
+}
+
+.case-study-chart .csc-grid-line {
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.case-study-chart .csc-bar-before {
+  fill: #cfd4da;
+}
+
+.case-study-chart .csc-bar-after {
+  fill: var(--accent);
+}
+
+.case-study-chart .csc-axis {
+  display: flex;
+  margin-top: 8px;
+}
+
+.case-study-chart .csc-axis span {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.case-study-chart .csc-switch {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.case-study-chart .csc-switch-label {
+  position: absolute;
+  top: 0;
+  margin-left: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 959px) {
+  .case-study-chart .csc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 479px) {
+  .case-study-chart .csc-metrics dd {
+    font-size: 22px;
+  }
+  .case-study-chart .csc-chart {
+    padding: 18px 14px 10px;
+  }
+  .case-study-chart svg {
+    height: 180px;
+  }
+  .case-study-chart .csc-axis span {
+    font-size: 11px;
+  }
+}
