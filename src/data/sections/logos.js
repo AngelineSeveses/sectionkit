@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, select, toggle, list, spacing } from '../fields'
+import { text, textarea, url, color, select, toggle, list, spacing, range } from '../fields'
 
 const faceOptions = [
   { value: 'serif', label: 'Serif italic' },
@@ -7,6 +7,7 @@ const faceOptions = [
   { value: 'caps', label: 'Spaced capitals' },
   { value: 'mono', label: 'Monospace' },
 ]
+const chipFields = [text('name', 'Name', ''), color('color', 'Mark color', '#3949AB', { group: 'content' })]
 const iconOptions = ['shield', 'home', 'clock', 'badge', 'user', 'tag'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
 
 export default [
@@ -182,6 +183,64 @@ export default [
       color('background', 'Background', '#FBFAF7'),
       color('ink', 'Text color', '#1C1A17'),
       color('accent', 'Quote mark color', '#B4532A'),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'logos-marquee-005',
+    slug: 'scrolling-integrations-marquee',
+    name: 'Scrolling integrations marquee',
+    description: 'Two rows of integration chips that drift in opposite directions, with faded edges, a pause on hover and a link to the full directory.',
+    category: 'logos',
+    file: 'logos/LogosMarquee',
+    thumbWidth: 1100,
+    industries: ['saas', 'b2b', 'ecommerce'],
+    goals: ['learn-more'],
+    audience: 'Evaluators checking whether a product works with the tools they already use.',
+    markets: ['US', 'CA'],
+    layout: 'band',
+    styles: ['friendly', 'minimal'],
+    tags: ['integrations', 'marquee', 'ticker', 'partners', 'apps', 'animated', 'logos'],
+    traits: [],
+    fonts: ['Manrope:wght@600;700;800'],
+    structure: ['Centered heading and directory link', 'Row of integration chips scrolling left', 'Optional second row scrolling right'],
+    rationale: [
+      'Gentle motion signals breadth: there are more integrations than fit on screen.',
+      'Lettermark chips stay legible and consistent without collecting logo files from every partner.',
+      'Hovering pauses the row, and reduced-motion settings turn it into a still, scrollable strip.',
+    ],
+    responsive: ['Rows run edge to edge at every width; chips shrink slightly on phones.', 'With reduced motion, rows stop animating and scroll horizontally instead.'],
+    tokens: { font: 'Manrope', headingSize: 28, headingWeight: 700, bodySize: 15.5, text: '#15171C', bg: '$background', accent: '$accent', radius: 999, maxWidth: 1200, paddingY: 67 },
+    elementor: {
+      structure: ['Centered Heading and a text Button.', 'Elementor Pro: Loop Carousel or Media Carousel with autoplay, speed equal to autoplay speed, slides per view auto, pause on hover. Free alternative: an HTML widget with this section’s exported markup and CSS.', 'Each chip: a Row container (radius 999px, white, 1px border) with a circular Heading for the letter and a Text Editor for the name.'],
+      notes: ['Use partner logos only where their brand guidelines allow; lettermarks are a safe default.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Works with the tools you already use'),
+      text('linkLabel', 'Link label (optional)', 'Browse all 140 integrations'),
+      url('linkUrl', 'Link', '/integrations'),
+      list('rowOne', 'Row one', [
+        { name: 'Ledgerly', color: '#2E7D32' },
+        { name: 'Shopwell', color: '#5E35B1' },
+        { name: 'Calendo', color: '#EF6C00' },
+        { name: 'Mailroom', color: '#C62828' },
+        { name: 'Payfield', color: '#1565C0' },
+        { name: 'Stackdesk', color: '#00838F' },
+        { name: 'Notewise', color: '#6D4C41' },
+      ], chipFields, { min: 3, max: 10 }),
+      list('rowTwo', 'Row two (optional)', [
+        { name: 'Hireloop', color: '#AD1457' },
+        { name: 'Formstack', color: '#283593' },
+        { name: 'Taxline', color: '#558B2F' },
+        { name: 'Shipbird', color: '#F9A825' },
+        { name: 'Chatter', color: '#00695C' },
+        { name: 'Docuvault', color: '#4527A0' },
+        { name: 'Routely', color: '#D84315' },
+      ], chipFields, { min: 0, max: 10 }),
+      range('speed', 'Loop duration', 40, 15, 90, 1, { unit: 's' }),
+      color('background', 'Background', '#F5F4F0'),
+      color('accent', 'Link color', '#3949AB'),
       spacing('regular'),
     ],
   }),

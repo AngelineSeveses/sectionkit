@@ -1,0 +1,149 @@
+.team-open-roles {
+  --ink: #17191e;
+  --muted: #5e636e;
+  --line: #e3e5ea;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.team-open-roles .tor-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.team-open-roles .tor-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.team-open-roles h2 {
+  margin-top: 10px;
+  font-size: clamp(30px, 3.8vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.team-open-roles .tor-text {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.team-open-roles .tor-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.team-open-roles .tor-perks li {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.team-open-roles .tor-count {
+  padding-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 1px solid var(--ink);
+}
+
+.team-open-roles .tor-role {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'title arrow' 'meta arrow';
+  align-items: center;
+  gap: 6px 20px;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 160ms ease, padding 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.team-open-roles .tor-role:hover {
+  padding-inline: 14px;
+  background: #fff;
+}
+
+.team-open-roles .tor-title {
+  grid-area: title;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.team-open-roles .tor-meta {
+  grid-area: meta;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.team-open-roles .tor-meta span + span::before {
+  content: '·';
+  margin-right: 14px;
+  color: var(--line);
+}
+
+.team-open-roles .tor-arrow {
+  grid-area: arrow;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  font-size: 17px;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.team-open-roles .tor-role:hover .tor-arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.team-open-roles .tor-note {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.team-open-roles .tor-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 899px) {
+  .team-open-roles .tor-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 479px) {
+  .team-open-roles .tor-title {
+    font-size: 17px;
+  }
+  .team-open-roles .tor-arrow {
+    width: 34px;
+    height: 34px;
+  }
+}

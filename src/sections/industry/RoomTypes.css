@@ -1,0 +1,148 @@
+.room-types {
+  --ink: #26221d;
+  --muted: #6c655b;
+  --line: #e4ded4;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Jost', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.room-types .rmt-head {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.room-types h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 4.6vw, 56px);
+  line-height: 1.02;
+  font-weight: 500;
+}
+
+.room-types .rmt-head p {
+  margin-top: 14px;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.room-types .rmt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.room-types .rmt-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.room-types .rmt-card > img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.room-types .rmt-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  padding: 22px 22px 24px;
+}
+
+.room-types h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.room-types .rmt-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.room-types .rmt-facts li + li::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin: 0 14px 2px 0;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+}
+
+.room-types .rmt-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.room-types .rmt-amenities li {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.room-types .rmt-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.room-types .rmt-price {
+  display: grid;
+  line-height: 1.1;
+}
+
+.room-types .rmt-price small {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.room-types .rmt-price strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.room-types .rmt-price span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.room-types .rmt-cta {
+  min-height: 44px;
+  padding-inline: 18px;
+  border-color: var(--ink);
+  color: var(--ink);
+  font-size: 13.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.room-types .rmt-cta:hover {
+  background: var(--ink);
+  color: #fff;
+}

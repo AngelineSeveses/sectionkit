@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, image, color, list, radius, spacing } from '../fields'
+import { text, textarea, url, image, color, list, radius, spacing, range } from '../fields'
 import { img } from '../images'
 
 export default [
@@ -192,6 +192,62 @@ export default [
       color('accent', 'Accent color', '#3F6B4E'),
       color('background', 'Background', '#F6F3EE'),
       radius(10),
+      spacing('regular'),
+    ],
+  }),
+
+  section({
+    id: 'case-study-chart-005',
+    slug: 'case-study-results-chart',
+    name: 'Case study with results chart',
+    description: 'Client, headline, summary and three metrics beside a monthly bar chart that marks the point the client switched, with gray bars before and accent bars after.',
+    category: 'case-studies',
+    file: 'case-studies/CaseStudyChart',
+    industries: ['saas', 'agency', 'b2b', 'finance'],
+    goals: ['learn-more', 'book-demo'],
+    audience: 'Analytical buyers who want to see the trend, not just a single headline number.',
+    markets: ['US', 'CA'],
+    layout: 'split',
+    styles: ['technical', 'minimal'],
+    tags: ['case study', 'chart', 'results', 'growth', 'data', 'before after'],
+    traits: ['sample-data'],
+    sampleContent: true,
+    fonts: ['Geist:wght@400;500;600'],
+    structure: ['Client name with industry tags', 'Headline and summary', 'Three result metrics', 'Client quote', 'Read-more link', 'Bar chart with a “switched” marker'],
+    rationale: [
+      'A trend over months is harder to cherry-pick than one figure, which makes the result more believable.',
+      'Gray before and accent after, split by a labeled line, shows the change without reading the axis.',
+      'The chart is drawn from plain numbers, so updating it means editing one field, and screen readers get the same data as a table.',
+    ],
+    responsive: ['Copy stacks above the chart under 960px.', 'Chart scales with its container; axis labels grow slightly on small phones to stay legible.'],
+    tokens: { font: 'Geist', headingSize: 40, headingWeight: 600, headingLine: 1.1, bodySize: 16.5, text: '#121417', muted: '#5C626B', bg: '$background', accent: '$accent', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Row container 45/55.', 'Left: Text Editor with client and pill tags, Heading (H2), Text Editor, a 3-column Row of Counter/Heading pairs, Blockquote, text Button.', 'Right: bordered container with a Heading row and the chart. Elementor has no bar chart widget: export the SVG from this section’s HTML into an HTML widget, or use a chart add-on with two bar colors.'],
+      notes: ['Use the client’s real data with their permission, and state the metric and period in the chart title.'],
+    },
+    fields: [
+      text('client', 'Client', 'Harbor & Pine'),
+      text('tags', 'Tags (comma separated)', 'Outdoor gear, E-commerce'),
+      text('headline', 'Headline', 'Organic revenue up 3.1× in the year after the rebuild'),
+      textarea('summary', 'Summary', 'We rebuilt their product pages around search intent, fixed 1,200 crawl errors and cut page load time in half. Growth started in the second month and kept compounding.'),
+      text('chartTitle', 'Chart title', 'Monthly organic revenue'),
+      text('unit', 'Unit', 'USD, thousands'),
+      text('labels', 'Bar labels (comma separated)', 'J, F, M, A, M, J, J, A, S, O, N, D'),
+      text('values', 'Bar values (comma separated)', '18, 17, 19, 18, 24, 29, 34, 38, 43, 47, 52, 56', { maxLength: 300 }),
+      range('switchAt', 'Switch at bar', 5, 1, 24),
+      text('switchLabel', 'Switch label', 'New site live'),
+      list('metrics', 'Metrics (sample)', [
+        { value: '3.1×', label: 'Organic revenue' },
+        { value: '−52%', label: 'Page load time' },
+        { value: '+214%', label: 'Ranking keywords' },
+      ], [text('value', 'Value', ''), text('label', 'Label', '')], { min: 1, max: 3 }),
+      textarea('quote', 'Quote (optional)', 'We stopped guessing what to fix. Every change had a reason and a number behind it.', { maxLength: 240 }),
+      text('quoteName', 'Quote attribution', 'Dana Whitlock, Head of E-commerce'),
+      text('linkLabel', 'Link label', 'Read the full case study'),
+      url('linkUrl', 'Link', '/work/harbor-and-pine'),
+      color('accent', 'Accent color', '#1F6FEB'),
+      color('background', 'Background', '#F7F8FA'),
+      radius(14),
       spacing('regular'),
     ],
   }),

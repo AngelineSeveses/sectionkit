@@ -1,0 +1,114 @@
+.logos-marquee {
+  --ink: #15171c;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Manrope', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.7);
+  overflow: hidden;
+}
+
+.logos-marquee .lmq-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px 16px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.logos-marquee h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.logos-marquee .lmq-head a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+
+.logos-marquee .lmq-row {
+  display: flex;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.logos-marquee .lmq-row + .lmq-row {
+  margin-top: 14px;
+}
+
+.logos-marquee .lmq-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 14px;
+  padding-right: 14px;
+  animation: lmq-scroll var(--duration) linear infinite;
+}
+
+.logos-marquee .lmq-row[data-reverse='true'] .lmq-track {
+  animation-direction: reverse;
+}
+
+.logos-marquee .lmq-row:hover .lmq-track {
+  animation-play-state: paused;
+}
+
+@keyframes lmq-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logos-marquee .lmq-track li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 10px 18px 10px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--ink) 9%, transparent);
+  font-size: 15.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.logos-marquee .lmq-mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logos-marquee .lmq-row {
+    overflow-x: auto;
+  }
+  .logos-marquee .lmq-track {
+    animation: none;
+  }
+  .logos-marquee .lmq-track li[aria-hidden='true'] {
+    display: none;
+  }
+}
+
+@media (max-width: 559px) {
+  .logos-marquee .lmq-track li {
+    font-size: 14px;
+    padding: 8px 14px 8px 8px;
+  }
+  .logos-marquee .lmq-mark {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+}
