@@ -1,0 +1,360 @@
+.form-multi-step {
+  --ink: #161b26;
+  --muted: #586070;
+  --line: #dde2ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Golos Text', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.form-multi-step .fms-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.form-multi-step h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.form-multi-step .fms-intro {
+  margin-top: 16px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.form-multi-step .fms-assure {
+  display: grid;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.form-multi-step .fms-assure li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.form-multi-step .fms-assure li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+}
+
+.form-multi-step .fms-assure li::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form-multi-step .fms-card {
+  position: relative;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.6);
+  background: #fff;
+  box-shadow: 0 40px 80px -60px rgba(22, 27, 38, 0.45);
+}
+
+.form-multi-step .fms-step {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.form-multi-step .fms-progress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 26px;
+}
+
+/* Keyboard users reach the step radios with Tab and move between steps with the arrow keys */
+.form-multi-step .fms-step:focus-visible ~ .fms-progress {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.form-multi-step .fms-progress span {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--line);
+  transition: background-color 260ms ease;
+}
+
+.form-multi-step .fms-progress span[data-n='1'],
+.form-multi-step #fms-2:checked ~ .fms-progress span[data-n='2'],
+.form-multi-step #fms-3:checked ~ .fms-progress span[data-n='2'],
+.form-multi-step #fms-3:checked ~ .fms-progress span[data-n='3'] {
+  background: var(--accent);
+}
+
+.form-multi-step form {
+  margin: 0;
+}
+
+.form-multi-step .fms-panel {
+  display: none;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-multi-step #fms-1:checked ~ form .fms-panel[data-step='1'],
+.form-multi-step #fms-2:checked ~ form .fms-panel[data-step='2'],
+.form-multi-step #fms-3:checked ~ form .fms-panel[data-step='3'] {
+  display: block;
+  animation: fms-in 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes fms-in {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+}
+
+.form-multi-step legend {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.form-multi-step .fms-count {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.form-multi-step .fms-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-multi-step .fms-options label,
+.form-multi-step .fms-chips label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-multi-step .fms-options input,
+.form-multi-step .fms-chips input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.form-multi-step .fms-options span {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  padding: 14px 16px 14px 46px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.form-multi-step .fms-options span::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+  border: 1.5px solid #b8bfcb;
+  border-radius: 50%;
+  background: #fff;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.form-multi-step .fms-options label:hover span {
+  border-color: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
+.form-multi-step .fms-options input:checked + span {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, #fff);
+}
+
+.form-multi-step .fms-options input:checked + span::before {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 9px var(--accent);
+}
+
+.form-multi-step .fms-options input:focus-visible + span,
+.form-multi-step .fms-chips input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.form-multi-step .fms-sub {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.form-multi-step .fms-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.form-multi-step .fms-chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.form-multi-step .fms-chips input:checked + span {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.form-multi-step .fms-field {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  min-width: 0;
+}
+
+.form-multi-step .fms-field > span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.form-multi-step .fms-field small {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.form-multi-step .fms-field input,
+.form-multi-step .fms-field textarea {
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 16px;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.form-multi-step .fms-field textarea {
+  resize: vertical;
+}
+
+.form-multi-step .fms-field input:focus,
+.form-multi-step .fms-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.form-multi-step .fms-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-multi-step .fms-row .fms-field {
+  margin-top: 18px;
+}
+
+.form-multi-step .fms-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.form-multi-step .fms-next {
+  min-height: 50px;
+  padding-inline: 26px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-multi-step .fms-next:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.form-multi-step .fms-back {
+  margin-right: auto;
+  padding: 8px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.form-multi-step .fms-back:hover {
+  color: var(--ink);
+}
+
+.form-multi-step .fms-privacy {
+  margin-top: 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (max-width: 919px) {
+  .form-multi-step .fms-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 519px) {
+  .form-multi-step .fms-card {
+    padding: 24px 18px;
+  }
+  .form-multi-step .fms-options,
+  .form-multi-step .fms-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

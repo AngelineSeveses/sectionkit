@@ -1,0 +1,120 @@
+.faq-objections {
+  --ink: #1e1d1b;
+  --muted: #605d57;
+  --line: #e4e1db;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Figtree', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.faq-objections .fob-head {
+  max-width: 640px;
+}
+
+.faq-objections h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.faq-objections .fob-head p {
+  margin-top: 14px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.faq-objections .fob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.faq-objections .fob-grid > li {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+}
+
+.faq-objections h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.005em;
+}
+
+.faq-objections h3 span {
+  color: var(--accent);
+}
+
+.faq-objections .fob-grid > li > p:not(.fob-proof) {
+  margin-top: 14px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.faq-objections .fob-proof {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--accent) 75%, #000);
+}
+
+.faq-objections .fob-grid > li.fob-cta {
+  justify-content: space-between;
+  gap: 20px;
+  border-color: transparent;
+  background: var(--accent);
+  color: #fff;
+}
+
+.faq-objections .fob-grid > li.fob-cta > p {
+  margin: 0;
+  color: #fff;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.faq-objections .fob-cta .lp-btn {
+  align-self: flex-start;
+  min-height: 48px;
+  padding-inline: 22px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.faq-objections .fob-cta .lp-btn:hover {
+  background: color-mix(in srgb, #fff 88%, var(--accent));
+}
+
+.faq-objections .fob-cta .lp-btn:focus-visible {
+  outline-color: #fff;
+}
+
+@media (max-width: 959px) {
+  .faq-objections .fob-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .faq-objections .fob-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .faq-objections .fob-grid > li {
+    padding: 24px 20px;
+  }
+}
