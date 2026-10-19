@@ -1,0 +1,176 @@
+.compare-decision-guide {
+  --ink: #1a1d23;
+  --muted: #5f6672;
+  --line: #e2e4e9;
+  --opt1: var(--accent);
+  --opt2: #3d4451;
+  --opt3: #8a6d1f;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.compare-decision-guide .cdg-head {
+  max-width: 640px;
+}
+
+.compare-decision-guide h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.compare-decision-guide .cdg-head p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.compare-decision-guide .cdg-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.compare-decision-guide .cdg-key li {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.compare-decision-guide .cdg-badge {
+  justify-self: start;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--opt);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.compare-decision-guide [data-opt='1'] {
+  --opt: var(--opt1);
+}
+
+.compare-decision-guide [data-opt='2'] {
+  --opt: var(--opt2);
+}
+
+.compare-decision-guide [data-opt='3'] {
+  --opt: var(--opt3);
+}
+
+.compare-decision-guide .cdg-table {
+  width: 100%;
+  margin-top: 32px;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.compare-decision-guide .cdg-table thead th {
+  padding: 0 16px 12px 0;
+  border-bottom: 2px solid var(--ink);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--muted);
+}
+
+.compare-decision-guide .cdg-table tbody th,
+.compare-decision-guide .cdg-table td {
+  padding: 18px 16px 18px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-decision-guide .cdg-table tbody th {
+  width: 38%;
+  font-weight: 600;
+}
+
+.compare-decision-guide .cdg-table td:nth-child(2) {
+  width: 160px;
+}
+
+.compare-decision-guide .cdg-table td:last-child {
+  color: var(--muted);
+}
+
+.compare-decision-guide .cdg-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 32px;
+  font-size: 16px;
+}
+
+.compare-decision-guide .cdg-cta {
+  background: var(--ink);
+  color: #fff;
+}
+
+.compare-decision-guide .cdg-cta:hover {
+  background: var(--accent);
+}
+
+/* Phones: each row becomes a card */
+@media (max-width: 679px) {
+  .compare-decision-guide .cdg-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .compare-decision-guide .cdg-table,
+  .compare-decision-guide .cdg-table tbody,
+  .compare-decision-guide .cdg-table tr,
+  .compare-decision-guide .cdg-table th,
+  .compare-decision-guide .cdg-table td {
+    display: block;
+    width: auto;
+  }
+  .compare-decision-guide .cdg-table tr {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .compare-decision-guide .cdg-table tbody th,
+  .compare-decision-guide .cdg-table td {
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+  /* The "If you…" column header is hidden here, so repeat it on each row */
+  .compare-decision-guide .cdg-table tbody th::before {
+    content: 'If you ';
+  }
+  .compare-decision-guide .cdg-table td:nth-child(2) {
+    width: auto;
+    margin-top: 10px;
+  }
+  .compare-decision-guide .cdg-table td:last-child {
+    margin-top: 8px;
+  }
+  .compare-decision-guide .cdg-cta {
+    width: 100%;
+  }
+}

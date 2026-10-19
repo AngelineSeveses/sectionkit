@@ -1,0 +1,184 @@
+.portfolio-viewer {
+  --ink: #f2efe9;
+  --muted: rgba(242, 239, 233, 0.66);
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Jost', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.portfolio-viewer .pvw-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px 48px;
+  flex-wrap: wrap;
+}
+
+.portfolio-viewer .pvw-head > div {
+  max-width: 600px;
+}
+
+.portfolio-viewer h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-viewer .pvw-head p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.portfolio-viewer .pvw-cta {
+  border-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.portfolio-viewer .pvw-cta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.portfolio-viewer .pvw-gallery {
+  position: relative;
+  margin-top: 40px;
+}
+
+.portfolio-viewer .pvw-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.portfolio-viewer .pvw-stage {
+  display: grid;
+}
+
+.portfolio-viewer .pvw-slide {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 320ms ease, visibility 0s linear 320ms;
+}
+
+.portfolio-viewer .pvw-slide img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.portfolio-viewer .pvw-slide figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+.portfolio-viewer .pvw-slide strong {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.portfolio-viewer .pvw-slide figcaption span {
+  color: var(--muted);
+}
+
+.portfolio-viewer .pvw-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.portfolio-viewer .pvw-thumbs label {
+  position: relative;
+  cursor: pointer;
+  border-radius: calc(var(--radius) * 0.6);
+  overflow: hidden;
+}
+
+.portfolio-viewer .pvw-thumbs img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: opacity 200ms ease, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-viewer .pvw-thumbs label:hover img {
+  opacity: 0.85;
+}
+
+.portfolio-viewer .pvw-thumbs label::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  transition: border-color 200ms ease;
+}
+
+/* Selected slide and thumbnail */
+.portfolio-viewer #pvw-1:checked ~ .pvw-stage [data-slot='1'],
+.portfolio-viewer #pvw-2:checked ~ .pvw-stage [data-slot='2'],
+.portfolio-viewer #pvw-3:checked ~ .pvw-stage [data-slot='3'],
+.portfolio-viewer #pvw-4:checked ~ .pvw-stage [data-slot='4'],
+.portfolio-viewer #pvw-5:checked ~ .pvw-stage [data-slot='5'],
+.portfolio-viewer #pvw-6:checked ~ .pvw-stage [data-slot='6'] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 320ms ease, visibility 0s;
+}
+
+.portfolio-viewer #pvw-1:checked ~ .pvw-thumbs label[for='pvw-1'] img,
+.portfolio-viewer #pvw-2:checked ~ .pvw-thumbs label[for='pvw-2'] img,
+.portfolio-viewer #pvw-3:checked ~ .pvw-thumbs label[for='pvw-3'] img,
+.portfolio-viewer #pvw-4:checked ~ .pvw-thumbs label[for='pvw-4'] img,
+.portfolio-viewer #pvw-5:checked ~ .pvw-thumbs label[for='pvw-5'] img,
+.portfolio-viewer #pvw-6:checked ~ .pvw-thumbs label[for='pvw-6'] img {
+  opacity: 1;
+}
+
+.portfolio-viewer #pvw-1:checked ~ .pvw-thumbs label[for='pvw-1']::after,
+.portfolio-viewer #pvw-2:checked ~ .pvw-thumbs label[for='pvw-2']::after,
+.portfolio-viewer #pvw-3:checked ~ .pvw-thumbs label[for='pvw-3']::after,
+.portfolio-viewer #pvw-4:checked ~ .pvw-thumbs label[for='pvw-4']::after,
+.portfolio-viewer #pvw-5:checked ~ .pvw-thumbs label[for='pvw-5']::after,
+.portfolio-viewer #pvw-6:checked ~ .pvw-thumbs label[for='pvw-6']::after {
+  border-color: var(--accent);
+}
+
+.portfolio-viewer #pvw-1:focus-visible ~ .pvw-thumbs label[for='pvw-1'],
+.portfolio-viewer #pvw-2:focus-visible ~ .pvw-thumbs label[for='pvw-2'],
+.portfolio-viewer #pvw-3:focus-visible ~ .pvw-thumbs label[for='pvw-3'],
+.portfolio-viewer #pvw-4:focus-visible ~ .pvw-thumbs label[for='pvw-4'],
+.portfolio-viewer #pvw-5:focus-visible ~ .pvw-thumbs label[for='pvw-5'],
+.portfolio-viewer #pvw-6:focus-visible ~ .pvw-thumbs label[for='pvw-6'] {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 719px) {
+  .portfolio-viewer .pvw-thumbs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .portfolio-viewer .pvw-slide img {
+    aspect-ratio: 4 / 3;
+  }
+}

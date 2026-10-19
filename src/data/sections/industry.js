@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, image, color, select, list, radius, spacing } from '../fields'
+import { text, textarea, url, image, color, select, list, radius, spacing, range, currencyOptions } from '../fields'
 import { img } from '../images'
 
 const dayOptions = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((v) => ({ value: v, label: v }))
@@ -403,6 +403,59 @@ export default [
       color('accent', 'Accent color', '#8A6A3B'),
       color('background', 'Background', '#F4EFE7'),
       radius(0, 24),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'industry-salon-menu-009',
+    slug: 'salon-price-menu-stylist-levels',
+    name: 'Salon price menu by stylist level',
+    description: 'A centered serif heading over a price table with services and durations as rows and up to three stylist levels as columns, with a pricing note and booking button.',
+    category: 'industry',
+    file: 'industry/SalonPriceMenu',
+    addedAt: '2026-10-19',
+    industries: ['local-business', 'hospitality'],
+    goals: ['book-appointment'],
+    audience: 'Salon, barber and spa clients who want to know what a service costs with each stylist before booking.',
+    markets: ['US', 'CA'],
+    layout: 'table',
+    styles: ['luxury', 'editorial', 'warm'],
+    tags: ['salon', 'hair', 'barber', 'spa', 'price list', 'menu', 'stylist levels', 'services', 'beauty'],
+    fonts: ['Gloock', 'Jost:wght@400;500'],
+    structure: ['Centered heading and intro', 'Header row: level name and experience', 'Rows: service name, duration, price per level', 'Pricing note and booking button'],
+    rationale: [
+      'Tiered pricing by stylist level is standard in salons but confusing in a long list; a table makes the trade-off between price and experience visible.',
+      'Durations under each service help clients plan, and help them pick the right appointment length.',
+      'A note that prices are starting points heads off surprises at checkout.',
+    ],
+    responsive: ['On phones each service becomes a block with the levels side by side, each labeled.'],
+    tokens: { font: 'Gloock / Jost', headingSize: 58, headingWeight: 400, headingLine: 1.05, bodySize: 17, text: '#2A1F24', muted: '#76666D', bg: '$background', accent: '$accent', radius: 0, maxWidth: 960, paddingY: 96 },
+    elementor: {
+      structure: ['Centered Heading (Gloock) and Text Editor.', 'Price Table: use the HTML widget with a plain table, or a container per row (Row: Heading + Text Editor on the left, three Text Editors right-aligned).', 'Row with Text Editor note and Button.'],
+      notes: ['Elementor’s Price List widget handles one price per item; for several levels, use a table or containers as above.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Services and prices'),
+      textarea('intro', 'Intro', 'Prices depend on your stylist’s experience. Every level trains with us for at least a year before taking clients.'),
+      list('levels', 'Stylist levels (up to 3)', [
+        { name: 'Stylist', experience: '1 to 3 years' },
+        { name: 'Senior', experience: '4 to 8 years' },
+        { name: 'Director', experience: '9+ years' },
+      ], [text('name', 'Level', ''), text('experience', 'Experience', '')], { min: 1, max: 3 }),
+      list('services', 'Services', [
+        { name: 'Cut and style', duration: '60 min', p1: 75, p2: 95, p3: 125 },
+        { name: 'Short cut or clipper cut', duration: '30 min', p1: 45, p2: 55, p3: 70 },
+        { name: 'Blowout', duration: '45 min', p1: 50, p2: 60, p3: 75 },
+        { name: 'Single-process colour', duration: '90 min', p1: 110, p2: 135, p3: 165 },
+        { name: 'Partial highlights', duration: '2 hr', p1: 160, p2: 195, p3: 240 },
+        { name: 'Colour correction', duration: 'Consultation first', p1: 0, p2: 0, p3: 300 },
+      ], [text('name', 'Service', ''), text('duration', 'Duration', ''), range('p1', 'Price, level 1 (0 = not offered)', 0, 0, 2000, 1), range('p2', 'Price, level 2', 0, 0, 2000, 1), range('p3', 'Price, level 3', 0, 0, 2000, 1)], { min: 1, max: 14 }),
+      select('currency', 'Currency', 'CAD', currencyOptions),
+      textarea('note', 'Pricing note', 'Prices are starting points for shoulder-length hair; longer or thicker hair may cost more. We confirm the price before we start.'),
+      text('ctaLabel', 'Button label', 'Book an appointment'),
+      url('ctaUrl', 'Button link', '/book'),
+      color('accent', 'Accent color', '#8C3B5A'),
+      color('background', 'Background', '#F7F2F3'),
       spacing('regular'),
     ],
   }),

@@ -1,0 +1,130 @@
+.banner-referral {
+  --ink: #1d1a2b;
+  --muted: #5f5a70;
+  --lp-focus: var(--ink);
+  --lp-btn-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: 'Sora', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.6);
+}
+
+.banner-referral .brf-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.9fr);
+  gap: 32px 48px;
+  align-items: center;
+  padding: 36px 44px;
+  border-radius: calc(var(--radius) * 2);
+  background: var(--bg);
+}
+
+.banner-referral h2 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.banner-referral .brf-swap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.banner-referral .brf-side {
+  display: grid;
+  justify-items: center;
+  min-width: 120px;
+  padding: 16px 18px;
+  border-radius: calc(var(--radius) * 1.25);
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 10px 24px -18px rgba(29, 26, 43, 0.5);
+}
+
+.banner-referral .brf-side + .brf-arrows + .brf-side {
+  background: var(--accent);
+  color: #fff;
+}
+
+.banner-referral .brf-amount {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.banner-referral .brf-label {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.35;
+  opacity: 0.8;
+}
+
+.banner-referral .brf-arrows svg {
+  width: 40px;
+  height: 24px;
+  color: var(--muted);
+}
+
+.banner-referral .brf-foot {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.banner-referral .brf-cta {
+  min-height: 50px;
+  padding-inline: 26px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 15.5px;
+}
+
+.banner-referral .brf-cta:hover {
+  background: color-mix(in srgb, var(--ink) 80%, var(--accent));
+}
+
+.banner-referral .brf-terms {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (max-width: 1023px) {
+  .banner-referral .brf-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .banner-referral .brf-foot {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 639px) {
+  .banner-referral .brf-card {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 28px 22px;
+  }
+  .banner-referral .brf-swap {
+    justify-content: center;
+  }
+  .banner-referral .brf-side {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 10px;
+  }
+  .banner-referral .brf-amount {
+    font-size: 26px;
+  }
+  .banner-referral .brf-arrows svg {
+    width: 30px;
+  }
+  .banner-referral .brf-cta {
+    width: 100%;
+  }
+  .banner-referral .brf-foot {
+    justify-items: stretch;
+  }
+}

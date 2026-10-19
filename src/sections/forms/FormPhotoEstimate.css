@@ -1,0 +1,276 @@
+.form-photo-estimate {
+  --ink: #1b1f1d;
+  --muted: #5d6662;
+  --line: #d6dbd8;
+  --field: #fff;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.form-photo-estimate .fpe-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.form-photo-estimate h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.form-photo-estimate .fpe-intro {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.form-photo-estimate .fpe-tips {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.form-photo-estimate .fpe-tips h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.form-photo-estimate .fpe-tips ul {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.form-photo-estimate .fpe-tips li {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding-left: 34px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.form-photo-estimate .fpe-tips li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+}
+
+.form-photo-estimate .fpe-tips li::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form-photo-estimate .fpe-tips span {
+  color: var(--muted);
+}
+
+.form-photo-estimate .fpe-form {
+  display: grid;
+  gap: 20px;
+  padding: 36px;
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+  box-shadow: 0 1px 0 var(--line), 0 30px 60px -40px rgba(27, 31, 29, 0.35);
+}
+
+.form-photo-estimate .fpe-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-photo-estimate .fpe-field > span,
+.form-photo-estimate .fpe-field legend {
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.form-photo-estimate legend {
+  margin-bottom: 8px;
+}
+
+.form-photo-estimate input[type='text'],
+.form-photo-estimate input[type='tel'],
+.form-photo-estimate input[type='email'],
+.form-photo-estimate textarea {
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--field);
+  font-size: 16px;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.form-photo-estimate textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.form-photo-estimate input:focus,
+.form-photo-estimate textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.form-photo-estimate ::placeholder {
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
+.form-photo-estimate .fpe-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-photo-estimate .fpe-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.form-photo-estimate .fpe-chips label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-photo-estimate .fpe-chips input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.form-photo-estimate .fpe-chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.form-photo-estimate .fpe-chips label:hover span {
+  border-color: var(--ink);
+}
+
+.form-photo-estimate .fpe-chips input:checked + span {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.form-photo-estimate .fpe-chips input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.form-photo-estimate .fpe-dropzone {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 24px 16px;
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 3%, #fff);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.form-photo-estimate .fpe-dropzone:hover,
+.form-photo-estimate .fpe-dropzone:focus-within {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, #fff);
+}
+
+.form-photo-estimate .fpe-dropzone svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+
+.form-photo-estimate .fpe-dropzone strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-photo-estimate .fpe-dropzone small {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* The real file input covers the drop zone, so clicking and dropping both work */
+.form-photo-estimate .fpe-dropzone input[type='file'] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form-photo-estimate .fpe-submit {
+  min-height: 54px;
+  margin-top: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 17px;
+}
+
+.form-photo-estimate .fpe-submit:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.form-photo-estimate .fpe-note {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 919px) {
+  .form-photo-estimate .fpe-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 559px) {
+  .form-photo-estimate .fpe-form {
+    padding: 24px 18px;
+  }
+  .form-photo-estimate .fpe-row {
+    grid-template-columns: 1fr;
+  }
+}
