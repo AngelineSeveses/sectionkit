@@ -1,0 +1,160 @@
+.portfolio-browser-cards {
+  --ink: #141219;
+  --muted: #5c5966;
+  --lp-focus: var(--ink);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.portfolio-browser-cards .pbc-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px 48px;
+  align-items: end;
+}
+
+.portfolio-browser-cards h2 {
+  font-size: clamp(32px, 4.4vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.portfolio-browser-cards .pbc-head p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.portfolio-browser-cards .pbc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.portfolio-browser-cards .pbc-grid a {
+  display: block;
+  text-decoration: none;
+}
+
+.portfolio-browser-cards .pbc-stage {
+  padding: 40px 40px 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 1.6);
+  background:
+    radial-gradient(circle at 85% 15%, color-mix(in srgb, #fff 30%, transparent) 0 12%, transparent 12.5%),
+    var(--tone);
+}
+
+.portfolio-browser-cards .pbc-browser {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background: #fff;
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.45);
+  transform: translateY(8px);
+  transition: transform 360ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-browser-cards .pbc-grid a:hover .pbc-browser {
+  transform: translateY(0);
+}
+
+.portfolio-browser-cards .pbc-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  background: #f1f1f4;
+}
+
+.portfolio-browser-cards .pbc-chrome i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d4d4da;
+}
+
+.portfolio-browser-cards .pbc-chrome span {
+  flex: 1;
+  max-width: 220px;
+  margin-left: 12px;
+  padding: 3px 10px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 11px;
+  color: #6b6b75;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.portfolio-browser-cards .pbc-browser img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.portfolio-browser-cards .pbc-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 4px 0;
+}
+
+.portfolio-browser-cards h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-browser-cards .pbc-tags {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.portfolio-browser-cards .pbc-result {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tone) 14%, #fff);
+  color: color-mix(in srgb, var(--tone) 70%, #000);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.portfolio-browser-cards .pbc-cta {
+  margin-top: 36px;
+  min-height: 50px;
+  padding-inline: 24px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 16px;
+}
+
+.portfolio-browser-cards .pbc-cta:hover {
+  background: #34313f;
+}
+
+@media (max-width: 859px) {
+  .portfolio-browser-cards .pbc-head,
+  .portfolio-browser-cards .pbc-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .portfolio-browser-cards .pbc-stage {
+    padding: 24px 20px 0;
+  }
+  .portfolio-browser-cards .pbc-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,148 @@
+.cta-gradient-band {
+  --ink: #120f1a;
+  --lp-focus: #fff;
+  --lp-btn-radius: 999px;
+  background: transparent;
+  font-family: 'Sora', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.cta-gradient-band .cgb-band {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 40px;
+  border-radius: calc(var(--radius) * 2.4);
+  background: linear-gradient(120deg, var(--c1) 0%, var(--c2) 55%, var(--c3) 100%);
+  color: #fff;
+  text-align: center;
+  isolation: isolate;
+}
+
+.cta-gradient-band .cgb-shape {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-gradient-band .cgb-s1 {
+  left: -80px;
+  top: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.28), transparent 70%);
+}
+
+.cta-gradient-band .cgb-s2 {
+  right: -60px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  border: 40px solid rgba(255, 255, 255, 0.12);
+}
+
+.cta-gradient-band .cgb-s3 {
+  right: 18%;
+  top: 28px;
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    -340px 180px 0 -4px rgba(255, 255, 255, 0.4),
+    -620px 40px 0 -8px rgba(255, 255, 255, 0.35);
+}
+
+.cta-gradient-band .cgb-content {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.cta-gradient-band h2 {
+  font-size: clamp(32px, 4.8vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.cta-gradient-band .cgb-text {
+  max-width: 540px;
+  margin: 18px auto 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-gradient-band .cgb-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.cta-gradient-band .cgb-actions .lp-btn {
+  min-height: 54px;
+  padding-inline: 28px;
+  font-size: 16.5px;
+}
+
+.cta-gradient-band .cgb-primary {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.35);
+}
+
+.cta-gradient-band .cgb-primary:hover {
+  background: color-mix(in srgb, #fff 90%, var(--c1));
+}
+
+.cta-gradient-band .cgb-secondary {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.cta-gradient-band .cgb-secondary:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.cta-gradient-band .cgb-trust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 28px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.cta-gradient-band .cgb-trust li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-gradient-band .cgb-trust li::before {
+  content: '';
+  width: 6px;
+  height: 10px;
+  margin-top: -3px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 639px) {
+  .cta-gradient-band .cgb-band {
+    padding: 56px 22px;
+    border-radius: calc(var(--radius) * 1.6);
+  }
+  .cta-gradient-band .cgb-actions .lp-btn {
+    flex: 1 1 100%;
+  }
+  .cta-gradient-band .cgb-trust {
+    flex-direction: column;
+    align-items: center;
+  }
+}
