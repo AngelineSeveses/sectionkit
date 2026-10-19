@@ -1,0 +1,220 @@
+.hero-zip-check {
+  --ink: #0d1a26;
+  --lp-focus: #fff;
+  --lp-btn-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Archivo', system-ui, sans-serif;
+  background: #13212e;
+}
+
+.hero-zip-check .hzc-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-zip-check::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 20, 30, 0.88) 0%, rgba(10, 20, 30, 0.7) 45%, rgba(10, 20, 30, 0.1) 100%);
+}
+
+.hero-zip-check .hzc-inner {
+  position: relative;
+  padding-block: calc(var(--lp-pad) * 1.1) calc(var(--lp-pad) * 1.3);
+}
+
+.hero-zip-check .hzc-copy {
+  max-width: 600px;
+}
+
+.hero-zip-check .hzc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--accent) 45%, #fff);
+}
+
+.hero-zip-check .hzc-eyebrow::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.hero-zip-check h1 {
+  margin-top: 16px;
+  font-size: clamp(38px, 5.4vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.hero-zip-check .hzc-sub {
+  margin-top: 18px;
+  max-width: 520px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-zip-check .hzc-form {
+  margin-top: 30px;
+  max-width: 520px;
+}
+
+.hero-zip-check .hzc-form label {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hero-zip-check .hzc-field {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-zip-check .hzc-field input {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.hero-zip-check .hzc-field input::placeholder {
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+  color: #7a8592;
+}
+
+.hero-zip-check .hzc-field:focus-within {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 60%, transparent), 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-zip-check .hzc-cta {
+  min-height: 52px;
+  padding-inline: 24px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.hero-zip-check .hzc-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
+.hero-zip-check .hzc-cta:focus-visible {
+  outline-color: var(--ink);
+}
+
+.hero-zip-check .hzc-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-zip-check .hzc-rating span {
+  letter-spacing: 2px;
+  color: #fbbf24;
+}
+
+.hero-zip-check .hzc-rating strong {
+  color: #fff;
+}
+
+.hero-zip-check .hzc-trust {
+  position: relative;
+  background: #fff;
+  color: var(--ink);
+}
+
+.hero-zip-check .hzc-trust ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hero-zip-check .hzc-trust li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px 22px 0;
+}
+
+.hero-zip-check .hzc-trust li + li {
+  padding-left: 24px;
+  border-left: 1px solid #e2e6eb;
+}
+
+.hero-zip-check .hzc-trust svg {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-zip-check .hzc-trust span {
+  display: grid;
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: #4b5866;
+}
+
+.hero-zip-check .hzc-trust strong {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+@media (max-width: 859px) {
+  .hero-zip-check::before {
+    background: linear-gradient(180deg, rgba(10, 20, 30, 0.8), rgba(10, 20, 30, 0.88));
+  }
+  .hero-zip-check .hzc-trust ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-zip-check .hzc-trust li,
+  .hero-zip-check .hzc-trust li + li {
+    padding: 16px 0;
+    border-left: 0;
+  }
+  .hero-zip-check .hzc-trust li + li {
+    border-top: 1px solid #e2e6eb;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-zip-check .hzc-field {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,106 @@
+.logos-review-platforms {
+  --ink: #141a22;
+  --muted: #5a6370;
+  --line: #e1e5ea;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.6);
+}
+
+.logos-review-platforms .lrp-inner {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) auto;
+  gap: 24px 40px;
+  align-items: center;
+}
+
+.logos-review-platforms h2 {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.logos-review-platforms .lrp-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.logos-review-platforms .lrp-list a {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.logos-review-platforms .lrp-list a:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  box-shadow: 0 10px 24px -18px rgba(20, 26, 34, 0.4);
+}
+
+.logos-review-platforms .lrp-name {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.logos-review-platforms .lrp-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logos-review-platforms .lrp-score strong {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.logos-review-platforms .lrp-stars {
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logos-review-platforms .lrp-stars-base {
+  color: #d9dde3;
+}
+
+.logos-review-platforms .lrp-stars-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #f5a623;
+}
+
+.logos-review-platforms .lrp-count {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.logos-review-platforms .lrp-link {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--accent);
+  white-space: nowrap;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1023px) {
+  .logos-review-platforms .lrp-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

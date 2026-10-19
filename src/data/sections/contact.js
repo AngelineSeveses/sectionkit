@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, image, color, list, radius, spacing, select } from '../fields'
+import { text, textarea, url, image, color, list, radius, spacing, select, range } from '../fields'
 import { img } from '../images'
 
 const channelIcons = ['sales', 'support', 'billing', 'press', 'partners'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
@@ -370,6 +370,52 @@ export default [
       ], [select('icon', 'Icon', 'phone', ['phone', 'text', 'email', 'visit'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) })), { group: 'content' }), text('title', 'Channel', ''), text('value', 'Number or address', ''), text('hours', 'Hours', ''), text('reply', 'Reply time', ''), color('color', 'Tile color', '#2563EB', { group: 'content' }), text('url', 'Link (tel:, sms:, mailto: or https:)', '#', { maxLength: 300 })], { min: 1, max: 6 }),
       color('background', 'Background', '#FFFFFF'),
       radius(12),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'contact-region-filter-009',
+    slug: 'locations-filter-by-region',
+    name: 'Locations with region filter',
+    description: 'A multi-location directory: pill filters for each province or state, and location cards with address, hours, a tap-to-call button and directions.',
+    category: 'contact',
+    file: 'contact/ContactRegionFilter',
+    addedAt: '2026-10-19',
+    industries: ['healthcare', 'finance', 'local-business', 'hospitality', 'home-services'],
+    goals: ['call-now', 'book-appointment', 'contact'],
+    audience: 'Customers of a multi-location business looking for the branch nearest them.',
+    markets: ['US', 'CA'],
+    layout: 'grid',
+    styles: ['professional', 'minimal'],
+    tags: ['locations', 'branches', 'clinics', 'directory', 'filter', 'provinces', 'states', 'directions'],
+    traits: ['css-interactive', 'sample-data'],
+    sampleContent: true,
+    fonts: ['Hanken Grotesk:wght@400;600;700'],
+    structure: ['Heading and intro', 'Region filter pills with an All option', 'Location cards: name, region tag, address, hours, call button, directions link'],
+    rationale: [
+      'Filtering by province or state gets people to their branch in one tap, without loading a map.',
+      'A call button on every card is the fastest next step for most visitors to a location page.',
+      'Hours on each card answer the most common reason people look up a location.',
+    ],
+    responsive: ['Cards flow into as many columns as fit (min 280px); filters wrap.'],
+    tokens: { font: 'Hanken Grotesk', headingSize: 46, headingWeight: 700, headingLine: 1.06, bodySize: 15.5, text: '#141B25', muted: '#586272', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Heading and Text Editor.', 'For many locations, use a Loop Grid of a “Locations” post type with a taxonomy filter (Elementor Pro Taxonomy Filter widget) for the regions.', 'Card template: Heading, pill Text Editor, Text Editors for address and hours, Button (tel:) and a text link to Google Maps.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Find a clinic near you'),
+      textarea('intro', 'Intro', 'Eleven physiotherapy clinics in three provinces and Washington State. Same-week appointments at most locations.'),
+      list('regions', 'Regions (up to 5)', [{ name: 'Ontario' }, { name: 'British Columbia' }, { name: 'Alberta' }, { name: 'Washington' }], [text('name', 'Region', '')], { min: 1, max: 5 }),
+      list('locations', 'Locations', [
+        { name: 'Toronto Midtown', region: 1, address: '2200 Yonge St, Suite 400\nToronto, ON M4S 2C6', hours: 'Mon to Fri 7 am–8 pm, Sat 9 am–2 pm', phone: '(416) 555-0110', phoneHref: 'tel:+14165550110', mapUrl: 'https://maps.google.com/?q=2200+Yonge+St+Toronto' },
+        { name: 'Ottawa Glebe', region: 1, address: '850 Bank St\nOttawa, ON K1S 3W2', hours: 'Mon to Fri 7 am–7 pm', phone: '(613) 555-0121', phoneHref: 'tel:+16135550121', mapUrl: 'https://maps.google.com/?q=850+Bank+St+Ottawa' },
+        { name: 'Vancouver Kitsilano', region: 2, address: '2150 W 4th Ave\nVancouver, BC V6K 1N6', hours: 'Mon to Sat 7 am–7 pm', phone: '(604) 555-0134', phoneHref: 'tel:+16045550134', mapUrl: 'https://maps.google.com/?q=2150+W+4th+Ave+Vancouver' },
+        { name: 'Calgary Beltline', region: 3, address: '1100 1st St SE\nCalgary, AB T2G 1B1', hours: 'Mon to Fri 6:30 am–7 pm', phone: '(403) 555-0145', phoneHref: 'tel:+14035550145', mapUrl: 'https://maps.google.com/?q=1100+1st+St+SE+Calgary' },
+        { name: 'Seattle Capitol Hill', region: 4, address: '1525 Broadway\nSeattle, WA 98122', hours: 'Mon to Fri 7 am–7 pm', phone: '(206) 555-0156', phoneHref: 'tel:+12065550156', mapUrl: 'https://maps.google.com/?q=1525+Broadway+Seattle' },
+      ], [text('name', 'Location', ''), range('region', 'Region (1–5)', 1, 1, 5, 1), textarea('address', 'Address', ''), text('hours', 'Hours', ''), text('phone', 'Phone', ''), url('phoneHref', 'Phone link', 'tel:'), url('mapUrl', 'Directions link', 'https://maps.google.com/')], { min: 1, max: 20 }),
+      color('accent', 'Accent color', '#0D7C66'),
+      color('background', 'Background', '#F4F7F6'),
+      radius(10),
       spacing('regular'),
     ],
   }),

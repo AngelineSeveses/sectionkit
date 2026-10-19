@@ -1,0 +1,177 @@
+.contact-region-filter {
+  --ink: #141b25;
+  --muted: #586272;
+  --line: #e0e4ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.contact-region-filter .clc-head {
+  max-width: 640px;
+}
+
+.contact-region-filter h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.contact-region-filter .clc-head p {
+  margin-top: 14px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.contact-region-filter .clc-wrap {
+  position: relative;
+  margin-top: 36px;
+}
+
+.contact-region-filter .clc-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.contact-region-filter .clc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact-region-filter .clc-filters label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.contact-region-filter .clc-filters label:hover {
+  border-color: var(--ink);
+}
+
+.contact-region-filter #clc-0:checked ~ .clc-filters label[for='clc-0'],
+.contact-region-filter #clc-1:checked ~ .clc-filters label[for='clc-1'],
+.contact-region-filter #clc-2:checked ~ .clc-filters label[for='clc-2'],
+.contact-region-filter #clc-3:checked ~ .clc-filters label[for='clc-3'],
+.contact-region-filter #clc-4:checked ~ .clc-filters label[for='clc-4'],
+.contact-region-filter #clc-5:checked ~ .clc-filters label[for='clc-5'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+}
+
+.contact-region-filter #clc-0:focus-visible ~ .clc-filters label[for='clc-0'],
+.contact-region-filter #clc-1:focus-visible ~ .clc-filters label[for='clc-1'],
+.contact-region-filter #clc-2:focus-visible ~ .clc-filters label[for='clc-2'],
+.contact-region-filter #clc-3:focus-visible ~ .clc-filters label[for='clc-3'],
+.contact-region-filter #clc-4:focus-visible ~ .clc-filters label[for='clc-4'],
+.contact-region-filter #clc-5:focus-visible ~ .clc-filters label[for='clc-5'] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Hide locations outside the chosen region */
+.contact-region-filter #clc-1:checked ~ .clc-list li:not([data-region='1']),
+.contact-region-filter #clc-2:checked ~ .clc-list li:not([data-region='2']),
+.contact-region-filter #clc-3:checked ~ .clc-list li:not([data-region='3']),
+.contact-region-filter #clc-4:checked ~ .clc-list li:not([data-region='4']),
+.contact-region-filter #clc-5:checked ~ .clc-list li:not([data-region='5']) {
+  display: none;
+}
+
+.contact-region-filter .clc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.contact-region-filter .clc-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.4);
+  background: #fff;
+}
+
+.contact-region-filter .clc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contact-region-filter h3 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.contact-region-filter .clc-tag {
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: color-mix(in srgb, var(--accent) 75%, #000);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.contact-region-filter .clc-addr {
+  margin-top: 8px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.contact-region-filter .clc-hours {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact-region-filter .clc-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.contact-region-filter .clc-call {
+  background: var(--accent);
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-region-filter .clc-call:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.contact-region-filter .clc-dir {
+  font-size: 15px;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 359px) {
+  .contact-region-filter .clc-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -22,33 +22,33 @@ at one width. In the browser console, `__qaReport()` lists horizontal overflow a
 
 ## What is in the library
 
-192 implemented sections across all 21 categories. The live count per category, against the
+212 implemented sections across all 21 categories. The live count per category, against the
 long-term target, is on the **Library coverage** page (Settings menu → Library coverage).
 
 | Category | Implemented | Target |
 | --- | ---: | ---: |
-| Navigation & headers | 9 | 25 |
-| Hero sections | 18 | 50 |
-| Logo bars & trust badges | 8 | 15 |
-| Benefits & features | 11 | 45 |
-| Products & services | 9 | 30 |
-| How it works | 8 | 20 |
-| Testimonials & reviews | 9 | 25 |
-| Case studies & results | 8 | 20 |
-| Portfolio & galleries | 8 | 20 |
-| Pricing & packages | 10 | 25 |
-| Comparison tables | 8 | 15 |
-| Lead-generation forms | 9 | 20 |
-| CTA sections | 10 | 25 |
-| FAQ sections | 8 | 15 |
-| Contact sections | 8 | 15 |
-| Statistics & metrics | 8 | 15 |
-| Team & company | 8 | 15 |
-| Industry-specific | 11 | 40 |
-| Blog & resources | 8 | 20 |
-| Footers | 8 | 15 |
+| Navigation & headers | 10 | 25 |
+| Hero sections | 19 | 50 |
+| Logo bars & trust badges | 9 | 15 |
+| Benefits & features | 12 | 45 |
+| Products & services | 10 | 30 |
+| How it works | 9 | 20 |
+| Testimonials & reviews | 10 | 25 |
+| Case studies & results | 9 | 20 |
+| Portfolio & galleries | 9 | 20 |
+| Pricing & packages | 11 | 25 |
+| Comparison tables | 9 | 15 |
+| Lead-generation forms | 10 | 20 |
+| CTA sections | 11 | 25 |
+| FAQ sections | 9 | 15 |
+| Contact sections | 9 | 15 |
+| Statistics & metrics | 9 | 15 |
+| Team & company | 9 | 15 |
+| Industry-specific | 12 | 40 |
+| Blog & resources | 9 | 20 |
+| Footers | 9 | 15 |
 | Banners, guarantees & offers | 8 | 15 |
-| **Total** | **192** | **485** |
+| **Total** | **212** | **485** |
 
 The original brief lists a total of 520, but its per-category targets add up to 485. The app uses
 the per-category numbers.

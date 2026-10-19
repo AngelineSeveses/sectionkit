@@ -1,5 +1,6 @@
 import { section } from '../define'
-import { text, textarea, url, color, range, list, radius, spacing, toggle } from '../fields'
+import { text, textarea, url, color, range, list, radius, spacing, toggle, image } from '../fields'
+import { img } from '../images'
 
 export default [
   section({
@@ -362,6 +363,50 @@ export default [
       text('source', 'Source note (optional)', 'Platform data, September 2025 to June 2026.'),
       color('background', 'Background', '#FFFFFF'),
       radius(12),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'stats-photo-band-009',
+    slug: 'stats-band-photo-background',
+    name: 'Stats band on a photo',
+    description: 'A full-bleed photo under a strong color overlay, with a centered statement and four big condensed figures separated by thin rules.',
+    category: 'stats',
+    file: 'stats/StatsPhotoBand',
+    addedAt: '2026-10-19',
+    industries: ['home-services', 'local-business', 'hospitality', 'b2b', 'professional-services'],
+    goals: ['learn-more', 'request-quote'],
+    audience: 'Visitors scrolling quickly who need a few numbers to anchor trust between longer sections.',
+    markets: ['US', 'CA'],
+    layout: 'full-bleed',
+    styles: ['bold', 'dark'],
+    tags: ['stats', 'numbers', 'counters', 'photo', 'band', 'overlay', 'experience', 'trust'],
+    traits: ['photography', 'dark-background', 'sample-data'],
+    sampleContent: true,
+    fonts: ['Oswald:wght@600', 'Archivo:wght@600;700'],
+    structure: ['Full-bleed photo with color overlay', 'Centered statement', 'Four figures with labels, separated by rules'],
+    rationale: [
+      'A photo band breaks up a long page and gives the numbers a real-world backdrop.',
+      'Big condensed figures in the accent color are readable at a glance while scrolling.',
+      'Four stats is the most people take in; more turns into noise.',
+    ],
+    responsive: ['Two by two below 768px.'],
+    tokens: { font: 'Oswald / Archivo', headingSize: 38, headingWeight: 700, headingLine: 1.15, bodySize: 16, text: '#FFFFFF', bg: '$overlay', accent: '$accent', radius: 0, maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Full-width container with a background image and a solid overlay (Background Overlay, opacity 0.8).', 'Centered Heading.', 'Row of four Counter widgets (number color $accent, Oswald), separated by 1px left borders.'],
+      notes: ['Elementor’s Counter widget can animate the numbers; keep the duration short and respect reduced motion.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Twenty-five years of keeping Phoenix cool'),
+      list('stats', 'Stats (up to 4)', [
+        { value: '25', label: 'years in business' },
+        { value: '41K', label: 'homes serviced' },
+        { value: '4.9', label: 'average Google rating' },
+        { value: '90 min', label: 'average emergency arrival' },
+      ], [text('value', 'Figure', '', { maxLength: 8 }), text('label', 'Label', '')], { min: 2, max: 4 }),
+      image('image', 'Background photo', img.cityStreet(1920, 900)),
+      color('overlay', 'Overlay color', '#0B2545'),
+      color('accent', 'Number color', '#FBBF24'),
       spacing('regular'),
     ],
   }),

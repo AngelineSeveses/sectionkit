@@ -1,0 +1,140 @@
+.showcase-service-areas {
+  --ink: #142030;
+  --muted: #566376;
+  --line: #dde3ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Public Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.showcase-service-areas .ssa-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 56px;
+  align-items: start;
+}
+
+.showcase-service-areas h2 {
+  font-size: clamp(30px, 3.8vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+.showcase-service-areas .ssa-intro {
+  margin-top: 14px;
+  max-width: 620px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.showcase-service-areas .ssa-regions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px 40px;
+  margin-top: 36px;
+}
+
+.showcase-service-areas .ssa-region h3 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.showcase-service-areas .ssa-region ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 16px;
+  margin-top: 12px;
+}
+
+.showcase-service-areas .ssa-region a {
+  display: block;
+  padding: 5px 0;
+  font-size: 15.5px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 140ms ease;
+}
+
+.showcase-service-areas .ssa-region a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.showcase-service-areas .ssa-aside {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--ink);
+  color: #fff;
+}
+
+.showcase-service-areas .ssa-aside svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.showcase-service-areas .ssa-aside h3 {
+  margin-top: 6px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.showcase-service-areas .ssa-aside p {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.showcase-service-areas .ssa-phone {
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.showcase-service-areas .ssa-phone:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.showcase-service-areas .ssa-cta {
+  min-height: 50px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+}
+
+.showcase-service-areas .ssa-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #fff);
+}
+
+.showcase-service-areas .ssa-aside a:focus-visible {
+  outline-color: #fff;
+}
+
+@media (max-width: 919px) {
+  .showcase-service-areas .ssa-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .showcase-service-areas .ssa-aside {
+    position: static;
+  }
+}

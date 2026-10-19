@@ -1,0 +1,222 @@
+.case-study-timeline {
+  --ink: #121826;
+  --muted: #566073;
+  --line: #dde2ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.case-study-timeline .cst-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px 48px;
+}
+
+.case-study-timeline .cst-head > div {
+  max-width: 680px;
+}
+
+.case-study-timeline .cst-client {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.case-study-timeline h2 {
+  margin-top: 10px;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.case-study-timeline .cst-intro {
+  margin-top: 14px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.case-study-timeline .cst-logo {
+  flex-shrink: 0;
+  padding: 14px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-family: 'IBM Plex Serif', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.case-study-timeline .cst-track {
+  display: grid;
+  grid-template-columns: repeat(var(--count), minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.case-study-timeline .cst-track li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px 0 0;
+}
+
+.case-study-timeline .cst-when {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.case-study-timeline .cst-dot {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 14px 0 20px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+/* Line from the first dot to the last: it ends one column width (less half a dot) from the right */
+.case-study-timeline .cst-track {
+  position: relative;
+}
+
+.case-study-timeline .cst-track::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: calc((100% - (var(--count) - 1) * 16px) / var(--count) - 8px);
+  top: 42px;
+  height: 2px;
+  background: var(--line);
+}
+
+.case-study-timeline .cst-dot {
+  z-index: 1;
+}
+
+.case-study-timeline .cst-track li[data-last='true'] .cst-dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.case-study-timeline .cst-value {
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.case-study-timeline li[data-last='true'] .cst-value {
+  color: var(--accent);
+}
+
+.case-study-timeline .cst-label {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.case-study-timeline .cst-note {
+  margin-top: 8px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.case-study-timeline .cst-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px 48px;
+  align-items: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.case-study-timeline blockquote {
+  margin: 0;
+}
+
+.case-study-timeline blockquote p {
+  font-family: 'IBM Plex Serif', Georgia, serif;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.45;
+}
+
+.case-study-timeline blockquote footer {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.case-study-timeline blockquote strong {
+  color: var(--ink);
+}
+
+.case-study-timeline .cst-cta {
+  min-height: 52px;
+  padding-inline: 26px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+}
+
+.case-study-timeline .cst-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
+@media (max-width: 899px) {
+  .case-study-timeline .cst-head {
+    flex-direction: column;
+  }
+  .case-study-timeline .cst-track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .case-study-timeline .cst-track li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 14px;
+    padding-bottom: 28px;
+  }
+  .case-study-timeline .cst-when,
+  .case-study-timeline .cst-value,
+  .case-study-timeline .cst-label,
+  .case-study-timeline .cst-note {
+    grid-column: 2;
+  }
+  .case-study-timeline .cst-dot {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    margin: 2px 0 0;
+  }
+  .case-study-timeline .cst-track::before {
+    display: none;
+  }
+  .case-study-timeline .cst-track li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line);
+  }
+  .case-study-timeline .cst-value {
+    margin-top: 4px;
+  }
+  .case-study-timeline .cst-foot {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

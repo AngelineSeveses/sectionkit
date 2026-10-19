@@ -1,0 +1,218 @@
+.home-value-lookup {
+  --ink: #15191f;
+  --muted: #5b626c;
+  --line: #dfe3e8;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.home-value-lookup .hvl-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.home-value-lookup h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(36px, 4.8vw, 60px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.home-value-lookup .hvl-text {
+  margin-top: 16px;
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.home-value-lookup .hvl-form {
+  margin-top: 30px;
+}
+
+.home-value-lookup .hvl-form label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.home-value-lookup .hvl-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px 6px 6px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 16px 32px -24px rgba(21, 25, 31, 0.45);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.home-value-lookup .hvl-field:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.home-value-lookup .hvl-field svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+.home-value-lookup .hvl-field input {
+  flex: 1;
+  min-width: 0;
+  min-height: 50px;
+  border: 0;
+  background: transparent;
+  font-size: 16.5px;
+  outline: none;
+}
+
+.home-value-lookup .hvl-cta {
+  min-height: 50px;
+  padding-inline: 22px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.home-value-lookup .hvl-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
+.home-value-lookup .hvl-steps {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.home-value-lookup .hvl-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;
+}
+
+.home-value-lookup .hvl-steps span {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.home-value-lookup .hvl-visual {
+  position: relative;
+  padding: 0 24px 40px 0;
+}
+
+.home-value-lookup .hvl-house {
+  width: 100%;
+  aspect-ratio: 9 / 10;
+  object-fit: cover;
+  border-radius: calc(var(--radius) * 2);
+}
+
+.home-value-lookup .hvl-agent {
+  position: absolute;
+  left: -28px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px 12px 12px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 20px 40px -20px rgba(21, 25, 31, 0.45);
+}
+
+.home-value-lookup .hvl-agent img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-value-lookup .hvl-agent div {
+  display: grid;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.home-value-lookup .hvl-agent strong {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.home-value-lookup .hvl-sold {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  display: grid;
+  padding: 16px 20px;
+  border-radius: calc(var(--radius) * 1.4);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 20px 40px -20px rgba(21, 25, 31, 0.5);
+}
+
+.home-value-lookup .hvl-sold strong {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.home-value-lookup .hvl-sold span {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+@media (max-width: 919px) {
+  .home-value-lookup .hvl-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .home-value-lookup .hvl-visual {
+    max-width: 520px;
+    padding-right: 0;
+  }
+  .home-value-lookup .hvl-agent {
+    left: 16px;
+  }
+  .home-value-lookup .hvl-sold {
+    right: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-value-lookup .hvl-field {
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+  .home-value-lookup .hvl-field svg {
+    margin-left: 8px;
+  }
+  .home-value-lookup .hvl-cta {
+    width: 100%;
+  }
+}

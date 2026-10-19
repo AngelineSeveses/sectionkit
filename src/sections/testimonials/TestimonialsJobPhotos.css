@@ -1,0 +1,162 @@
+.testimonials-job-photos {
+  --ink: #141b24;
+  --muted: #57616e;
+  --line: #e1e5ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.testimonials-job-photos .tjp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px 48px;
+}
+
+.testimonials-job-photos .tjp-head > div {
+  max-width: 620px;
+}
+
+.testimonials-job-photos h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.testimonials-job-photos .tjp-head p {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.testimonials-job-photos .tjp-score {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.testimonials-job-photos .tjp-score strong {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.testimonials-job-photos .tjp-score > span {
+  display: grid;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.testimonials-job-photos .tjp-stars,
+.testimonials-job-photos .tjp-stars-sm {
+  letter-spacing: 2px;
+  color: #f5a623;
+}
+
+.testimonials-job-photos .tjp-stars {
+  font-size: 18px;
+}
+
+.testimonials-job-photos .tjp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.testimonials-job-photos .tjp-grid > li {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 1.4);
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 20px 40px -32px rgba(20, 27, 36, 0.4);
+}
+
+.testimonials-job-photos figure {
+  position: relative;
+  margin: 0;
+}
+
+.testimonials-job-photos figure img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.testimonials-job-photos figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.testimonials-job-photos .tjp-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px 22px 22px;
+}
+
+.testimonials-job-photos .tjp-stars-sm {
+  font-size: 15px;
+}
+
+.testimonials-job-photos blockquote {
+  flex: 1;
+  margin: 10px 0 0;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.testimonials-job-photos .tjp-who {
+  display: grid;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.testimonials-job-photos .tjp-who span {
+  color: var(--muted);
+}
+
+.testimonials-job-photos .tjp-link {
+  margin-top: 32px;
+  border-color: var(--ink);
+  font-size: 16px;
+}
+
+.testimonials-job-photos .tjp-link:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+@media (max-width: 959px) {
+  .testimonials-job-photos .tjp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .testimonials-job-photos .tjp-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

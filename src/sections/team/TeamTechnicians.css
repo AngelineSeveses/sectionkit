@@ -1,0 +1,139 @@
+.team-technicians {
+  --ink: #121b26;
+  --muted: #56616f;
+  --line: #e0e5ea;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.team-technicians .ttc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px 48px;
+}
+
+.team-technicians .ttc-head > div {
+  max-width: 620px;
+}
+
+.team-technicians h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.team-technicians .ttc-head p:not(.ttc-badge) {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.team-technicians .ttc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 10%, #fff);
+  color: color-mix(in srgb, var(--accent) 75%, #000);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.team-technicians .ttc-badge svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.team-technicians .ttc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.team-technicians .ttc-grid > li {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 1.4);
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.team-technicians .ttc-photo {
+  position: relative;
+}
+
+.team-technicians .ttc-photo img {
+  width: 100%;
+  aspect-ratio: 12 / 13;
+  object-fit: cover;
+}
+
+.team-technicians .ttc-years {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.team-technicians .ttc-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+}
+
+.team-technicians h3 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.team-technicians .ttc-role {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.team-technicians .ttc-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.team-technicians .ttc-certs li {
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: #f0f3f6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.team-technicians .ttc-quote {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 15.5px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--muted);
+}
