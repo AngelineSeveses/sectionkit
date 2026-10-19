@@ -1,0 +1,177 @@
+.salon-price-menu {
+  --ink: #2a1f24;
+  --muted: #76666d;
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  --lp-focus: var(--ink);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Jost', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.salon-price-menu .spm-inner {
+  max-width: 960px;
+}
+
+.salon-price-menu .spm-head {
+  text-align: center;
+}
+
+.salon-price-menu h2 {
+  font-family: 'Gloock', Georgia, serif;
+  font-size: clamp(36px, 4.6vw, 58px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.salon-price-menu .spm-head p {
+  max-width: 560px;
+  margin: 14px auto 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.salon-price-menu .spm-table {
+  width: 100%;
+  margin-top: 48px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.salon-price-menu .spm-table th,
+.salon-price-menu .spm-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  vertical-align: baseline;
+}
+
+.salon-price-menu .spm-table th:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.salon-price-menu .spm-table tr > :last-child {
+  padding-right: 0;
+}
+
+.salon-price-menu thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--ink);
+}
+
+.salon-price-menu .spm-level {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.salon-price-menu .spm-exp {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.salon-price-menu tbody th {
+  font-weight: 400;
+}
+
+.salon-price-menu .spm-service {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.salon-price-menu .spm-time {
+  display: block;
+  margin-top: 2px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.salon-price-menu tbody td {
+  width: calc(56% / var(--cols));
+  font-size: 17px;
+}
+
+.salon-price-menu tbody td:last-child {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.salon-price-menu .spm-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 28px;
+}
+
+.salon-price-menu .spm-foot p {
+  max-width: 520px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.salon-price-menu .spm-cta {
+  min-height: 50px;
+  padding-inline: 28px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.salon-price-menu .spm-cta:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Phones: each service becomes a block with the levels in a row */
+@media (max-width: 599px) {
+  .salon-price-menu .spm-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .salon-price-menu .spm-table,
+  .salon-price-menu .spm-table tbody {
+    display: block;
+  }
+  .salon-price-menu .spm-table tr {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    gap: 8px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .salon-price-menu .spm-table tbody th {
+    grid-column: 1 / -1;
+  }
+  .salon-price-menu .spm-table th,
+  .salon-price-menu .spm-table td {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: 0;
+    text-align: left;
+  }
+  .salon-price-menu tbody td::before {
+    content: attr(data-level);
+    display: block;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .salon-price-menu .spm-cta {
+    width: 100%;
+  }
+}

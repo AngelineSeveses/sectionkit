@@ -1,0 +1,94 @@
+.stats-sparklines {
+  --ink: #16191f;
+  --muted: #5e6470;
+  --line: #e3e6eb;
+  --good: #16794a;
+  --bad: #b42318;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Geist', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.stats-sparklines .ssp-head {
+  max-width: 620px;
+}
+
+.stats-sparklines h2 {
+  font-size: clamp(30px, 3.6vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.stats-sparklines .ssp-head p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.stats-sparklines .ssp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.stats-sparklines .ssp-grid li {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  padding: 22px 22px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.stats-sparklines .ssp-label {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.stats-sparklines .ssp-value {
+  margin-top: 8px;
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-sparklines .ssp-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--good);
+}
+
+.stats-sparklines li[data-good='false'] .ssp-change {
+  color: var(--bad);
+}
+
+.stats-sparklines .ssp-spark {
+  align-self: end;
+  width: calc(100% + 44px);
+  height: 64px;
+  margin: 18px -22px 0;
+}
+
+.stats-sparklines .ssp-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.stats-sparklines .ssp-area {
+  fill: color-mix(in srgb, var(--accent) 12%, transparent);
+}

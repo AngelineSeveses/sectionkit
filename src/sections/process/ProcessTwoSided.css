@@ -1,0 +1,206 @@
+.process-two-sided {
+  --ink: #18202b;
+  --muted: #5d6675;
+  --line: #e1e5ec;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.process-two-sided .pts2-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.process-two-sided h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.process-two-sided .pts2-head p {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.process-two-sided .pts2-body {
+  position: relative;
+}
+
+.process-two-sided .pts2-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.process-two-sided .pts2-switch {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: min(100%, 420px);
+  padding: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
+.process-two-sided .pts2-switch label {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.process-two-sided .pts2-thumb {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(24, 32, 43, 0.14);
+  transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.process-two-sided #pts2-b:checked ~ .pts2-switch .pts2-thumb {
+  transform: translateX(100%);
+}
+
+.process-two-sided #pts2-a:checked ~ .pts2-switch label[for='pts2-a'],
+.process-two-sided #pts2-b:checked ~ .pts2-switch label[for='pts2-b'] {
+  color: var(--ink);
+}
+
+.process-two-sided #pts2-a:focus-visible ~ .pts2-switch label[for='pts2-a'],
+.process-two-sided #pts2-b:focus-visible ~ .pts2-switch label[for='pts2-b'] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.process-two-sided .pts2-card {
+  margin-top: 20px;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+}
+
+.process-two-sided .pts2-panel {
+  display: none;
+}
+
+.process-two-sided #pts2-a:checked ~ .pts2-card .pts2-panel[data-slot='a'],
+.process-two-sided #pts2-b:checked ~ .pts2-card .pts2-panel[data-slot='b'] {
+  display: block;
+  animation: pts2-in 260ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes pts2-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+.process-two-sided .pts2-panel ol {
+  display: grid;
+}
+
+.process-two-sided .pts2-panel li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 18px;
+  padding-bottom: 28px;
+}
+
+/* Connector between step numbers */
+.process-two-sided .pts2-panel li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 40px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.process-two-sided .pts2-num {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.process-two-sided h3 {
+  padding-top: 6px;
+  font-size: 17.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.process-two-sided .pts2-panel li p {
+  margin-top: 6px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.process-two-sided .pts2-cta {
+  margin-top: 4px;
+  margin-left: 54px;
+  min-height: 48px;
+  padding-inline: 24px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.process-two-sided .pts2-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+@media (max-width: 899px) {
+  .process-two-sided .pts2-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 479px) {
+  .process-two-sided .pts2-card {
+    padding: 24px 20px;
+  }
+  .process-two-sided .pts2-panel li {
+    gap: 14px;
+  }
+  .process-two-sided .pts2-cta {
+    margin-left: 0;
+    width: 100%;
+  }
+}

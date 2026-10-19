@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, range, list, radius, spacing } from '../fields'
+import { text, textarea, url, color, range, list, radius, spacing, toggle } from '../fields'
 
 export default [
   section({
@@ -223,6 +223,52 @@ export default [
       ], [text('year', 'Year', ''), text('value', 'Figure', ''), text('label', 'Label', '')], { min: 2, max: 6 }),
       color('accent', 'Accent color', '#9A3412'),
       color('background', 'Background', '#F6F1E9'),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'stats-sparklines-006',
+    slug: 'metric-cards-sparklines',
+    name: 'Metric cards with sparklines',
+    description: 'A row of metric cards, each with its latest value, the change over the period in green or red, and a small trend line drawn from the same numbers.',
+    category: 'stats',
+    file: 'stats/StatsSparklines',
+    addedAt: '2026-10-19',
+    industries: ['saas', 'finance', 'b2b', 'agency', 'healthcare'],
+    goals: ['learn-more', 'book-demo'],
+    audience: 'Analytical buyers who trust a trend more than a single big number.',
+    markets: ['US', 'CA'],
+    layout: 'grid',
+    styles: ['technical', 'minimal'],
+    tags: ['stats', 'metrics', 'sparkline', 'trend', 'chart', 'kpi', 'results', 'growth'],
+    traits: ['sample-data'],
+    sampleContent: true,
+    fonts: ['Geist:wght@400;500;600'],
+    structure: ['Heading and intro', 'Metric cards: label, latest value, change and period, trend line'],
+    rationale: [
+      'A trend line shows that a result held up over time, which a single figure cannot.',
+      'Value, change and line are all computed from one list of numbers, so nothing can be cherry-picked by accident.',
+      'Metrics where lower is better, like wait time or cost, can flip the colors so a drop reads as good.',
+    ],
+    responsive: ['Cards flow into as many columns as fit (min 240px).'],
+    tokens: { font: 'Geist', headingSize: 42, headingWeight: 600, headingLine: 1.1, bodySize: 14.5, text: '#16191F', muted: '#5E6470', bg: '$background', accent: '$accent', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Heading and Text Editor.', 'Grid container (auto-fit, min 240px) of bordered cards: Text Editor (label), Heading (value), Text Editor (change, green or red), and an Image or HTML widget with the sparkline SVG at the bottom, full bleed.'],
+      notes: ['Copy each sparkline from the HTML tab as an inline SVG. Elementor has no built-in sparkline widget.', 'Change is calculated from the first and last number in each series. Use real figures and say what period they cover.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'A year of results across 140 clinics'),
+      textarea('intro', 'Intro', 'Monthly averages from clinics that switched to online booking and automated reminders in 2025.'),
+      list('metrics', 'Metrics', [
+        { label: 'Online bookings per clinic', prefix: '', suffix: '', series: '212, 230, 251, 249, 278, 301, 296, 322, 340, 351, 368, 384', lowerIsBetter: false },
+        { label: 'No-show rate', prefix: '', suffix: '%', series: '11.2, 10.8, 9.9, 9.4, 8.7, 8.1, 8.3, 7.6, 7.2, 6.9, 6.6, 6.4', lowerIsBetter: true },
+        { label: 'Average wait for a new patient', prefix: '', suffix: ' days', series: '9, 9, 8, 8, 7, 7, 6, 6, 6, 5, 5, 4', lowerIsBetter: true },
+        { label: 'Front-desk calls per day', prefix: '', suffix: '', series: '64, 62, 59, 55, 54, 50, 47, 46, 44, 41, 40, 38', lowerIsBetter: true },
+      ], [text('label', 'Label', ''), text('prefix', 'Prefix (e.g. $)', '', { maxLength: 4 }), text('suffix', 'Suffix (e.g. %)', '', { maxLength: 8 }), textarea('series', 'Numbers, oldest first (comma separated)', ''), toggle('lowerIsBetter', 'Lower is better', false)], { min: 1, max: 6 }),
+      text('period', 'Period label', 'over 12 months'),
+      color('accent', 'Line color', '#2563EB'),
+      color('background', 'Background', '#F5F6F8'),
+      radius(12),
       spacing('regular'),
     ],
   }),

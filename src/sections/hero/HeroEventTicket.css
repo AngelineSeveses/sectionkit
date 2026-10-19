@@ -1,0 +1,262 @@
+.hero-event-ticket {
+  --ink: #14231c;
+  --muted: #4f5e56;
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  --lp-focus: var(--ink);
+  --lp-btn-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+  overflow: hidden;
+}
+
+.hero-event-ticket .het-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-event-ticket .het-edition {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-event-ticket .het-edition::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+}
+
+.hero-event-ticket h1 {
+  margin-top: 20px;
+  font-family: 'Unbounded', 'Inter', sans-serif;
+  font-size: clamp(38px, 5.4vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.hero-event-ticket .het-intro {
+  margin-top: 22px;
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-event-ticket .het-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-event-ticket .het-actions .lp-btn {
+  min-height: 52px;
+  padding-inline: 26px;
+  font-size: 16px;
+}
+
+.hero-event-ticket .het-primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.hero-event-ticket .het-primary:hover {
+  background: var(--accent);
+}
+
+.hero-event-ticket .het-secondary {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.hero-event-ticket .het-secondary:hover {
+  border-color: var(--ink);
+}
+
+.hero-event-ticket .het-speakers {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.hero-event-ticket .het-speakers ul {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.hero-event-ticket .het-speakers li + li {
+  margin-left: -12px;
+}
+
+.hero-event-ticket .het-speakers img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg);
+}
+
+.hero-event-ticket .het-speakers p {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* Ticket */
+.hero-event-ticket .het-ticket {
+  position: relative;
+  display: grid;
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+  box-shadow:
+    0 1px 0 var(--line),
+    0 40px 60px -40px color-mix(in srgb, var(--ink) 45%, transparent);
+  transform: rotate(2deg);
+}
+
+.hero-event-ticket .het-ticket-main {
+  padding: 32px 32px 28px;
+}
+
+.hero-event-ticket .het-facts {
+  display: grid;
+  gap: 20px;
+}
+
+.hero-event-ticket .het-facts dt {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.hero-event-ticket .het-facts dd {
+  margin-top: 4px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.hero-event-ticket .het-facts dd span {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.hero-event-ticket .het-when dd {
+  font-family: 'Unbounded', 'Inter', sans-serif;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+
+.hero-event-ticket .het-ticket-stub {
+  position: relative;
+  padding: 26px 32px 30px;
+  border-top: 2px dashed var(--line);
+  background: color-mix(in srgb, var(--accent) 7%, #fff);
+  border-radius: 0 0 calc(var(--radius) * 1.5) calc(var(--radius) * 1.5);
+}
+
+/* Notches cut into the ticket at the perforation */
+.hero-event-ticket .het-ticket-stub::before,
+.hero-event-ticket .het-ticket-stub::after {
+  content: '';
+  position: absolute;
+  top: -13px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.hero-event-ticket .het-ticket-stub::before {
+  left: -12px;
+}
+
+.hero-event-ticket .het-ticket-stub::after {
+  right: -12px;
+}
+
+.hero-event-ticket .het-pass {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-event-ticket .het-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  margin-top: 6px;
+}
+
+.hero-event-ticket .het-price strong {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-event-ticket .het-price > span {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.hero-event-ticket .het-price s {
+  color: var(--muted);
+}
+
+.hero-event-ticket .het-save {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-event-ticket .het-note {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (max-width: 919px) {
+  .hero-event-ticket .het-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+  .hero-event-ticket .het-ticket {
+    max-width: 440px;
+    transform: rotate(1deg);
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-event-ticket .het-ticket {
+    transform: none;
+  }
+  .hero-event-ticket .het-ticket-main,
+  .hero-event-ticket .het-ticket-stub {
+    padding-inline: 22px;
+  }
+  .hero-event-ticket .het-speakers {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

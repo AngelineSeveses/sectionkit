@@ -1,0 +1,354 @@
+.features-annotated {
+  --ink: #161a22;
+  --muted: #5b6170;
+  --line: #e2e5eb;
+  --lp-focus: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Figtree', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.features-annotated .fan-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.features-annotated h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.features-annotated .fan-intro {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.features-annotated .fan-legend {
+  display: grid;
+  gap: 4px;
+  margin-top: 32px;
+}
+
+.features-annotated .fan-legend li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 14px;
+  padding: 14px 16px 14px 12px;
+  margin-inline: -12px -16px;
+  border-radius: var(--radius);
+  transition: background-color 160ms ease;
+}
+
+.features-annotated .fan-legend li:hover {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.features-annotated .fan-num {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.features-annotated h3 {
+  padding-top: 3px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.features-annotated .fan-legend p {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Product mock: 1em = 1/64 of the stage width */
+.features-annotated .fan-figure {
+  margin: 0;
+  container-type: inline-size;
+}
+
+.features-annotated .fan-stage {
+  --u: calc(100cqw / 64);
+  position: relative;
+  font-size: var(--u);
+}
+
+.features-annotated .fan-app {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.4em;
+  background: #f6f7f9;
+  box-shadow: 0 3em 6em -3em rgba(22, 26, 34, 0.28);
+  font-size: 1em;
+  color: var(--ink);
+}
+
+.features-annotated .fan-top {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  height: 5em;
+  padding: 0 2.4em;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  font-size: 1em;
+}
+
+.features-annotated .fan-top strong {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.features-annotated .fan-logo {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 0.6em;
+  background: var(--accent);
+}
+
+.features-annotated .fan-search {
+  flex: 1;
+  max-width: 22em;
+  height: 2.8em;
+  margin-left: auto;
+  border-radius: 0.8em;
+  background: #f0f2f5;
+}
+
+.features-annotated .fan-avatar {
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 50%;
+  background: #d9dde4;
+}
+
+.features-annotated .fan-body {
+  display: grid;
+  grid-template-columns: 1fr 20em;
+  gap: 2em;
+  padding: 2.4em;
+}
+
+.features-annotated .fan-invoice,
+.features-annotated .fan-card {
+  border: 1px solid var(--line);
+  border-radius: 1em;
+  background: #fff;
+}
+
+.features-annotated .fan-invoice {
+  padding: 2.4em;
+}
+
+.features-annotated small {
+  display: block;
+  font-size: 1.15em;
+  color: var(--muted);
+}
+
+.features-annotated .fan-inv-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.features-annotated .fan-inv-head b {
+  display: block;
+  margin-top: 0.3em;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.features-annotated .fan-pill {
+  padding: 0.5em 1em;
+  border-radius: 99em;
+  background: #e3f5ea;
+  color: #17723f;
+  font-size: 1.15em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.features-annotated .fan-amount {
+  margin-top: 1.2em;
+  font-size: 3.6em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.features-annotated .fan-lines {
+  margin-top: 1.6em;
+}
+
+.features-annotated .fan-lines p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.9em 0;
+  border-top: 1px solid var(--line);
+  font-size: 1.25em;
+  font-variant-numeric: tabular-nums;
+}
+
+.features-annotated .fan-lines .fan-tax {
+  color: var(--muted);
+}
+
+.features-annotated .fan-lines .fan-total {
+  font-weight: 700;
+}
+
+.features-annotated .fan-side {
+  display: grid;
+  gap: 1.6em;
+  align-content: start;
+}
+
+.features-annotated .fan-card {
+  display: grid;
+  gap: 1em;
+  padding: 1.8em;
+}
+
+.features-annotated .fan-card p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8em;
+  font-size: 1.2em;
+}
+
+.features-annotated .fan-toggle {
+  flex-shrink: 0;
+  position: relative;
+  width: 2.6em;
+  height: 1.5em;
+  border-radius: 99em;
+  background: var(--accent);
+}
+
+.features-annotated .fan-toggle::after {
+  content: '';
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.features-annotated .fan-toggle.is-off {
+  background: #d4d8df;
+}
+
+.features-annotated .fan-toggle.is-off::after {
+  right: auto;
+  left: 0.2em;
+}
+
+.features-annotated .fan-link {
+  height: 2.8em;
+  border-radius: 0.7em;
+  background: #f0f2f5;
+}
+
+.features-annotated .fan-btn {
+  display: grid;
+  place-items: center;
+  height: 3.2em;
+  border-radius: 0.7em;
+  background: var(--ink);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+/* Numbered markers, positioned in em so they track the mock */
+.features-annotated .fan-spot {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: max(26px, calc(var(--u) * 3));
+  height: max(26px, calc(var(--u) * 3));
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: max(13px, calc(var(--u) * 1.4));
+  font-weight: 700;
+  box-shadow:
+    0 0 0 max(4px, calc(var(--u) * 0.5)) color-mix(in srgb, var(--accent) 25%, transparent),
+    0 4px 10px -3px rgba(22, 26, 34, 0.4);
+  transform: translate(-50%, -50%);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.features-annotated .fan-spot[data-slot='1'] {
+  left: calc(var(--u) * 37.4);
+  top: calc(var(--u) * 9.6);
+}
+
+.features-annotated .fan-spot[data-slot='2'] {
+  left: calc(var(--u) * 2.4);
+  top: calc(var(--u) * 36);
+}
+
+.features-annotated .fan-spot[data-slot='3'] {
+  left: calc(var(--u) * 61.6);
+  top: calc(var(--u) * 7.4);
+}
+
+.features-annotated .fan-spot[data-slot='4'] {
+  left: calc(var(--u) * 41.6);
+  top: calc(var(--u) * 27);
+}
+
+/* Hovering a list item enlarges its marker */
+.features-annotated .fan-grid:has(.fan-legend li[data-slot='1']:hover) .fan-spot[data-slot='1'],
+.features-annotated .fan-grid:has(.fan-legend li[data-slot='2']:hover) .fan-spot[data-slot='2'],
+.features-annotated .fan-grid:has(.fan-legend li[data-slot='3']:hover) .fan-spot[data-slot='3'],
+.features-annotated .fan-grid:has(.fan-legend li[data-slot='4']:hover) .fan-spot[data-slot='4'] {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+@media (max-width: 959px) {
+  .features-annotated .fan-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  /* Heading and intro, then the mock, then the numbered list */
+  .features-annotated .fan-copy {
+    display: contents;
+  }
+  .features-annotated .fan-figure {
+    order: 1;
+    margin-top: 36px;
+  }
+  .features-annotated .fan-legend {
+    order: 2;
+  }
+}
+
+@media (max-width: 479px) {
+  .features-annotated .fan-figure {
+    margin-inline: -4px;
+  }
+}

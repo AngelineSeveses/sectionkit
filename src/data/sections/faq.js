@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, toggle, list, radius, spacing, image } from '../fields'
+import { text, textarea, url, color, toggle, list, radius, spacing, image, range } from '../fields'
 import { img } from '../images'
 
 const qa = (question, answer) => ({ question, answer })
@@ -237,6 +237,58 @@ export default [
       url('ctaUrl', 'Button link', '/contact'),
       color('accent', 'Bubble color', '#C2410C'),
       color('background', 'Background', '#FBF6F0'),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'faq-tabs-006',
+    slug: 'faq-topic-tabs',
+    name: 'FAQ with topic tabs',
+    description: 'Centered heading, pill tabs for up to four topics with question counts, and a two-column grid of expandable question cards for the chosen topic.',
+    category: 'faq',
+    file: 'faq/FaqTabs',
+    addedAt: '2026-10-19',
+    industries: ['ecommerce', 'saas', 'education', 'hospitality', 'healthcare'],
+    goals: ['learn-more', 'contact', 'purchase'],
+    audience: 'Visitors with a specific question who want to skip everything that does not apply to them.',
+    markets: ['US', 'CA'],
+    layout: 'grid',
+    styles: ['friendly', 'minimal'],
+    tags: ['faq', 'tabs', 'topics', 'questions', 'accordion', 'help', 'shipping', 'returns'],
+    traits: ['css-interactive'],
+    fonts: ['Mulish:wght@400;700;800'],
+    structure: ['Centered heading and intro', 'Topic tabs with counts', 'Two-column grid of question cards (details/summary)', 'Contact line'],
+    rationale: [
+      'Tabs cut a long FAQ to the handful of questions that matter for the visitor’s topic.',
+      'Counts on each tab show how much is behind it, so nothing feels hidden.',
+      'Two columns of short cards keep more questions above the fold than a single long accordion.',
+    ],
+    responsive: ['Cards drop to one column below 760px; tabs wrap and align left.'],
+    tokens: { font: 'Mulish', headingSize: 44, headingWeight: 800, headingLine: 1.1, bodySize: 15.5, text: '#1E1B26', muted: '#625D6E', bg: '$background', accent: '$accent', radius: '$radius', maxWidth: 1000, paddingY: 96 },
+    elementor: {
+      structure: ['Centered Heading and Text Editor.', 'Tabs widget (horizontal, centered), with titles styled as pills.', 'In each tab: a two-column container of Accordion or Toggle widgets (one item each) so they open independently.', 'Text Editor with a link at the bottom.'],
+      notes: ['Elementor’s Tabs cannot show counts automatically; type them into the tab titles if you want them.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Questions, sorted'),
+      textarea('intro', 'Intro', 'Pick a topic. If your question isn’t here, our team answers email seven days a week.'),
+      list('topics', 'Topics (up to 4)', [{ label: 'Orders' }, { label: 'Shipping' }, { label: 'Returns' }], [text('label', 'Topic', '')], { min: 1, max: 4 }),
+      list('items', 'Questions', [
+        { topic: 1, question: 'Can I change my order after placing it?', answer: 'Yes, within two hours. Use the link in your confirmation email, or reply to it and we will update it for you.' },
+        { topic: 1, question: 'Do you offer gift wrapping?', answer: 'Every order can be gift wrapped for $5. Prices are left off the packing slip.' },
+        { topic: 1, question: 'Which payment methods do you accept?', answer: 'Visa, Mastercard, American Express, Apple Pay, Google Pay and PayPal.' },
+        { topic: 2, question: 'How long does shipping take?', answer: '2 to 5 business days across Canada and the continental US. Orders placed before 1 pm ET ship the same day.' },
+        { topic: 2, question: 'Will I pay duties?', answer: 'No. We ship from warehouses in Ontario and Ohio, so orders stay in-country and duty-free.' },
+        { topic: 2, question: 'Do you ship to PO boxes?', answer: 'Yes, through Canada Post and USPS. Courier-only items will say so at checkout.' },
+        { topic: 3, question: 'What is your return window?', answer: '30 days from delivery for unworn items with tags. Sale items are final.' },
+        { topic: 3, question: 'Are returns free?', answer: 'Exchanges are free. Refunds have a $7 label fee, taken from your refund.' },
+      ], [range('topic', 'Topic (1–4)', 1, 1, 4, 1), text('question', 'Question', ''), textarea('answer', 'Answer', '')], { min: 1, max: 16 }),
+      text('contactText', 'Contact text', 'Still stuck?'),
+      text('contactLabel', 'Contact link label', 'Email our team'),
+      url('contactUrl', 'Contact link', 'mailto:help@example.com'),
+      color('accent', 'Accent color', '#6D4AFF'),
+      color('background', 'Background', '#F7F6FA'),
+      radius(12),
       spacing('regular'),
     ],
   }),

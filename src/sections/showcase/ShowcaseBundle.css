@@ -1,0 +1,227 @@
+.showcase-bundle {
+  --ink: #1d1b18;
+  --muted: #6a655d;
+  --line: #e6e2da;
+  --lp-focus: var(--ink);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Rethink Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.showcase-bundle .sbd-head {
+  max-width: 600px;
+}
+
+.showcase-bundle h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.showcase-bundle .sbd-head p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.showcase-bundle .sbd-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 40px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.showcase-bundle .sbd-items {
+  display: grid;
+  grid-template-columns: repeat(var(--count), minmax(0, 1fr));
+  gap: 36px;
+}
+
+.showcase-bundle .sbd-media {
+  position: relative;
+}
+
+.showcase-bundle .sbd-plus {
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--muted);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.showcase-bundle figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.showcase-bundle figure img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.showcase-bundle h3 {
+  margin-top: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.showcase-bundle .sbd-detail {
+  margin-top: 4px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.showcase-bundle .sbd-price {
+  margin-top: 8px;
+  font-size: 15.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.showcase-bundle .sbd-summary {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+}
+
+.showcase-bundle .sbd-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.showcase-bundle .sbd-summary dl {
+  display: grid;
+  gap: 10px;
+}
+
+.showcase-bundle .sbd-summary dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.showcase-bundle .sbd-summary dt {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.showcase-bundle .sbd-summary dd {
+  margin: 0;
+  font-size: 15px;
+}
+
+.showcase-bundle .sbd-bundle {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.showcase-bundle .sbd-bundle dt {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.showcase-bundle .sbd-bundle dd {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.showcase-bundle .sbd-save {
+  justify-self: start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  color: color-mix(in srgb, var(--accent) 70%, #000);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.showcase-bundle .sbd-cta {
+  min-height: 52px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+}
+
+.showcase-bundle .sbd-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.showcase-bundle .sbd-note {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 1079px) {
+  .showcase-bundle .sbd-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .showcase-bundle .sbd-summary {
+    position: static;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 719px) {
+  .showcase-bundle .sbd-items {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .showcase-bundle .sbd-items li {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto 1fr;
+    column-gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+  .showcase-bundle .sbd-items li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .showcase-bundle .sbd-media {
+    grid-row: 1 / 4;
+  }
+  .showcase-bundle h3 {
+    margin-top: 2px;
+  }
+  .showcase-bundle .sbd-plus {
+    left: 50%;
+    top: -16px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+  .showcase-bundle .sbd-summary {
+    max-width: none;
+  }
+}
