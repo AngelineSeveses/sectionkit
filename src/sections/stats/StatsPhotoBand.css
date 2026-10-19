@@ -10,6 +10,7 @@
 .stats-photo-band .spb-bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -19,11 +20,13 @@
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: color-mix(in srgb, var(--overlay) 82%, transparent);
 }
 
 .stats-photo-band .spb-inner {
   position: relative;
+  z-index: 2;
 }
 
 .stats-photo-band h2 {

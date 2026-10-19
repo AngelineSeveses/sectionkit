@@ -404,7 +404,7 @@ export default [
     },
     fields: [
       text('heading', 'Heading', 'Find a clinic near you'),
-      textarea('intro', 'Intro', 'Eleven physiotherapy clinics in three provinces and Washington State. Same-week appointments at most locations.'),
+      textarea('intro', 'Intro', 'Physiotherapy clinics in three provinces and Washington State, with same-week appointments at most locations.'),
       list('regions', 'Regions (up to 5)', [{ name: 'Ontario' }, { name: 'British Columbia' }, { name: 'Alberta' }, { name: 'Washington' }], [text('name', 'Region', '')], { min: 1, max: 5 }),
       list('locations', 'Locations', [
         { name: 'Toronto Midtown', region: 1, address: '2200 Yonge St, Suite 400\nToronto, ON M4S 2C6', hours: 'Mon to Fri 7 am–8 pm, Sat 9 am–2 pm', phone: '(416) 555-0110', phoneHref: 'tel:+14165550110', mapUrl: 'https://maps.google.com/?q=2200+Yonge+St+Toronto' },

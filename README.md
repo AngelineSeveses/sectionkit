@@ -22,7 +22,7 @@ at one width. In the browser console, `__qaReport()` lists horizontal overflow a
 
 ## What is in the library
 
-212 implemented sections across all 21 categories. The live count per category, against the
+213 implemented sections across all 21 categories. The live count per category, against the
 long-term target, is on the **Library coverage** page (Settings menu → Library coverage).
 
 | Category | Implemented | Target |
@@ -47,8 +47,8 @@ long-term target, is on the **Library coverage** page (Settings menu → Library
 | Industry-specific | 12 | 40 |
 | Blog & resources | 9 | 20 |
 | Footers | 9 | 15 |
-| Banners, guarantees & offers | 8 | 15 |
-| **Total** | **212** | **485** |
+| Banners, guarantees & offers | 9 | 15 |
+| **Total** | **213** | **485** |
 
 The original brief lists a total of 520, but its per-category targets add up to 485. The app uses
 the per-category numbers.

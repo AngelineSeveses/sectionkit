@@ -1,0 +1,177 @@
+.banner-membership {
+  --ink: #0f1b2a;
+  --muted: #536072;
+  --line: #dbe2ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  padding-block: calc(var(--lp-pad) * 0.6);
+}
+
+.banner-membership .bms-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 1.8);
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.banner-membership .bms-copy {
+  padding: 40px 44px;
+}
+
+.banner-membership .bms-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  color: color-mix(in srgb, var(--accent) 75%, #000);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.banner-membership h2 {
+  margin-top: 14px;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.banner-membership .bms-text {
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.banner-membership .bms-perks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  margin-top: 22px;
+}
+
+.banner-membership .bms-perks li {
+  position: relative;
+  display: grid;
+  padding-left: 28px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.banner-membership .bms-perks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.banner-membership .bms-perks li::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.banner-membership .bms-val {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.banner-membership .bms-offer {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 40px 36px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.banner-membership .bms-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.banner-membership .bms-price strong {
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.banner-membership .bms-price span {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.banner-membership .bms-compare {
+  font-size: 15px;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--accent) 45%, #fff);
+  font-weight: 600;
+}
+
+.banner-membership .bms-cta {
+  min-height: 52px;
+  margin-top: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16.5px;
+  font-weight: 700;
+}
+
+.banner-membership .bms-cta:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #fff);
+}
+
+.banner-membership .bms-cta:focus-visible {
+  outline-color: #fff;
+}
+
+.banner-membership .bms-terms {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 859px) {
+  .banner-membership .bms-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .banner-membership .bms-copy {
+    padding: 32px 28px;
+  }
+  .banner-membership .bms-offer {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 519px) {
+  .banner-membership .bms-copy {
+    padding: 26px 20px;
+  }
+  .banner-membership .bms-offer {
+    padding: 24px 20px;
+  }
+  .banner-membership .bms-perks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

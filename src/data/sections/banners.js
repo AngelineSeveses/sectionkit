@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, color, select, toggle, list, radius, spacing, range, image } from '../fields'
+import { text, textarea, url, color, select, toggle, list, radius, spacing, range, image, currencyOptions } from '../fields'
 import { img } from '../images'
 
 const perkIcons = ['truck', 'return', 'lock', 'leaf', 'maple', 'chat'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
@@ -349,6 +349,57 @@ export default [
       color('color3', 'Color 3', '#F59E0B'),
       color('background', 'Card color', '#FBFAFF'),
       radius(14),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'banner-membership-009',
+    slug: 'maintenance-membership-banner',
+    name: 'Maintenance membership banner',
+    description: 'A banner selling a yearly maintenance plan: perks with their dollar values on the left, and a dark panel with the monthly price, the yearly value compared with the yearly price, a join button and terms.',
+    category: 'banners',
+    file: 'banners/BannerMembership',
+    addedAt: '2026-10-19',
+    industries: ['home-services', 'healthcare', 'local-business'],
+    goals: ['sign-up', 'purchase'],
+    audience: 'Existing and new customers who could save with a recurring plan, for HVAC, plumbing, lawn care or dental.',
+    markets: ['US', 'CA'],
+    layout: 'split',
+    styles: ['professional', 'bold'],
+    tags: ['membership', 'maintenance plan', 'subscription', 'club', 'hvac', 'recurring', 'value', 'perks'],
+    fonts: ['Source Sans 3:wght@400;600;700;800'],
+    structure: ['Badge, headline and text', 'Perks with dollar values', 'Dark panel: monthly price, value comparison, button, terms'],
+    rationale: [
+      'Maintenance memberships are a staple of US and Canadian home-service businesses because they bring repeat revenue and loyal customers.',
+      'Showing each perk’s dollar value, and the total against the yearly price, makes the deal concrete.',
+      'The value line is calculated from the perks and the price, so it always adds up.',
+    ],
+    responsive: ['The price panel moves under the perks below 860px; perks stack on phones.'],
+    tokens: { font: 'Source Sans 3', headingSize: 36, headingWeight: 800, headingLine: 1.1, bodySize: 16, text: '#0F1B2A', muted: '#536072', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 1200, paddingY: 58 },
+    elementor: {
+      structure: ['Container Row 65/35 (radius, overflow hidden, 1px border).', 'Left: pill Text Editor, Heading, Text Editor, Icon List in two columns with small value labels.', 'Right: dark container with a large Heading for the price, Text Editor for the value line, Button and small Text Editor.'],
+      notes: ['Recalculate the value line if you change perks in Elementor. List realistic values for each perk.'],
+    },
+    fields: [
+      text('badge', 'Badge', 'Comfort Club'),
+      text('headline', 'Headline', 'Never pay full price for a tune-up again'),
+      textarea('text', 'Text', 'Two precision tune-ups a year, priority booking and member pricing on every repair.'),
+      range('monthly', 'Monthly price', 19, 1, 500, 1),
+      select('currency', 'Currency', 'USD', currencyOptions),
+      list('perks', 'Perks', [
+        { label: 'Spring AC tune-up', value: 149 },
+        { label: 'Fall furnace tune-up', value: 149 },
+        { label: 'No after-hours fees', value: 99 },
+        { label: '15% off all repairs', value: 0 },
+        { label: 'Priority scheduling', value: 0 },
+        { label: 'Transferable if you move', value: 0 },
+      ], [text('label', 'Perk', ''), range('value', 'Value (0 to hide)', 0, 0, 5000, 1)], { min: 2, max: 8 }),
+      text('ctaLabel', 'Button label', 'Join the Comfort Club'),
+      url('ctaUrl', 'Button link', '/membership'),
+      text('terms', 'Terms', 'Billed monthly. Cancel any time after the first tune-up.'),
+      color('accent', 'Accent color', '#0EA5E9'),
+      color('background', 'Card color', '#F5F8FB'),
+      radius(12),
       spacing('regular'),
     ],
   }),

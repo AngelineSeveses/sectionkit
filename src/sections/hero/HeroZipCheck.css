@@ -12,6 +12,7 @@
 .hero-zip-check .hzc-bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -21,11 +22,13 @@
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(90deg, rgba(10, 20, 30, 0.88) 0%, rgba(10, 20, 30, 0.7) 45%, rgba(10, 20, 30, 0.1) 100%);
 }
 
 .hero-zip-check .hzc-inner {
   position: relative;
+  z-index: 2;
   padding-block: calc(var(--lp-pad) * 1.1) calc(var(--lp-pad) * 1.3);
 }
 
@@ -152,6 +155,7 @@
 
 .hero-zip-check .hzc-trust {
   position: relative;
+  z-index: 2;
   background: #fff;
   color: var(--ink);
 }

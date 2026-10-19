@@ -55,6 +55,7 @@
 }
 
 .portfolio-before-after .pba-media img {
+  position: relative;
   grid-area: 1 / 1;
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -63,7 +64,13 @@
 }
 
 .portfolio-before-after .pba-before {
+  z-index: 0;
   filter: saturate(0.7) brightness(0.95);
+}
+
+/* The filter on the before photo creates its own layer, so the after photo needs a higher one */
+.portfolio-before-after .pba-after {
+  z-index: 1;
 }
 
 .portfolio-before-after .pba-r-before:checked ~ .pba-media .pba-after {
@@ -72,6 +79,7 @@
 
 .portfolio-before-after .pba-switch {
   position: absolute;
+  z-index: 2;
   left: 50%;
   bottom: 14px;
   display: grid;
