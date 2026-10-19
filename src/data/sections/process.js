@@ -1,5 +1,5 @@
 import { section } from '../define'
-import { text, textarea, url, image, color, list, radius, spacing } from '../fields'
+import { text, textarea, url, image, color, list, radius, spacing, range } from '../fields'
 import { img } from '../images'
 
 export default [
@@ -288,6 +288,53 @@ export default [
       color('accent', 'Accent color', '#0F7B6C'),
       color('background', 'Background', '#F3F6F8'),
       radius(12),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'process-gantt-007',
+    slug: 'project-timeline-week-chart',
+    name: 'Project timeline as a week chart',
+    description: 'Project phases on a week-by-week chart: each row names the phase and its deliverable, with a bar spanning its weeks, and the total length shown up top.',
+    category: 'process',
+    file: 'process/ProcessGantt',
+    addedAt: '2026-10-19',
+    industries: ['agency', 'home-services', 'professional-services', 'saas', 'b2b'],
+    goals: ['book-consultation', 'request-quote'],
+    audience: 'Clients planning a project around a deadline who need to know how long it takes and when they are involved.',
+    markets: ['US', 'CA'],
+    layout: 'table',
+    styles: ['professional', 'technical'],
+    tags: ['process', 'timeline', 'gantt', 'project plan', 'phases', 'weeks', 'deliverables', 'onboarding'],
+    fonts: ['Onest:wght@400;600;700'],
+    structure: ['Heading and intro', 'Total weeks', 'Week scale', 'Phase rows: name, deliverable, bar across its weeks', 'Button'],
+    rationale: [
+      'A visible schedule answers “when will it be done?” and shows overlapping phases, which a numbered list hides.',
+      'The total and every bar come from the same start and length numbers, so the plan can be edited without the chart drifting.',
+      'Deliverables under each phase show what the client gets, not just what the agency does.',
+    ],
+    responsive: ['Below 640px the week scale hides and each bar sits under its label, still in proportion.'],
+    tokens: { font: 'Onest', headingSize: 44, headingWeight: 700, headingLine: 1.08, bodySize: 14, text: '#191A1F', muted: '#5D606B', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 1200, paddingY: 96 },
+    elementor: {
+      structure: ['Row: Heading + Text Editor, and a large Heading for the total weeks.', 'White bordered container. For each phase, a Row: a 300px column with Heading + Text Editor, and a container with a light grid background holding a colored inner container (width = weeks ÷ total × 100%, left margin = (start − 1) ÷ total × 100%).', 'Button.'],
+      notes: ['Elementor has no Gantt widget; set each bar’s width and margin in % as described, or paste the HTML export into an HTML widget.'],
+    },
+    fields: [
+      text('heading', 'Heading', 'Your website, in ten weeks'),
+      textarea('intro', 'Intro', 'A fixed schedule agreed at kickoff. You review at the end of each phase, and nothing moves forward without your sign-off.'),
+      list('phases', 'Phases', [
+        { name: 'Discovery', deliverable: 'Goals, audience and sitemap', start: 1, weeks: 2 },
+        { name: 'Content and copy', deliverable: 'Page copy you approve line by line', start: 2, weeks: 3 },
+        { name: 'Design', deliverable: 'Homepage and key templates', start: 3, weeks: 3 },
+        { name: 'Build', deliverable: 'WordPress site on a staging link', start: 6, weeks: 3 },
+        { name: 'Testing and training', deliverable: 'Device checks and a recorded walkthrough', start: 9, weeks: 1 },
+        { name: 'Launch', deliverable: 'Go live and 30 days of support', start: 10, weeks: 1 },
+      ], [text('name', 'Phase', ''), text('deliverable', 'Deliverable', ''), range('start', 'Start week', 1, 1, 52, 1), range('weeks', 'Length in weeks', 1, 1, 52, 1)], { min: 1, max: 8 }),
+      text('ctaLabel', 'Button label', 'Plan your project'),
+      url('ctaUrl', 'Button link', '/contact'),
+      color('accent', 'Accent color', '#2D5BD7'),
+      color('background', 'Background', '#F4F5F8'),
+      radius(10),
       spacing('regular'),
     ],
   }),

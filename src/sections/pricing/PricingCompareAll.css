@@ -1,0 +1,221 @@
+.pricing-compare-all {
+  --ink: #12161d;
+  --muted: #59606c;
+  --line: #e2e5ea;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.pricing-compare-all .pca-head {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.pricing-compare-all h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 650;
+}
+
+.pricing-compare-all .pca-head p {
+  margin-top: 14px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.pricing-compare-all .pca-plans {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+.pricing-compare-all .pca-plans > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px 28px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+}
+
+.pricing-compare-all .pca-plans > li[data-featured='true'] {
+  border: 2px solid var(--accent);
+  box-shadow: 0 30px 60px -40px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.pricing-compare-all .pca-flag {
+  position: absolute;
+  top: -13px;
+  left: 26px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.pricing-compare-all h3 {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.pricing-compare-all .pca-desc {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.pricing-compare-all .pca-price {
+  margin-top: 22px;
+}
+
+.pricing-compare-all .pca-price strong {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing-compare-all .pca-price span {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.pricing-compare-all .pca-cta {
+  margin-top: 20px;
+  min-height: 48px;
+  border-color: var(--line);
+  background: #fff;
+}
+
+.pricing-compare-all .pca-cta:hover {
+  border-color: var(--ink);
+}
+
+.pricing-compare-all [data-featured='true'] .pca-cta {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.pricing-compare-all [data-featured='true'] .pca-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.pricing-compare-all .pca-key {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.pricing-compare-all .pca-compare {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.pricing-compare-all .pca-compare summary {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 0;
+  font-size: 15.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pricing-compare-all .pca-compare summary::-webkit-details-marker {
+  display: none;
+}
+
+.pricing-compare-all .pca-compare summary:hover {
+  color: var(--accent);
+}
+
+.pricing-compare-all .pca-compare summary svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.pricing-compare-all .pca-compare[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.pricing-compare-all .pca-scroll {
+  position: relative;
+  overflow-x: auto;
+}
+
+.pricing-compare-all table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.pricing-compare-all th,
+.pricing-compare-all td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.pricing-compare-all thead th {
+  font-weight: 650;
+}
+
+.pricing-compare-all tbody th {
+  padding-left: 0;
+  font-weight: 500;
+  text-align: left;
+}
+
+.pricing-compare-all td {
+  width: calc(60% / var(--cols));
+  color: var(--muted);
+}
+
+.pricing-compare-all .pca-yes {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  color: var(--accent);
+  vertical-align: middle;
+}
+
+.pricing-compare-all .pca-yes svg {
+  width: 14px;
+  height: 14px;
+}
+
+.pricing-compare-all .pca-no {
+  color: #a3a8b1;
+}
+
+@media (max-width: 899px) {
+  .pricing-compare-all .pca-plans {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 480px;
+    margin-inline: auto;
+    gap: 24px;
+  }
+}

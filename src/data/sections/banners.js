@@ -1,5 +1,6 @@
 import { section } from '../define'
-import { text, textarea, url, color, select, toggle, list, radius, spacing, range } from '../fields'
+import { text, textarea, url, color, select, toggle, list, radius, spacing, range, image } from '../fields'
+import { img } from '../images'
 
 const perkIcons = ['truck', 'return', 'lock', 'leaf', 'maple', 'chat'].map((v) => ({ value: v, label: v[0].toUpperCase() + v.slice(1) }))
 
@@ -260,6 +261,51 @@ export default [
       color('accent', 'Accent color', '#5B3FD9'),
       color('background', 'Background', '#ECE8FB'),
       radius(12),
+      spacing('regular'),
+    ],
+  }),
+  section({
+    id: 'banner-welcome-offer-007',
+    slug: 'welcome-offer-email-signup',
+    name: 'Welcome offer with email signup',
+    description: 'An inset card with a product photo and a round offer sticker, beside a serif headline, a one-field email signup and the offer’s fine print.',
+    category: 'banners',
+    file: 'banners/BannerWelcomeOffer',
+    addedAt: '2026-10-19',
+    industries: ['ecommerce', 'local-business', 'hospitality'],
+    goals: ['subscribe', 'purchase'],
+    audience: 'First-time shoppers browsing without buying, who will join a list for a first-order discount.',
+    markets: ['US', 'CA'],
+    layout: 'split',
+    styles: ['warm', 'friendly'],
+    tags: ['offer', 'discount', 'welcome', 'email signup', 'newsletter', 'first order', 'coupon'],
+    traits: ['form', 'photography'],
+    fonts: ['DM Serif Display', 'DM Sans:wght@400;500;700'],
+    structure: ['Product photo with offer sticker', 'Serif headline and text', 'Email field and button', 'Fine print'],
+    rationale: [
+      'A clear first-order offer is one of the most reliable ways to grow an email list in e-commerce.',
+      'The sticker states the value before anyone reads the copy.',
+      'Fine print right under the button states the conditions and the consent wording, which email marketing rules in both countries expect.',
+    ],
+    responsive: ['The photo moves on top below 760px and the sticker shrinks.'],
+    tokens: { font: 'DM Serif Display / DM Sans', headingSize: 42, headingWeight: 400, headingLine: 1.08, bodySize: 17, text: '#1D1A1F', muted: '#645E68', bg: '$background', accent: '$accent', accentText: '#FFFFFF', radius: '$radius', maxWidth: 980, paddingY: 58 },
+    elementor: {
+      structure: ['Container Row 45/55 (background $background, radius 2× $radius, overflow hidden, max 980px).', 'Left: container with a background image and an absolutely positioned circular Heading for the offer (Transform rotate −8°).', 'Right: Heading, Text Editor, Form widget with one Email field and a full-width button, small Text Editor.'],
+      notes: ['Canada’s anti-spam law (CASL) and US CAN-SPAM rules apply to marketing email. Keep the consent wording and an unsubscribe link in every email.'],
+    },
+    fields: [
+      text('offer', 'Sticker text', '15% off', { maxLength: 14 }),
+      text('headline', 'Headline', 'Your first order is on us, partly'),
+      textarea('text', 'Text', 'Join our list for 15% off your first order, plus early access to new products and restocks.'),
+      image('image', 'Photo', img.skincare(720, 720)),
+      text('imageAlt', 'Photo description', 'Skincare bottles on a pale background'),
+      text('placeholder', 'Field placeholder', 'Your email address'),
+      text('ctaLabel', 'Button label', 'Get my 15% code'),
+      url('formAction', 'Form action URL', '/api/subscribe'),
+      textarea('finePrint', 'Fine print', 'One code per customer, for full-price items. By signing up you agree to receive marketing email from us. Unsubscribe any time.'),
+      color('accent', 'Sticker color', '#D9366E'),
+      color('background', 'Card color', '#F7EEF1'),
+      radius(14),
       spacing('regular'),
     ],
   }),

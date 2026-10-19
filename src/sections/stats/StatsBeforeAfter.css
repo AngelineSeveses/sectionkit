@@ -1,0 +1,151 @@
+.stats-before-after {
+  --ink: #f1f3f6;
+  --muted: rgba(241, 243, 246, 0.64);
+  --line: rgba(241, 243, 246, 0.12);
+  --before: rgba(241, 243, 246, 0.28);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.stats-before-after .sba-head {
+  max-width: 640px;
+}
+
+.stats-before-after h2 {
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.stats-before-after .sba-head > p:not(.sba-legend) {
+  margin-top: 14px;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.stats-before-after .sba-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.stats-before-after .sba-key {
+  width: 14px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.stats-before-after .sba-key-after {
+  margin-left: 12px;
+  background: var(--accent);
+}
+
+.stats-before-after .sba-key-before {
+  background: var(--before);
+}
+
+.stats-before-after .sba-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.stats-before-after .sba-list > li {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.4);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.stats-before-after .sba-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.stats-before-after h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.stats-before-after .sba-change {
+  flex-shrink: 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-before-after .sba-change[data-better='false'] {
+  color: #f87171;
+}
+
+.stats-before-after .sba-bars {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.stats-before-after .sba-bars > div {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.stats-before-after .sba-bars dt {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stats-before-after .sba-bars dd {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-right: 72px;
+}
+
+.stats-before-after .sba-bar {
+  height: 12px;
+  min-width: 4px;
+  border-radius: 6px;
+}
+
+.stats-before-after .sba-before {
+  background: var(--before);
+}
+
+.stats-before-after .sba-after {
+  background: var(--accent);
+}
+
+.stats-before-after .sba-val {
+  position: absolute;
+  right: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-before-after .sba-source {
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+@media (max-width: 819px) {
+  .stats-before-after .sba-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

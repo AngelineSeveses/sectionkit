@@ -1,0 +1,164 @@
+.cta-advisor {
+  --ink: #1b1f24;
+  --muted: #5d636d;
+  --line: #e1e4e8;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Public Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+}
+
+.cta-advisor .cad-card {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 48px;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 40px;
+  border-radius: calc(var(--radius) * 2);
+  background: #fff;
+  box-shadow: 0 1px 0 var(--line), 0 40px 80px -60px rgba(27, 31, 36, 0.45);
+}
+
+.cta-advisor .cad-person {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding-right: 40px;
+  border-right: 1px solid var(--line);
+}
+
+.cta-advisor .cad-person img {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: calc(var(--radius) * 1.5);
+}
+
+.cta-advisor .cad-name {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cta-advisor .cad-cred {
+  margin-top: 4px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.cta-advisor .cad-lang {
+  margin-top: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cta-advisor h2 {
+  font-size: clamp(28px, 3.2vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.cta-advisor .cad-text {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.cta-advisor .cad-slots-label {
+  margin-top: 26px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cta-advisor .cad-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cta-advisor .cad-slots a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--accent) 80%, #000);
+  font-variant-numeric: tabular-nums;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.cta-advisor .cad-slots a:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.cta-advisor .cad-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.cta-advisor .cad-cta {
+  min-height: 50px;
+  padding-inline: 24px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 16px;
+}
+
+.cta-advisor .cad-cta:hover {
+  background: var(--accent);
+}
+
+.cta-advisor .cad-actions p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.cta-advisor .cad-actions p a {
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 819px) {
+  .cta-advisor .cad-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 32px;
+  }
+  .cta-advisor .cad-person {
+    grid-template-columns: 96px 1fr;
+    align-items: center;
+    padding: 0 0 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 479px) {
+  .cta-advisor .cad-card {
+    padding: 24px 18px;
+  }
+  .cta-advisor .cad-cta {
+    width: 100%;
+  }
+}

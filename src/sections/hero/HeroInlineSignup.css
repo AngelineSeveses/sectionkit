@@ -1,0 +1,247 @@
+.hero-inline-signup {
+  --ink: #111827;
+  --muted: #4b5563;
+  --line: #e5e7eb;
+  --lp-focus: var(--accent);
+  --lp-btn-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding-block: var(--lp-pad);
+  overflow: hidden;
+}
+
+.hero-inline-signup .his-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-inline-signup h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.hero-inline-signup .his-sub {
+  margin-top: 20px;
+  max-width: 520px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-inline-signup .his-form {
+  display: flex;
+  gap: 8px;
+  max-width: 500px;
+  margin-top: 32px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 6px);
+  background: #fff;
+  box-shadow: 0 12px 30px -18px rgba(17, 24, 39, 0.3);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.hero-inline-signup .his-form:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.hero-inline-signup .his-form input {
+  flex: 1;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+.hero-inline-signup .his-cta {
+  min-height: 48px;
+  padding-inline: 22px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15.5px;
+}
+
+.hero-inline-signup .his-cta:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.hero-inline-signup .his-micro {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero-inline-signup .his-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  max-width: 500px;
+}
+
+.hero-inline-signup .his-stars {
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: #f59e0b;
+}
+
+.hero-inline-signup .his-proof p {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.hero-inline-signup .his-proof strong {
+  color: var(--ink);
+}
+
+/* Drawn calendar */
+.hero-inline-signup .his-visual {
+  position: relative;
+  padding: 0 0 40px 24px;
+}
+
+.hero-inline-signup .his-cal {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+  box-shadow: 0 40px 80px -40px rgba(17, 24, 39, 0.35);
+}
+
+.hero-inline-signup .his-cal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+}
+
+.hero-inline-signup .his-cal-head span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hero-inline-signup .his-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.hero-inline-signup .his-day-name {
+  display: block;
+  padding-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.hero-inline-signup .his-slots {
+  display: grid;
+  grid-template-rows: repeat(5, 46px);
+  gap: 6px;
+  padding: 6px;
+  border-radius: 10px;
+  background: repeating-linear-gradient(to bottom, #f6f7f9 0 46px, #fff 46px 52px);
+}
+
+.hero-inline-signup .his-booking {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 7px;
+  overflow: hidden;
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 13%, #fff);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--accent) 70%, #000);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hero-inline-signup .his-notify {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 290px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 20px 40px -20px rgba(17, 24, 39, 0.6);
+}
+
+.hero-inline-signup .his-notify-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.25);
+}
+
+.hero-inline-signup .his-notify div {
+  display: grid;
+  gap: 2px;
+}
+
+.hero-inline-signup .his-notify strong {
+  font-size: 14px;
+}
+
+.hero-inline-signup .his-notify span:not(.his-notify-dot) {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 959px) {
+  .hero-inline-signup .his-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+  .hero-inline-signup .his-visual {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 519px) {
+  .hero-inline-signup .his-form {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .hero-inline-signup .his-cta {
+    width: 100%;
+  }
+  .hero-inline-signup .his-visual {
+    padding-left: 0;
+  }
+  .hero-inline-signup .his-cal {
+    padding: 14px;
+  }
+  .hero-inline-signup .his-cal-grid {
+    gap: 4px;
+  }
+  .hero-inline-signup .his-slots {
+    grid-template-rows: repeat(5, 36px);
+    padding: 4px;
+    gap: 4px;
+    background: repeating-linear-gradient(to bottom, #f6f7f9 0 36px, #fff 36px 40px);
+  }
+  .hero-inline-signup .his-booking {
+    padding: 4px;
+    font-size: 0;
+  }
+}
